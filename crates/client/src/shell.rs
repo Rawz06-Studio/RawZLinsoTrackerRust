@@ -21,6 +21,8 @@ pub enum Shortcut {
     GoLive,
     #[cfg(any(target_os = "macos", target_os = "windows"))]
     Home,
+    #[cfg(any(target_os = "macos", target_os = "windows"))]
+    NewWindow,
     #[cfg(target_arch = "wasm32")]
     SmallWindow,
 }
@@ -70,6 +72,11 @@ pub struct Shell {
 
 fn tracker_dir(name: &str) -> String {
     format!("sources/{name}/")
+}
+
+#[cfg(not(target_arch = "wasm32"))]
+fn open_new_window(options: &Options) {
+    crate::instance::spawn(&options.server_url, options.source.sources_dir.as_deref());
 }
 
 impl Shell {
@@ -290,6 +297,10 @@ impl Shell {
                 _ => menu.set_enabled(false, false),
             }
             shortcuts.extend(menu.take_shortcuts());
+            // Before the check below: this also works from the home screen.
+            if shortcuts.contains(&Shortcut::NewWindow) {
+                open_new_window(&self.options);
+            }
         }
         let Screen::Tracker(live) = &mut self.screen else {
             return;
@@ -305,6 +316,8 @@ impl Shell {
                     self.navigate(ctx, Route::Home);
                     return;
                 }
+                #[cfg(any(target_os = "macos", target_os = "windows"))]
+                Shortcut::NewWindow => {}
                 #[cfg(target_arch = "wasm32")]
                 Shortcut::SmallWindow => crate::web::open_small_window(live.size.x, live.size.y),
             }
@@ -330,7 +343,22 @@ impl Shell {
                 ui.centered_and_justified(|ui| ui.label(message.as_str()));
             }
             Screen::Home(home) => {
-                if let Some(name) = home.show(ui) {
+                let chosen = home.show(ui);
+                // macOS and Windows have this action in the system menu.
+                #[cfg(not(any(
+                    target_os = "macos",
+                    target_os = "windows",
+                    target_arch = "wasm32"
+                )))]
+                {
+                    let top_right = ui.max_rect().right_top();
+                    let button =
+                        egui::Rect::from_min_size(top_right + vec2(-112.0, 8.0), vec2(104.0, 24.0));
+                    if ui.put(button, egui::Button::new("New Window")).clicked() {
+                        open_new_window(&self.options);
+                    }
+                }
+                if let Some(name) = chosen {
                     let route = Route::Tracker {
                         name: name.to_owned(),
                         room: None,
@@ -360,6 +388,10 @@ impl Shell {
             bar_ui.horizontal(|ui| {
                 if cfg!(not(target_arch = "wasm32")) && ui.button("Home").clicked() {
                     route = Some(Route::Home);
+                }
+                #[cfg(not(target_arch = "wasm32"))]
+                if ui.button("New Window").clicked() {
+                    open_new_window(&self.options);
                 }
                 if live.room.is_none() {
                     let label = egui::RichText::new("Go Live").color(Color32::BLACK);

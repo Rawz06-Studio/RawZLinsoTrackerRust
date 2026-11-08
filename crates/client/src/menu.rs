@@ -10,6 +10,7 @@ type Error = Box<dyn std::error::Error + Send + Sync>;
 pub struct NativeMenu {
     /// The menu disappears if this is dropped.
     _bar: Menu,
+    new_window: MenuItem,
     home: MenuItem,
     go_live: MenuItem,
     enabled: (bool, bool),
@@ -18,6 +19,7 @@ pub struct NativeMenu {
 
 impl NativeMenu {
     pub fn install(cc: &eframe::CreationContext<'_>) -> Result<Self, Error> {
+        let new_window = MenuItem::new("New Window", true, None);
         let home = MenuItem::new("Home", false, None);
         let go_live = MenuItem::new("Go Live…", false, None);
         let bar = Menu::new();
@@ -27,7 +29,11 @@ impl NativeMenu {
             true,
             &[&muda::PredefinedMenuItem::quit(None)],
         )?)?;
-        bar.append(&Submenu::with_items("File", true, &[&home, &go_live])?)?;
+        bar.append(&Submenu::with_items(
+            "File",
+            true,
+            &[&new_window, &home, &go_live],
+        )?)?;
         attach(&bar, cc)?;
 
         let (sender, events) = mpsc::channel();
@@ -40,6 +46,7 @@ impl NativeMenu {
 
         Ok(Self {
             _bar: bar,
+            new_window,
             home,
             go_live,
             enabled: (false, false),
@@ -59,7 +66,9 @@ impl NativeMenu {
         self.events
             .try_iter()
             .filter_map(|id| {
-                if id == *self.home.id() {
+                if id == *self.new_window.id() {
+                    Some(Shortcut::NewWindow)
+                } else if id == *self.home.id() {
                     Some(Shortcut::Home)
                 } else if id == *self.go_live.id() {
                     Some(Shortcut::GoLive)

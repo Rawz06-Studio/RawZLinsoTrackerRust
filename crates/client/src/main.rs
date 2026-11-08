@@ -3,6 +3,8 @@
 mod app;
 mod assets;
 mod home;
+#[cfg(not(target_arch = "wasm32"))]
+mod instance;
 #[cfg(any(target_os = "macos", target_os = "windows"))]
 mod menu;
 mod net;
