@@ -2,14 +2,56 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v*"
-  workflow_dispatch:
+    branches:
+      - main
+
+# Versions are computed from the previous one, so releases must not overlap.
+concurrency:
+  group: release
+
+permissions:
+  contents: read
 
 jobs:
-  build:
-    name: build (${{ matrix.name }})
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  version:
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.release.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+
+      - name: Bump, tag and release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="v$(bash .github/scripts/bump-version.sh)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Cargo.toml Cargo.lock
+          git commit -m "🔖 release $tag [skip ci]"
+          git tag "$tag"
+          git push --atomic origin HEAD:main "$tag"
+          gh release create "$tag" --verify-tag --generate-notes
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+  binaries:
+    name: binaries (${{ matrix.name }})
+    needs: version
     runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -17,19 +59,21 @@ jobs:
           - name: linux-x86_64
             os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
+            ext: ""
           - name: windows-x86_64
             os: windows-latest
             target: x86_64-pc-windows-msvc
+            ext: ".exe"
           - name: macos-aarch64
             os: macos-latest
             target: aarch64-apple-darwin
-          - name: macos-x86_64
-            os: macos-latest
-            target: x86_64-apple-darwin
+            ext: ""
     env:
       TRACKER_SERVER_URL: ${{ vars.TRACKER_SERVER_URL }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.version.outputs.tag }}
 
       - name: Install system libraries
         if: runner.os == 'Linux'
@@ -51,40 +95,34 @@ jobs:
       - name: Build
         run: cargo build --release --locked --target ${{ matrix.target }} -p tracker-client -p tracker-server
 
-      - name: Package
+      - name: Package and upload
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.version.outputs.tag }}
         run: |
           package="RawZLinsoTracker-${{ matrix.name }}"
           mkdir "$package"
-          cp target/${{ matrix.target }}/release/tracker-client* target/${{ matrix.target }}/release/tracker-server* "$package"/
-          rm -f "$package"/*.d "$package"/*.pdb
+          for binary in tracker-client tracker-server; do
+            cp "target/${{ matrix.target }}/release/${binary}${{ matrix.ext }}" "$package/"
+          done
           if [ "$RUNNER_OS" = "Windows" ]; then
-            7z a "$package.zip" "$package"
+            archive="$package.zip"
+            7z a "$archive" "$package"
           else
-            tar -czf "$package.tar.gz" "$package"
+            archive="$package.tar.gz"
+            tar -czf "$archive" "$package"
           fi
+          gh release upload "$TAG" "$archive" --clobber
 
-      - uses: actions/upload-artifact@v7
-        with:
-          name: RawZLinsoTracker-${{ matrix.name }}
-          path: |
-            RawZLinsoTracker-*.zip
-            RawZLinsoTracker-*.tar.gz
-          if-no-files-found: error
-
-  release:
-    if: startsWith(github.ref, 'refs/tags/')
-    needs: build
-    runs-on: ubuntu-latest
+  preprod:
+    # The shared workflow checks out the branch, which now has the new version.
+    needs: version
+    uses: RawZ06-Studio/.github/.github/workflows/docker-build-push.yml@main
     permissions:
-      contents: write
-    steps:
-      - uses: actions/download-artifact@v8
-        with:
-          path: artifacts
-          merge-multiple: true
-
-      - uses: softprops/action-gh-release@v3
-        with:
-          files: artifacts/*
-          generate_release_notes: true
+      contents: read
+      packages: write
+    with:
+      image_name: tracker-online-rust
+      dokploy_app_id: DTjMDDBQDjlgTsCgvL47F
+    secrets: inherit

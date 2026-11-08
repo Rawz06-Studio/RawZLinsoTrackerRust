@@ -46,7 +46,11 @@ make docker && make docker-run
 
 ## Releases
 
-Pushing a `v*` tag builds the Windows, Linux and macOS executables and attaches
-them to a GitHub release. Set the `TRACKER_SERVER_URL` repository variable, for
-example `wss://tracker.example.com/ws`, to choose the server they connect to by
-default. Without it they use the local server.
+Every push to `main` runs the checks, then bumps the minor version, tags it and
+creates a GitHub release. Once tagged, the Windows, Linux and macOS executables
+are attached to that release and the server is deployed to preprod. Nothing
+happens if the checks fail.
+
+Set the `TRACKER_SERVER_URL` repository variable, for example
+`wss://tracker.example.com/ws`, to choose the server the executables connect to
+by default. Without it they use the local server.

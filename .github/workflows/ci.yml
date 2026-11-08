@@ -2,10 +2,13 @@ name: CI
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
-      - develop
   pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
 
 jobs:
   check:
@@ -36,6 +39,9 @@ jobs:
 
       - name: Test
         run: cargo test --workspace --locked
+
+      - name: Build
+        run: cargo build --workspace --release --locked
 
   docker:
     runs-on: ubuntu-latest

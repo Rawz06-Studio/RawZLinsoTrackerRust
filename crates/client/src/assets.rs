@@ -65,6 +65,12 @@ fn read_svg(files: &Files, name: &str, target: egui::Vec2) -> Result<ColorImage,
     Ok(ColorImage::from_rgba_premultiplied(size, pixmap.data()))
 }
 
+/// Item positions assume the web app's `max-width: 100%` on the background:
+/// an image wider than the tracker is scaled down, never up.
+fn background_size(natural: egui::Vec2, tracker_width: f32) -> egui::Vec2 {
+    natural * (tracker_width / natural.x).min(1.0)
+}
+
 /// Same weights as the CSS `grayscale(100%)` filter.
 fn grayscale(image: &ColorImage) -> ColorImage {
     let mut gray = image.clone();
@@ -122,8 +128,8 @@ impl Assets {
             (read_svg(files, &tracker.background, size)?, size)
         } else {
             let image = read_png(files, &tracker.background)?;
-            let size = egui::vec2(image.width() as f32, image.height() as f32);
-            (image, size)
+            let natural = egui::vec2(image.width() as f32, image.height() as f32);
+            (image, background_size(natural, tracker.dimensions.width))
         };
         let background = ctx.load_texture("background", bg_image, TextureOptions::LINEAR);
 
@@ -176,6 +182,16 @@ mod tests {
                 tracker_dirs(&path, out);
             }
         }
+    }
+
+    #[test]
+    fn backgrounds_wider_than_the_tracker_are_scaled_down() {
+        let compactfr = background_size(egui::vec2(520.0, 400.0), 390.0);
+        assert_eq!(compactfr, egui::vec2(390.0, 300.0));
+        let exact = background_size(egui::vec2(330.0, 220.0), 330.0);
+        assert_eq!(exact, egui::vec2(330.0, 220.0));
+        let narrow = background_size(egui::vec2(300.0, 200.0), 330.0);
+        assert_eq!(narrow, egui::vec2(300.0, 200.0));
     }
 
     #[test]
