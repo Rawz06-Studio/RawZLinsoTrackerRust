@@ -1,0 +1,3 @@
+# Links the C runtime into the .exe: VCRUNTIME140.dll is not on every machine.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
