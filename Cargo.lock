@@ -4290,7 +4290,7 @@ dependencies = [
 
 [[package]]
 name = "tracker-client"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "axum",
  "clap",
@@ -4313,7 +4313,7 @@ dependencies = [
 
 [[package]]
 name = "tracker-core"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "serde",
  "serde_json",
@@ -4321,7 +4321,7 @@ dependencies = [
 
 [[package]]
 name = "tracker-server"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "axum",
  "futures-util",
