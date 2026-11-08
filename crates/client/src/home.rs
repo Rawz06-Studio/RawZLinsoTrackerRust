@@ -31,12 +31,16 @@ const INFO_BOTTOM: f32 = 560.0;
 const INFO_PADDING: f32 = 24.0;
 const GLOW_FADE_SECONDS: f32 = 0.3;
 
-const CREDITS: [(&str, Color32); 3] = [
+const CREDITS: [(&str, Color32); 4] = [
     (
         "Based on LinSoTracker 2.2 - Developed by LinSoraK",
         Color32::from_rgb(0xf3, 0xf4, 0xf6),
     ),
     ("", Color32::from_rgb(0xf3, 0xf4, 0xf6)),
+    (
+        "Third version, rewritten in Rust from the web version",
+        Color32::from_rgb(0xf3, 0xf4, 0xf6),
+    ),
     (
         "Only for Restream use, please use Linsotracker app for personal use",
         Color32::from_rgb(0xfb, 0x2c, 0x36),

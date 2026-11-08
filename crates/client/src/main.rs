@@ -3,6 +3,8 @@
 mod app;
 mod assets;
 mod home;
+#[cfg(any(target_os = "macos", target_os = "windows"))]
+mod menu;
 mod net;
 mod route;
 mod shell;
@@ -57,7 +59,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size(home::SIZE)
-            .with_resizable(false),
+            .with_resizable(false)
+            .with_icon(eframe::icon_data::from_png_bytes(include_bytes!(
+                "../../../public/default/icon.png"
+            ))?),
         ..Default::default()
     };
     let shell_options = Options {
@@ -67,11 +72,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         server_url: args.server,
         small: args.small,
         screenshot: args.screenshot,
+        #[cfg(any(target_os = "macos", target_os = "windows"))]
+        menu: None,
     };
     eframe::run_native(
         "RawZLinsoTracker",
         options,
         Box::new(move |cc| {
+            #[cfg(any(target_os = "macos", target_os = "windows"))]
+            let shell_options = Options {
+                // On Windows the menu is part of the window, which `--small` keeps bare.
+                menu: (cfg!(target_os = "macos") || !shell_options.small)
+                    .then(|| menu::NativeMenu::install(cc))
+                    .transpose()?,
+                ..shell_options
+            };
             Ok(Box::new(Shell::new(
                 &cc.egui_ctx,
                 Some(route),

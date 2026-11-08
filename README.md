@@ -47,9 +47,9 @@ make docker && make docker-run
 ## Releases
 
 Every push to `main` runs the checks, then bumps the minor version, tags it and
-creates a GitHub release. Once tagged, the Windows, Linux and macOS executables
-are attached to that release and the server is deployed to preprod. Nothing
-happens if the checks fail.
+creates a GitHub release. Once tagged, the client is attached to that release
+as a Windows `.exe`, a Linux `.AppImage` and a macOS `.dmg`, and the server is
+deployed to preprod. Nothing happens if the checks fail.
 
 Set the `TRACKER_SERVER_URL` repository variable, for example
 `wss://tracker.example.com/ws`, to choose the server the executables connect to

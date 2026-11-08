@@ -19,6 +19,8 @@ const PAGE_COLOR: Color32 = Color32::from_rgb(0x11, 0x11, 0x11);
 pub enum Shortcut {
     Reset,
     GoLive,
+    #[cfg(any(target_os = "macos", target_os = "windows"))]
+    Home,
     #[cfg(target_arch = "wasm32")]
     SmallWindow,
 }
@@ -28,6 +30,8 @@ pub struct Options {
     pub server_url: String,
     pub small: bool,
     pub screenshot: Option<PathBuf>,
+    #[cfg(any(target_os = "macos", target_os = "windows"))]
+    pub menu: Option<crate::menu::NativeMenu>,
 }
 
 struct Live {
@@ -128,7 +132,12 @@ impl Shell {
     }
 
     fn shows_bar(&self, room: &Option<String>) -> bool {
-        let wanted_on_this_platform = cfg!(not(target_arch = "wasm32")) || room.is_none();
+        let wanted_on_this_platform = if cfg!(target_arch = "wasm32") {
+            room.is_none()
+        } else {
+            // macOS and Windows have these actions in the system menu.
+            !cfg!(any(target_os = "macos", target_os = "windows"))
+        };
         !self.options.small && wanted_on_this_platform
     }
 
@@ -272,15 +281,30 @@ impl Shell {
 
     fn tick(&mut self, ctx: &Context) {
         self.advance_loading(ctx);
+        #[allow(unused_mut)]
+        let mut shortcuts = Self::shortcuts(ctx);
+        #[cfg(any(target_os = "macos", target_os = "windows"))]
+        if let Some(menu) = &mut self.options.menu {
+            match &self.screen {
+                Screen::Tracker(live) => menu.set_enabled(true, live.room.is_none()),
+                _ => menu.set_enabled(false, false),
+            }
+            shortcuts.extend(menu.take_shortcuts());
+        }
         let Screen::Tracker(live) = &mut self.screen else {
             return;
         };
         live.view.tick(ctx);
-        for shortcut in Self::shortcuts(ctx) {
+        for shortcut in shortcuts {
             match shortcut {
                 Shortcut::Reset => live.view.reset(),
                 Shortcut::GoLive if live.room.is_none() => live.go_live = Some(String::new()),
                 Shortcut::GoLive => {}
+                #[cfg(any(target_os = "macos", target_os = "windows"))]
+                Shortcut::Home => {
+                    self.navigate(ctx, Route::Home);
+                    return;
+                }
                 #[cfg(target_arch = "wasm32")]
                 Shortcut::SmallWindow => crate::web::open_small_window(live.size.x, live.size.y),
             }
