@@ -65,8 +65,9 @@ pub fn open_small_window(width: f32, height: f32) {
     let _ = window.open_with_url_and_target_and_features(&url, "_blank", &features);
 }
 
-/// eframe leaves these combinations to the browser (hard reload, address bar),
-/// so they have to be caught before it sees them.
+/// eframe stops key events from propagating, and these combinations also belong
+/// to the browser (hard reload, address bar), so they are caught in the capture
+/// phase, before anyone else sees them.
 pub fn install_shortcuts(ctx: Context) {
     let listener =
         Closure::<dyn FnMut(web_sys::KeyboardEvent)>::new(move |event: web_sys::KeyboardEvent| {
@@ -83,7 +84,11 @@ pub fn install_shortcuts(ctx: Context) {
             SHORTCUTS.with(|pending| pending.borrow_mut().push(shortcut));
             ctx.request_repaint();
         });
-    let _ = window().add_event_listener_with_callback("keydown", listener.as_ref().unchecked_ref());
+    let _ = window().add_event_listener_with_callback_and_bool(
+        "keydown",
+        listener.as_ref().unchecked_ref(),
+        true,
+    );
     listener.forget(); // Lives as long as the page.
 }
 
