@@ -1,0 +1,6 @@
+/target
+/dist
+.DS_Store
+.idea
+.env
+.claude/settings.local.json

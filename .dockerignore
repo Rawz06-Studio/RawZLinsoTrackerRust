@@ -1,0 +1,9 @@
+**/.DS_Store
+.claude
+.git
+.github
+.idea
+dist
+target
+Dockerfile
+README.md
