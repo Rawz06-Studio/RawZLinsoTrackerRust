@@ -231,7 +231,7 @@ mod tests {
 
     #[test]
     fn parses_every_tracker_in_the_repository() {
-        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../public/sources");
+        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../public/sources/restream");
         let mut files = Vec::new();
         tracker_files(&root, &mut files);
         assert!(files.len() >= 12, "found only {} trackers", files.len());

@@ -3,12 +3,15 @@
 use crate::app::TrackerApp;
 use crate::assets::Assets;
 use crate::home::{self, Home};
+use crate::local::{LocalApp, assets::LocalAssets};
 use crate::net::Net;
 use crate::route::Route;
 use crate::source::{Bundle, Source};
 use eframe::egui::{self, Color32, Context, Key, Modal, TextEdit, Vec2, vec2};
 use std::collections::HashMap;
 use std::path::PathBuf;
+use tracker_core::linso::Template;
+use tracker_core::linso::model::MapDef;
 use tracker_core::{ErrorCode, Tracker};
 
 const BAR_HEIGHT: f32 = 36.0;
@@ -46,6 +49,26 @@ struct Live {
     go_live: Option<String>,
 }
 
+/// A LinSoTracker template on screen.
+struct LocalLive {
+    view: LocalApp,
+}
+
+/// A LinSoTracker template loads in steps: its `tracker.json`, the files it
+/// names, then the files its maps name.
+enum LocalStage {
+    Json,
+    Files(Box<Template>),
+    MapFiles(Box<Template>, Vec<MapDef>),
+}
+
+struct LocalLoad {
+    name: String,
+    stage: LocalStage,
+    files: HashMap<String, Vec<u8>>,
+    bundle: Bundle,
+}
+
 enum Screen {
     LoadingHome(Bundle),
     LoadingTracker {
@@ -60,8 +83,10 @@ enum Screen {
     /// New fonts only apply on the next frame, and drawing with a family that
     /// is not registered yet panics, so a page waits one frame before showing.
     Settling(Box<Screen>),
+    LoadingLocal(Box<LocalLoad>),
     Home(Box<Home>),
     Tracker(Box<Live>),
+    Local(Box<LocalLive>),
     Failed(String),
 }
 
@@ -71,7 +96,11 @@ pub struct Shell {
 }
 
 fn tracker_dir(name: &str) -> String {
-    format!("sources/{name}/")
+    format!("sources/restream/{name}/")
+}
+
+fn local_dir(name: &str) -> String {
+    format!("sources/linso/{name}/")
 }
 
 #[cfg(not(target_arch = "wasm32"))]
@@ -82,7 +111,7 @@ fn open_new_window(options: &Options) {
 impl Shell {
     pub fn new(ctx: &Context, route: Option<Route>, options: Options) -> Self {
         #[cfg(target_arch = "wasm32")]
-        if matches!(route, Some(Route::Tracker { .. })) {
+        if matches!(route, Some(Route::Tracker { .. } | Route::Local { .. })) {
             crate::web::install_shortcuts(ctx.clone());
         }
         let mut shell = Self {
@@ -106,6 +135,16 @@ impl Shell {
                 let mut bundle = Bundle::new(ctx, &self.options.source, tracker_dir(name));
                 bundle.request("tracker.json");
                 Screen::LoadingTracker { route, bundle }
+            }
+            Route::Local { name } => {
+                let mut bundle = Bundle::new(ctx, &self.options.source, local_dir(name));
+                bundle.request("tracker.json");
+                Screen::LoadingLocal(Box::new(LocalLoad {
+                    name: name.clone(),
+                    stage: LocalStage::Json,
+                    files: HashMap::new(),
+                    bundle,
+                }))
             }
         };
     }
@@ -138,9 +177,10 @@ impl Shell {
         let _ = (ctx, size);
     }
 
-    fn shows_bar(&self, room: &Option<String>) -> bool {
+    /// `local` trackers have no Go Live, the only button of the web bar.
+    fn shows_bar(&self, room: &Option<String>, local: bool) -> bool {
         let wanted_on_this_platform = if cfg!(target_arch = "wasm32") {
-            room.is_none()
+            room.is_none() && !local
         } else {
             // macOS and Windows have these actions in the system menu.
             !cfg!(any(target_os = "macos", target_os = "windows"))
@@ -187,7 +227,7 @@ impl Shell {
         };
         Self::set_title(ctx, &title);
         let size = vec2(tracker.dimensions.width, tracker.dimensions.height);
-        let bar = if self.shows_bar(&room) {
+        let bar = if self.shows_bar(&room, false) {
             BAR_HEIGHT
         } else {
             0.0
@@ -218,6 +258,11 @@ impl Shell {
                 Some(Err(_)) => Screen::Failed("Tracker not found".to_owned()),
                 Some(Ok(files)) => self.request_assets(ctx, route, &files),
             },
+            Screen::LoadingLocal(load) => {
+                // A step with no file to fetch gets no callback to wake egui.
+                ctx.request_repaint();
+                self.advance_local(ctx, *load)
+            }
             Screen::LoadingAssets {
                 route,
                 tracker,
@@ -233,6 +278,89 @@ impl Shell {
             },
             other => other,
         };
+    }
+
+    fn advance_local(&mut self, ctx: &Context, mut load: LocalLoad) -> Screen {
+        let files = match load.bundle.poll() {
+            None => return Screen::LoadingLocal(Box::new(load)),
+            Some(Err(error)) => return Screen::Failed(error),
+            Some(Ok(files)) => files,
+        };
+        load.files.extend(files);
+        let next_bundle = |names: Vec<String>| {
+            let mut bundle = Bundle::new(ctx, &self.options.source, local_dir(&load.name));
+            for name in names {
+                bundle.request(&name);
+            }
+            bundle
+        };
+        match load.stage {
+            LocalStage::Json => {
+                let parsed = load
+                    .files
+                    .get("tracker.json")
+                    .and_then(|bytes| std::str::from_utf8(bytes).ok())
+                    .map(Template::parse);
+                match parsed {
+                    Some(Ok(template)) => {
+                        load.bundle = next_bundle(template.files());
+                        load.stage = LocalStage::Files(Box::new(template));
+                        Screen::LoadingLocal(Box::new(load))
+                    }
+                    Some(Err(error)) => Screen::Failed(format!("Invalid tracker: {error}")),
+                    None => Screen::Failed("Tracker not found".to_owned()),
+                }
+            }
+            LocalStage::Files(template) => {
+                let mut maps = Vec::new();
+                for map in template.maps.iter().flat_map(|section| &section.maps) {
+                    let parsed = load
+                        .files
+                        .get(&map.file)
+                        .and_then(|bytes| std::str::from_utf8(bytes).ok())
+                        .map(MapDef::parse);
+                    match parsed {
+                        Some(Ok(def)) => maps.push(def),
+                        Some(Err(error)) => {
+                            return Screen::Failed(format!("Invalid map {}: {error}", map.file));
+                        }
+                        None => return Screen::Failed(format!("{}: missing", map.file)),
+                    }
+                }
+                let mut names: Vec<String> = maps.iter().flat_map(MapDef::files).collect();
+                names.retain(|name| !load.files.contains_key(name));
+                names.sort();
+                names.dedup();
+                load.bundle = next_bundle(names);
+                load.stage = LocalStage::MapFiles(template, maps);
+                Screen::LoadingLocal(Box::new(load))
+            }
+            LocalStage::MapFiles(template, maps) => {
+                self.enter_local(ctx, *template, maps, &load.files)
+            }
+        }
+    }
+
+    fn enter_local(
+        &mut self,
+        ctx: &Context,
+        template: Template,
+        maps: Vec<MapDef>,
+        files: &HashMap<String, Vec<u8>>,
+    ) -> Screen {
+        let assets = match LocalAssets::load(ctx, &template, &maps, files) {
+            Ok(assets) => assets,
+            Err(error) => return Screen::Failed(error.to_string()),
+        };
+        Self::set_title(ctx, &format!("{} - LinSoTracker", template.info.name));
+        let view = LocalApp::new(ctx, template, maps, assets, self.options.screenshot.take());
+        let bar = if self.shows_bar(&None, true) {
+            BAR_HEIGHT
+        } else {
+            0.0
+        };
+        Self::resize(ctx, view.size() + vec2(0.0, bar));
+        Screen::Settling(Box::new(Screen::Local(Box::new(LocalLive { view }))))
     }
 
     fn request_assets(
@@ -294,6 +422,7 @@ impl Shell {
         if let Some(menu) = &mut self.options.menu {
             match &self.screen {
                 Screen::Tracker(live) => menu.set_enabled(true, live.room.is_none()),
+                Screen::Local(_) => menu.set_enabled(true, false),
                 _ => menu.set_enabled(false, false),
             }
             shortcuts.extend(menu.take_shortcuts());
@@ -301,6 +430,29 @@ impl Shell {
             if shortcuts.contains(&Shortcut::NewWindow) {
                 open_new_window(&self.options);
             }
+        }
+        if let Screen::Local(local) = &mut self.screen {
+            local.view.tick(ctx);
+            for shortcut in shortcuts {
+                match shortcut {
+                    Shortcut::Reset => local.view.reset(),
+                    // LinSoTracker templates never go online.
+                    Shortcut::GoLive => {}
+                    #[cfg(any(target_os = "macos", target_os = "windows"))]
+                    Shortcut::Home => {
+                        self.navigate(ctx, Route::Home);
+                        return;
+                    }
+                    #[cfg(any(target_os = "macos", target_os = "windows"))]
+                    Shortcut::NewWindow => {}
+                    #[cfg(target_arch = "wasm32")]
+                    Shortcut::SmallWindow => {
+                        let size = local.view.size();
+                        crate::web::open_small_window(size.x, size.y);
+                    }
+                }
+            }
+            return;
         }
         let Screen::Tracker(live) = &mut self.screen else {
             return;
@@ -336,7 +488,8 @@ impl Shell {
             }
             Screen::LoadingHome(_)
             | Screen::LoadingTracker { .. }
-            | Screen::LoadingAssets { .. } => {
+            | Screen::LoadingAssets { .. }
+            | Screen::LoadingLocal(_) => {
                 ui.centered_and_justified(|ui| ui.spinner());
             }
             Screen::Failed(message) => {
@@ -358,22 +511,46 @@ impl Shell {
                         open_new_window(&self.options);
                     }
                 }
-                if let Some(name) = chosen {
-                    let route = Route::Tracker {
-                        name: name.to_owned(),
-                        room: None,
-                    };
+                if let Some(route) = chosen {
                     self.navigate(&ctx, route);
                 }
             }
             Screen::Tracker(_) => self.show_tracker(ui),
+            Screen::Local(_) => self.show_local(ui),
+        }
+    }
+
+    fn show_local(&mut self, ui: &mut egui::Ui) {
+        let ctx = ui.ctx().clone();
+        let show_bar = self.shows_bar(&None, true);
+        let mut origin = ui.max_rect().min;
+        let mut home = false;
+        if show_bar {
+            let bar = egui::Rect::from_min_size(origin, vec2(ui.available_width(), BAR_HEIGHT));
+            let mut bar_ui = ui.new_child(egui::UiBuilder::new().max_rect(bar.shrink(4.0)));
+            bar_ui.horizontal(|ui| {
+                if ui.button("Home").clicked() {
+                    home = true;
+                }
+                #[cfg(not(target_arch = "wasm32"))]
+                if ui.button("New Window").clicked() {
+                    open_new_window(&self.options);
+                }
+            });
+            origin.y += BAR_HEIGHT;
+        }
+        if let Screen::Local(local) = &mut self.screen {
+            local.view.show(ui, origin);
+        }
+        if home {
+            self.navigate(&ctx, Route::Home);
         }
     }
 
     fn show_tracker(&mut self, ui: &mut egui::Ui) {
         let ctx = ui.ctx().clone();
         let show_bar = match &self.screen {
-            Screen::Tracker(live) => self.shows_bar(&live.room),
+            Screen::Tracker(live) => self.shows_bar(&live.room, false),
             _ => return,
         };
         let mut route = None;

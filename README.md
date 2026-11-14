@@ -9,8 +9,17 @@ shared rooms between players. Written in Rust with [egui](https://github.com/emi
 | `crates/server` | WebSocket rooms, monitoring API, hosting of the web client |
 | `crates/client` | The tracker UI, for desktop and WebAssembly |
 
-Trackers live in `public/sources`. The five of the menu are bundled in the
-desktop executable.
+Trackers live in `public/sources`, in two families read by different code:
+
+- `restream/`: the restream trackers, which can go online in a shared room
+  (`/compact`, `/tracker/compact/<room>`).
+- `linso/`: LinSoTracker 2.4's own templates, extracted from their
+  `.template` archives and played as LinSoTracker plays them: evolutions,
+  hints, sub-menus, conditional items, drag and drop, and the map template
+  with its logic and rules (`crates/core/src/linso`). They are local only
+  (`/local/oot64`).
+
+Both families are bundled in the desktop executable.
 
 ## Commands
 
@@ -18,6 +27,7 @@ desktop executable.
 make server                            # http://127.0.0.1:3000
 make client                            # desktop client, opens the menu
 make client ARGS="compact --room test" # open a tracker and join a room
+make client ARGS="local/oot64"         # open a LinSoTracker template
 make web                               # build the web client and serve it
 make test
 make lint

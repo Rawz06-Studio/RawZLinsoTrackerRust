@@ -1,0 +1,3795 @@
+[
+    {
+        "Datas" : {
+            "Name": "Hyrule",
+            "Background": "main_map.png",
+            "Dimensions": {
+                "width": 750,
+                "height": 785
+            },         
+            "SubMenuBackground": "main_map_submenu.png",
+            "DrawBoxRect": {
+                "x": 195,
+                "y": 150,
+                "w": 363,
+                "h": 455
+            },
+			"DrawBoxRectSubTitle": {
+				"x": 195,
+                "y": 170,
+                "w": 363,
+                "h": 435 
+            },   
+            "LabelY": 100,
+            "LeftArrow" : {
+                "Image": "left-arrow.png",
+                "Positions": {
+                    "x": 315,
+                    "y": 616
+                }
+            },
+            "RightArrow" : {
+                "Image": "right-arrow.png",
+                "Positions": {
+                    "x": 419,
+                    "y": 616
+                }
+            }
+        },
+        "ChecksList": 
+            [
+                {
+                    "Id": 0,
+                    "Kind": "Block",
+                    "Name": "Ordon Village",
+					"Zone": "Ordon Village",
+                    "Positions": {
+                        "x": 406,
+                        "y": 650
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Wooden Sword Chest",
+                            "Conditions": "do('CanAccessOrdonVillage')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Link House Basement Chest",
+                            "Conditions": "do('CanAccessOrdonVillage') and have('Lantern')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Ordon Hint Sign",
+                            "Conditions": "do('CanAccessOrdonVillage')"
+                        }   ,
+                        {
+                            "Id": 3,
+                            "Name": "Sera Shop Slingshot",
+                            "Conditions": "do('CanAccessOrdonVillage')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Cat Rescue",
+                            "Conditions": "do('CanAccessOrdonVillage') and do('CanFish')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Uli Cradle Delivery",
+                            "Conditions": "do('CanAccessOrdonVillage')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Ordon Sword",
+                            "Conditions": "do('CanAccessOrdonVillage') and (do('CanCompletePrologue') or do('HaveClearedFT'))"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Ordon Shield",
+                            "Conditions": "do('CanAccessOrdonVillage') and ((do('CanCompletePrologue') and not do('HaveClearedFT')) or (do('HaveClearedFT') and have('Crystal')))"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Wrestling with Bo",
+                            "Conditions": "do('CanAccessOrdonVillage')"
+                        }                                
+                    ]
+                },                                
+                {
+                    "Id": 1,
+                    "Kind": "SimpleCheck",
+                    "Name": "Herding Goats",
+					"Zone": "Ordon Village",
+                    "Positions": {
+                        "x": 417,
+                        "y": 683
+                    },
+                    "Conditions": "do('CanAccessOrdonVillage') and do('CanCompletePrologue')"
+                },
+                {
+                    "Id": 2,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Rat Chuchu Lantern Chest",
+					"Zone": "Ordon Village",
+                    "Positions": {
+                        "x": 400,
+                        "y": 683
+                    },
+                    "Conditions": "do('CanAccessOrdonVillage') and have('Crystal') and have('Lantern')"
+                },
+                {
+                    "Id": 3,
+                    "Kind": "SimpleCheck",
+                    "Name": "Golden Wolf from Mountain Stone",
+					"Zone": "Ordon Village",
+                    "Positions": {
+                        "x": 394,
+                        "y": 619
+                    },
+                    "Conditions": "do('CanAccessOrdonVillage') and have('Crystal') and do('CanAccessDuringorAfterET') and do('CanAttendHiddenSkillTraining')"
+                },
+                {
+                    "Id": 4,
+                    "Kind": "Block",
+                    "Name": "Coro",
+					"Zone": "Faron Woods",
+                    "Positions": {
+                        "x": 413,
+                        "y": 542
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Coro Lantern (Dev 1.3)",
+                            "Conditions": "do('CanAccessSouthFaronWoods') and (do('HaveVessels') or rules('Faron Twilight Skip'))"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Coro Key (Dev 1.3)",
+                            "Conditions": "do('CanAccessSouthFaronWoods') and (do('HaveVessels') or rules('Faron Twilight Skip'))"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Coro Bottle",
+                            "Conditions": "do('CanAccessSouthFaronWoods') and (do('HaveVessels') or rules('Faron Twilight Skip'))"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Coro Hint Sign",
+                            "Conditions": "do('CanAccessSouthFaronWoods') and (do('HaveVessels') or rules('Faron Twilight Skip'))"
+                        }
+                    ]
+                },
+                {
+                    "Id": 6,
+                    "Kind": "SimpleCheck",
+                    "Name": "South Faron Cave Small Chest",
+					"Zone": "Faron Woods",
+                    "Positions": {
+                        "x": 394,
+                        "y": 544
+                    },
+                    "Conditions": "do('CanAccessFaronCave')"
+                },
+                {
+                    "Id": 7,
+                    "Kind": "SimpleCheck",
+                    "Name": "Faron Woods Owl Statue Chest",
+					"Zone": "Faron Woods",
+                    "Positions": {
+                        "x": 394,
+                        "y": 531
+                    },
+                    "Conditions": "do('CanAccessSouthFaronWoods') and do('CanSmash') and have('Dominion Rod 2') and have('Crystal')"
+                },
+                {
+                    "Id": 8,
+                    "Kind": "SimpleCheck",
+                    "Name": "Faron Woods Sky Character",
+					"Zone": "Faron Woods",
+                    "Positions": {
+                        "x": 404,
+                        "y": 531
+                    },
+                    "Conditions": "do('CanAccessSouthFaronWoods') and do('CanSmash') and have('Dominion Rod 2')"
+                },
+                {
+                    "Id": 9,
+                    "Kind": "Block",
+                    "Name": "Purple Mist",
+					"Zone": "Faron Woods",
+                    "Positions": {
+                        "x": 378,
+                        "y": 525
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Mist Central Stump Small Chest",
+                            "Conditions": "do('CanAccessFaronCave') and have('Lantern') and do('CanCompletePrologue')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Mist North Small Chest",
+                            "Conditions": "do('CanAccessFaronCave') and have('Lantern') and do('CanCompletePrologue')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Mist South Big Chest",
+                            "Conditions": "do('CanAccessFaronCave') and have('Lantern') and do('CanCompletePrologue')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Mist Northeast Cave Small Chest",
+                            "Conditions": "do('CanAccessFaronCave') and have('Lantern')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Mist Northeast Cave Lantern Chest",
+                            "Conditions": "do('CanAccessFaronCave') and have('Lantern')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Faron Mist Poe",
+                            "Conditions": "do('CanAccessSouthFaronWoods') and have('Crystal') and do('CanCompletePrologue')"
+                        }
+                    ]
+                }, 
+                {
+                    "Id": 10,
+                    "Kind": "SimpleCheck",
+                    "Name": "Near Shop Chest",
+					"Zone": "Faron Woods",
+                    "Positions": {
+                        "x": 361,
+                        "y": 539
+                    },
+                    "Conditions": "do('CanCompletePrologue') and do('CanAccessNorthFaronWoods')"
+                },
+                {
+                    "Id": 11,
+                    "Kind": "SimpleCheck",
+                    "Name": "Faron Woods Golden Wolf",
+					"Zone": "Faron Woods",
+                    "Positions": {
+                        "x": 356,
+                        "y": 529
+                    },
+                    "Conditions": "do('CanAccessNorthFaronWoods') and do('CanAttendHiddenSkillTraining')"
+                },
+                {
+                    "Id": 17,
+                    "Kind": "Block",
+                    "Name": "Forest Temple",
+                    "Positions": {
+                        "x": 356,
+                        "y": 510
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Entrance Vine Chest",
+                            "Conditions": "do('CanCompletePrologue') and do('CanAccessNorthFaronWoods') and do('CanDefeatWalltula')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Lobby Hanging From Web Chest",
+                            "Conditions": "do('CanAccessForestTempleLobby') and do('CanCutHangingWeb')"
+                        }, 
+                        {
+                            "Id": 2,
+                            "Name": "Central Chest Behind Stairs",
+                            "Conditions": "do('CanAccessForestTempleLobby') and have('Gale Boomerang')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Lobby North Chest",
+                            "Conditions": "do('CanAccessForestTempleLobby') and have('Lantern')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Ooccoo",
+                            "Conditions": "do('CanAccessForestTempleLobby')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Second Monkey Under Bridge Chest",
+                            "Conditions": "do('CanAccessForestTempleLobby') and (have('Forest Keys', '==4') or rules('Small Key Keysey'))"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Big Key Chest",
+                            "Conditions": "do('CanAccessForestTempleLobby') and have('Gale Boomerang')"
+                        },   
+                        {
+                            "Id": 7,
+                            "Name": "Water Cave Near Big Key",
+                            "Conditions": "do('CanAccessForestTempleLobby')"
+                        }, 
+                        {
+                            "Id": 8,
+                            "Name": "Windless Bridge Chest",
+                            "Conditions": "do('CanAccessForestTempleLobby')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Before West Wing Hint Sign",
+                            "Conditions": "do('CanAccessForestTempleLobby') and (((have('Forest Keys', '>=2') or rules('Small Key Keysey')) and do('CanDefeatBokoblin')) or do('HaveClawShot'))"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Deku Like Piece of Heart",
+                            "Conditions": "do('CanAccessForestWestWing') and do('CanDefeatWalltula')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Totem Pole Chest",
+                            "Conditions": " do('CanAccessForestWestWing')"
+                        },    
+                        {
+                            "Id": 11,
+                            "Name": "West Tile Worm Small Chest",
+                            "Conditions": "do('CanAccessForestWestWing')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "West Tile Worm Behind Stairs",
+                            "Conditions": "do('CanAccessForestWestWing') and have('Gale Boomerang')"
+                        },   
+                        {
+                            "Id": 13,
+                            "Name": "Big Baba Small Key",
+                            "Conditions": "do('CanAccessForestWestWing') and do('CanDefeatBigBaba') and do('CanDefeatWalltula')"
+                        },   
+                        {
+                            "Id": 14,
+                            "Name": "Gale Boomerang",
+                            "Conditions": "do('CanAccessOok') and do('CanDefeatOok')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "East Tile Worm Chest",
+                            "Conditions": "do('CanAccessForestNorthWing') and do('CanDefeatTileWorm') and do('CanDefeatSkulltula') and do('CanDefeatWalltula') and (have('Forest Keys', '==4') or rules('Small Key Keysey'))"
+                        }, 
+                        {
+                            "Id": 16,
+                            "Name": "North Deku Like Chest",
+                            "Conditions": "do('CanAccessForestNorthWing')"
+                        }, 
+                        {
+                            "Id": 17,
+                            "Name": "Diababa",
+                            "Conditions": "do('CanAccessForestNorthWing') and (have('Forest Big Key') or rules('Big Key Keysey')) and have('Gale Boomerang') and (do('HaveClawShot') or do('CanFreeAllMonkeys')) and do('CanDefeatDiababa')"
+                        }                                                   
+                    ]
+                },
+                {
+                    "Id": 12,
+                    "Kind": "SimpleCheck",
+                    "Name": "Lost Woods Lantern Chest",
+					"Zone": "Sacred Grove & Lost Woods",
+                    "Positions": {
+                        "x": 295,
+                        "y": 517
+                    },
+                    "Conditions": "do('CanCompletePrologue') and do('CanAccessNorthFaronWoods') and have('Crystal') and have('Lantern')"
+                },
+                {
+                    "Id": 13,
+                    "Kind": "Block",
+                    "Name": "Wolf Grotto - Chu Baba & Keese",
+					"Zone": "Faron Fields",
+                    "Positions": {
+                        "x": 428,
+                        "y": 485
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Rear Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Crystal')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Left Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Crystal')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Right Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Crystal')"
+                        }                                              
+                    ]
+                },
+                {
+                    "Id": 14,
+                    "Kind": "SimpleCheck",
+                    "Name": "Male Beetle",
+					"Zone": "Faron Fields",
+                    "Positions": {
+                        "x": 395,
+                        "y": 471
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField')"
+                },
+                {
+                    "Id": 15,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Beetle",
+					"Zone": "Faron Fields",
+                    "Positions": {
+                        "x": 422,
+                        "y": 447
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and (do('HaveClawShot') or have('Gale Boomerang')) "
+                },
+                {
+                    "Id": 16,
+                    "Kind": "Block",
+                    "Name": "Faron Bridge",
+					"Zone": "Faron Fields",
+                    "Positions": {
+                        "x": 407,
+                        "y": 457
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Tree Above Bridge Heart Piece",
+                            "Conditions": "do('CanAccessSouthHyruleField') and (have('Gale Boomerang') or do('HaveClawShot'))"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Under Bridge Hint Sign",
+                            "Conditions": "do('CanAccessSouthHyruleField')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Under Bridge Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('HaveClawShot')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 17,
+                    "Kind": "SimpleCheck",
+                    "Name": "Faron Fields Poe",
+					"Zone": "Faron Fields",
+                    "Positions": {
+                        "x": 410,
+                        "y": 445
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and do('CanCompleteMDH') and have('Crystal')"
+                },
+                {
+                    "Id": 18,
+                    "Kind": "Block",
+                    "Name": "Kakariko Gorge",
+                    "Positions": {
+                        "x": 470,
+                        "y": 404
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Gorge Spire Heart Piece",
+                            "Conditions": "do('CanAccessSouthHyruleField') and (have('Gale Boomerang') or do('HaveClawShot')) and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Gorge Double Clawshot Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Double Clawshot') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Kakariko Gorge Poe",
+                            "Conditions": "do('HaveClearedET') and do('CanCompleteMDH') and have('Crystal')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Male Pill Bug",
+                            "Conditions": "do('HaveClearedET')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 19,
+                    "Kind": "Block",
+                    "Name": "Eldin Lantern Cave",
+					"Zone": "Kakariko Gorge",
+                    "Positions": {
+                        "x": 481,
+                        "y": 439
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "First Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanSmash') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Second Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanSmash') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Lantern Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanSmash') and have('Lantern') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Eldin Lantern Cave Poe",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanSmash') and do('CanAccessDuringorAfterET') and have('Crystal')"
+                        }                                                   
+                    ]
+                },
+                {
+                    "Id": 20,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Pill Bug",
+					"Zone": "Kakariko Gorge",
+                    "Positions": {
+                        "x": 499,
+                        "y": 417
+                    },
+                    "Conditions": "do('HaveClearedET')"
+                },
+                {
+                    "Id": 21,
+                    "Kind": "SimpleCheck",
+                    "Name": "Gorge Owl Statue Chest",
+					"Zone": "Kakariko Gorge",
+                    "Positions": {
+                        "x": 482,
+                        "y": 375
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and have('Dominion Rod 2') and do('CanAccessDuringorAfterET')"
+                },
+                {
+                    "Id": 22,
+                    "Kind": "SimpleCheck",
+                    "Name": "Gorge Sky Character",
+					"Zone": "Kakariko Gorge",
+                    "Positions": {
+                        "x": 492,
+                        "y": 375
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and have('Dominion Rod 2')and do('CanAccessDuringorAfterET')"
+                },
+                {
+                    "Id" : 23,
+                    "Kind": "SimpleCheck",
+                    "Name": "Gorge Hint Sign",
+                    "Zone": "Kakariko Gorge",
+                    "Positions": {
+                        "x": 472,
+                        "y": 365
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and do('CanAccessDuringorAfterET')"
+                },
+                {
+                    "Id": 24,
+                    "Kind": "Block",
+                    "Name": "Kakariko Village",
+                    "Positions": {
+                        "x": 582,
+                        "y": 405
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Bomb Rock Spire Freestanding",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanLaunchBombs') and have('Gale Boomerang') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Eldin Spring Underwater Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanSmash') and have('Iron Boots') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Shad Dominion Rod (Dev 1.3)",
+                            "Conditions": "do('HaveClearedET') and do('HaveSkyBook')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Malo Mart Left Item",
+                            "Conditions": "do('HaveClearedET') and have('Hero Bow') and have('Mines')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Malo Mart Central Item",
+                            "Conditions": "do('HaveClearedET')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Malo Mart Right Item",
+                            "Conditions": "do('HaveClearedET')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Malo Mart Second Right Item",
+                            "Conditions": "do('HaveClearedET')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Inn Small Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Female Ant",
+                            "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Barnes Bomb Bag",
+                            "Conditions": "do('HaveClearedET')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Watchtower Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Watchtower Alcove Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('CanAccessDuringorAfterET') and do('CanSmash')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Talo Sharpshooting",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Hero Bow') and have('Mines')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Renado's Letter",
+                            "Conditions": "do('CanAccessSouthHyruleField') and do('HaveClearedET') and have('Time')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Horse Call",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Time') and do('CanAccessHiddenVillage')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Top Kakariko Hot Spring Hint Sign",
+                            "Conditions": "do('CanAccessSouthHyruleField')"
+                        }                                          
+                    ]
+                },
+                {
+                    "Id": 25,
+                    "Kind": "SimpleCheck",
+                    "Name": "Bomb Shop Poe",
+					"Zone": "Kakariko Village",
+                    "Positions": {
+                        "x": 598,
+                        "y": 396
+                    },
+                    "Conditions": "do('HaveClearedET') and have('Crystal')"
+                },
+                {
+                    "Id": 26,
+                    "Kind": "SimpleCheck",
+                    "Name": "Watchtower Poe",
+					"Zone": "Kakariko Village",
+                    "Positions": {
+                        "x": 588,
+                        "y": 390
+                    },
+                    "Conditions": "do('HaveClearedET') and have('Crystal')"
+                },
+                {
+                    "Id": 27,
+                    "Kind": "Block",
+                    "Name": "Kakariko Graveyard",
+                    "Positions": {
+                        "x": 616,
+                        "y": 408
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Graveyard Under Grave Poe",
+                            "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Graveyard Open Poe",
+                            "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Graveyard Lantern Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Lantern') and do('CanAccessDuringorAfterET')"
+                        },
+						{
+                            "Id": 3,
+                            "Name": "Male Ant",
+                            "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Zora Armor",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Gate Key') and do('HaveClearedET')"
+                        },
+						{
+                            "Id": 5,
+                            "Name": "Gift from Ralis",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Gate Key') and have('Ashei Sketch') and do('HaveClearedET')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Hint Sign behind Zora Grave",
+                            "Conditions": "do('CanAccessSouthHyruleField') and have('Gate Key') and do('HaveClearedET')"
+                        }
+					]
+                },
+                {
+                    "Id": 28,
+                    "Kind": "SimpleCheck",
+                    "Name": "Golden Wolf from Snowpeak Stone",
+					"Zone": "Kakariko Graveyard",
+                    "Positions": {
+                        "x": 612,
+                        "y": 420
+                    },
+                    "Conditions": "do('CanAccessSnowCave') and have('Crystal') and do('CanAttendHiddenSkillTraining')"
+                },
+                {
+                    "Id": 29,
+                    "Kind": "SimpleCheck",
+                    "Name": "Death Mountain Alcove Chest",
+					"Zone": "Death Mountain",
+                    "Positions": {
+                        "x": 624,
+                        "y": 318
+                    },
+                    "Conditions": "do('HaveClearedET') and do('HaveClawShot') and (have('Iron Boots') or have('Crystal'))" 
+                },
+                {
+                    "Id": 30,
+                    "Kind": "SimpleCheck",
+                    "Name": "Death Mountain Poe",
+					"Zone": "Death Mountain",
+                    "Positions": {
+                        "x": 619,
+                        "y": 340
+                    },
+                    "Conditions": "do('HaveClearedET') and have('Mines') and have('Crystal')"
+                },
+                {
+                    "Id": 31,
+                    "Kind": "SimpleCheck",
+                    "Name": "Death Mountain Hint Sign",
+                    "Zone": "Death Mountain",
+                    "Positions": {
+                        "x": 627,
+                        "y": 305
+                    },
+                    "Conditions": "(do('HaveClearedET') and (have('Iron Boots') or have('Crystal'))) or do('CanTeleportAnywhere')"
+                },
+                {
+                    "Id": 32,
+                    "Kind": "Block",
+                    "Name": "Goron Mines",
+                    "Positions": {
+                        "x": 621,
+                        "y": 289
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Entrance Small Chest",
+                            "Conditions": "do('CanAccessGoronMines') and do('CanPressMinesSwitch') and do('CanBreakWoodenDoor')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Main Magnet Room Bottom",
+                            "Conditions": "do('CanAccessMinesMagnetRoom')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Gor Amato Big Chest",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Gor Amato Small Chest",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Gor Amato Key Shard",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Ooccoo",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Magnet Maze Chest",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Switch Room Underwater Chest",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Switch Room Small Chest",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "After Switch Door Magnet Wall Chest",
+                            "Conditions": "do('CanAccessMinesLowerWestWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Outside Beamos Chest",
+                            "Conditions": "do('CanAccessMinesNorthWing')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Outside Underwater Chest",
+                            "Conditions": "do('CanAccessMinesNorthWing') and (do('HaveSword') or do('CanUseWaterBombs')) and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Outside Clawshot Chest",
+                            "Conditions": "do('CanAccessMinesNorthWing') and do('HaveClawShot') and (have('Hero Bow') or have('Slingshot'))"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Gor Ebizo Hint Sign",
+                            "Conditions": "do('CanAccessMinesUpperEastWing')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Gor Ebizo Small Chest",
+                            "Conditions": "do('CanAccessMinesUpperEastWing')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Gor Ebizo Key Shard",
+                            "Conditions": "do('CanAccessMinesUpperEastWing')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "Small Chest Before Dangoro",
+                            "Conditions": "do('CanAccessMinesUpperEastWing') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "After Dangoro Chest",
+                            "Conditions": "do('CanAccessMinesUpperEastWing') and have('Iron Boots') and do('CanDefeatDangoro')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Beamos Room Chest",
+                            "Conditions": "do('CanAccessMinesUpperEastWing') and have('Iron Boots') and do('CanDefeatDangoro') and have('Hero Bow')"
+                        },
+                        {
+                            "Id": 19,
+                            "Name": "Gor Liggs Chest",
+                            "Conditions": "do('CanAccessMinesUpperEastWing') and have('Iron Boots') and do('CanDefeatDangoro') and have('Hero Bow')"
+                        },
+                        {
+                            "Id": 20,
+                            "Name": "Gor Liggs Key Shard",
+                            "Conditions": "do('CanAccessMinesUpperEastWing') and have('Iron Boots') and do('CanDefeatDangoro') and have('Hero Bow')"
+                        },
+                        {
+                            "Id": 21,
+                            "Name": "Main Magnet Room Top Chest",
+                            "Conditions": "do('CanAccessMinesUpperEastWing') and have('Iron Boots') and do('CanDefeatDangoro') and have('Hero Bow') and (have('Mines Keys', '==3') or rules('Small Key Keysey'))"
+                        },
+                        {
+                            "Id": 22,
+                            "Name": "Fyrus",
+                            "Conditions": "do('CanAccessMinesNorthWing') and (have('Mines Big Key') or rules('Big Key Keysey')) and do('CanDefeatFyrus')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 33,
+                    "Kind": "SimpleCheck",
+                    "Name": "Bomb Rock Ledge Chest",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 524,
+                        "y": 335
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and do('CanSmash')"
+                },
+                {
+                    "Id": 34,
+                    "Kind": "SimpleCheck",
+                    "Name": "Eldin Field Hint Sign",
+                    "Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 472,
+                        "y": 335
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and do('CanAccessDuringorAfterET')"
+                },
+                {
+                    "Id": 35,
+                    "Kind": "SimpleCheck",
+                    "Name": "Male Grasshopper",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 542,
+                        "y": 312
+                    },
+                    "Conditions": "do('HaveClearedET')"
+                },
+                {
+                    "Id": 36,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Grasshopper",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 486,
+                        "y": 270
+                    },
+                    "Conditions": "do('HaveClearedET')"
+                },
+                {
+                    "Id": 37,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Bomskit Lantern Chest",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 520,
+                        "y": 300
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and have('Crystal') and do('CanDefeatBomskit') and have('Lantern')"
+                },
+                {
+                    "Id": 38,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Bomskit Left Chest",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 508,
+                        "y": 300
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and have('Crystal') and do('CanDefeatBomskit')"
+                },
+                {
+                    "Id": 39,
+                    "Kind": "SimpleCheck",
+                    "Name": "Goron Springwater Rush",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 441,
+                        "y": 311
+                    },
+                    "Conditions": "do('HaveClearedET') and do('HaveClearedLT')"
+                },
+                {
+                    "Id": 40,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Water Bomb Fish Chest",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 565,
+                        "y": 266
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and do('CanAccessDuringorAfterET') and have('Crystal')"
+                },
+                {
+                    "Id": 41,
+                    "Kind": "SimpleCheck",
+                    "Name": "Male Phasmid",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 576,
+                        "y": 260
+                    },
+                    "Conditions": "do('HaveClearedET') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                },
+                {
+                    "Id": 42,
+                    "Kind": "SimpleCheck",
+                    "Name": "Eldin Bridge Owl Statue Chest",
+					"Zone": "Eldin Field",
+                    "Positions": {
+                        "x": 567,
+                        "y": 253
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and have('Dominion Rod 2')"
+                },
+                {
+                    "Id": 43,
+                    "Kind": "SimpleCheck",
+                    "Name": "Eldin Bridge Sky Character",
+					"Zone": "North Eldin",
+                    "Positions": {
+                        "x": 567,
+                        "y": 223
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and have('Dominion Rod 2')"
+                },
+                {
+                    "Id": 44,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Phasmid",
+					"Zone": "North Eldin",
+                    "Positions": {
+                        "x": 582,
+                        "y": 200
+                    },
+                    "Conditions": "do('CanAccessSouthHyruleField') and do('HaveClearedET') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                },
+                {
+                    "Id": 45,
+                    "Kind": "Block",
+                    "Name": "Bridge of Eldin Stockcave",
+					"Zone": "North Eldin",
+                    "Positions": {
+                        "x": 586,
+                        "y": 212
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Upper Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and do('HaveClawShot') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Lantern Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and do('HaveClawShot') and have('Iron Boots') and have('Lantern')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Lower Chest",
+                            "Conditions": "do('CanAccessSouthHyruleField') and  do('CanAccessDuringorAfterET') and do('HaveClawShot') and have('Iron Boots')"
+                        }                                              
+                    ]
+                },
+                {
+                    "Id": 46,
+                    "Kind": "SimpleCheck",
+                    "Name": "North Eldin Field Hint Sign",
+                    "Zone": "North Eldin",
+                    "Positions": {
+                        "x": 561,
+                        "y": 173
+                    },
+                    "Conditions": "do('CanAccessNorthernEldin')"
+                },
+                {
+                    "Id": 47,
+                    "Kind": "Block",
+                    "Name": "Wolf Grotto - Stalfos",
+					"Zone": "North Eldin",
+                    "Positions": {
+                        "x": 547,
+                        "y": 149
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Left Small Chest",
+                            "Conditions": "do('CanAccessNorthernEldin') and have('Spinner') and have('Crystal')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Right Small Chest",
+                            "Conditions": "do('CanAccessNorthernEldin') and have('Spinner') and have('Crystal')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Stalfos Chest",
+                            "Conditions": "do('CanAccessNorthernEldin') and have('Spinner') and have('Crystal') and do('CanSmash')"
+                        }                                                
+                    ]
+                },
+
+                {
+                    "Id": 48,
+                    "Kind": "Block",
+                    "Name": "Hidden Village",
+                    "Positions": {
+                        "x": 518,
+                        "y": 189
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Impaz Skybook",
+                            "Conditions": "do('CanAccessHiddenVillage') and have('Hero Bow') and do('HaveRod')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Impaz Ilia Charm",
+                            "Conditions": "do('CanAccessHiddenVillage') and have('Hero Bow')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Cats Hide and Seek",
+                            "Conditions": "do('CanAccessHiddenVillage') and have('Crystal') and do('HaveClawShot') and have('Hero Bow') and do('HaveRod')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Hint Sign near Cucco",
+                            "Conditions": "do('CanAccessHiddenVillage') and have('Crystal') and do('HaveClawShot') and have('Hero Bow') and do('HaveRod')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Hidden Village Poe",
+                            "Conditions": "do('CanAccessHiddenVillage') and have('Crystal') and do('HaveClawShot') and have('Hero Bow') and do('HaveRod')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 49,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Skulltula Lantern Chest",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 399,
+                        "y": 194
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal') and have('Lantern')"
+                },  
+                {
+                    "Id": 50,
+                    "Kind": "SimpleCheck",
+                    "Name": "Ice Block Puzzle Cave Chest",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 388,
+                        "y": 182
+                    },
+                    "Conditions": "do('CanAccessLanayru') and have('Ball and Chain')"
+                },
+                {
+                    "Id": 51,
+                    "Kind": "SimpleCheck",
+                    "Name": "Lanayru Fields Hint Sign",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 401,
+                        "y": 172
+                    },
+                    "Conditions": "do('HaveClearedLT')"
+                },
+                {
+                    "Id": 52,
+                    "Kind": "SimpleCheck",
+                    "Name": "Behind Gate Underwater Chest",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 397,
+                        "y": 233
+                    },
+                    "Conditions": "do('CanAccessLanayru') and have('Iron Boots')"
+                },
+                {
+                    "Id": 53,
+                    "Kind": "SimpleCheck",
+                    "Name": "Male Stag Beetle",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 384,
+                        "y": 220
+                    },
+                    "Conditions": "do('HaveClearedLT') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                },
+                {
+                    "Id": 54,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Stag Beetle",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 398,
+                        "y": 182
+                    },
+                    "Conditions": "do('HaveClearedLT') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                },
+                {
+                    "Id": 55,
+                    "Kind": "SimpleCheck",
+                    "Name": "Grotto Poe 1",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 360,
+                        "y": 218
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 56,
+                    "Kind": "SimpleCheck",
+                    "Name": "Grotto Poe 2",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 371,
+                        "y": 218
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 57,
+                    "Kind": "SimpleCheck",
+                    "Name": "Bridge Poe",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 398,
+                        "y": 210
+                    },
+                    "Conditions": "do('HaveClearedLT') and do('CanCompleteMDH') and have('Crystal')"
+                },
+                {
+                    "Id": 58,
+                    "Kind": "SimpleCheck",
+                    "Name": "Spinner Track Chest",
+					"Zone": "Lanayru Fields",
+                    "Positions": {
+                        "x": 308,
+                        "y": 292
+                    },
+                    "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Spinner')"
+                },
+                {
+                    "Id": 59,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Helmasaur Chest",
+					"Zone": "Beside Castle Town",
+                    "Positions": {
+                        "x": 328,
+                        "y": 297
+                    },
+                    "Conditions": "do('HaveClearedLT') and do('HaveClawShot') and have('Crystal') and do('CanDefeatHelmasaur')"
+                },
+                {
+                    "Id": 595,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Butterfly",
+					"Zone": "Beside Castle Town",
+                    "Positions": {
+                        "x": 337,
+                        "y": 293
+                    },
+                    "Conditions": "do('HaveClearedLT') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                },
+                {
+                    "Id": 60,
+                    "Kind": "SimpleCheck",
+                    "Name": "Golden Wolf from River Stone",
+					"Zone": "Beside Castle Town",
+                    "Positions": {
+                        "x": 358,
+                        "y": 300
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal') and do('CanAttendHiddenSkillTraining')"
+                },
+                {
+                    "Id": 61,
+                    "Kind": "SimpleCheck",
+                    "Name": "Beside Castle Town Hint Sign",
+                    "Zone": "Beside Castle Town",
+                    "Positions": {
+                        "x": 350,
+                        "y": 297
+                    },
+                    "Conditions": "do('HaveClearedLT')"
+                },
+                {
+                    "Id": 62,
+                    "Kind": "Block",
+                    "Name": "Castle Ruins",
+					"Zone": "Beside Castle Town",
+                    "Positions": {
+                        "x": 335,
+                        "y": 330
+                    },
+                    "Checks" : [
+                         {
+                            "Id": 0,
+                            "Name": "Castle Ruins Sky Character",
+                            "Conditions": "do('CanAccessLanayru') and have('Dominion Rod 2')"
+                        },
+						{
+                            "Id": 1,
+                            "Name": "Castle Ruins Owl Statue Chest",
+                            "Conditions": "do('CanAccessLanayru') and have('Dominion Rod 2')"
+                        },
+						{
+                            "Id": 2,
+                            "Name": "Castle Ruins Poe",
+                            "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Male Butterfly",
+                            "Conditions": "do('HaveClearedLT')"
+                        }
+                    ]
+                }, 
+                {
+                    "Id": 63,
+                    "Kind": "SimpleCheck",
+                    "Name": "Hylia Bridge Owl Statue Chest",
+					"Zone": "Great Bridge of Hylia",
+                    "Positions": {
+                        "x": 313,
+                        "y": 334
+                    },
+                    "Conditions": "do('CanAccessLanayru') and have('Dominion Rod 2') and do('HaveClawShot')"
+                }, 
+                {
+                    "Id": 64,
+                    "Kind": "SimpleCheck",
+                    "Name": "Hylia Bridge Sky Character",
+					"Zone": "Great Bridge of Hylia",
+                    "Positions": {
+                        "x": 304,
+                        "y": 334
+                    },
+                    "Conditions": "do('CanAccessLanayru') and have('Dominion Rod 2') and do('HaveClawShot')"
+                },
+                {
+                    "Id": 65,
+                    "Kind": "SimpleCheck",
+                    "Name": "Above Owl Statue Hint Sign",
+                    "Zone": "Great Bridge of Hylia",
+                    "Positions": {
+                        "x": 303,
+                        "y": 324
+                    },
+                    "Conditions": "do('CanAccessLanayru') and do('HaveClawShot')"
+                },
+                {
+                    "Id": 66,
+                    "Kind": "Block",
+                    "Name": "Bridge Vines",
+					"Zone": "Great Bridge of Hylia",
+                    "Positions": {
+                        "x": 305,
+                        "y": 348
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Bridge Vines Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Male Mantis",
+                            "Conditions": "do('CanAccessLanayru') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                        }
+                    ]
+                },
+                {
+                    "Id": 67,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Mantis",
+					"Zone": "Great Bridge of Hylia",
+                    "Positions": {
+                        "x": 318,
+                        "y": 413
+                    },
+                    "Conditions": "do('HaveClearedLT') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                },
+                {
+                    "Id": 68,
+                    "Kind": "Block",
+                    "Name": "Bubble Grotto",
+					"Zone": "Great Bridge of Hylia",
+                    "Positions": {
+                        "x": 324,
+                        "y": 425
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Bridge Cliff Chest",
+                            "Conditions": "do('HaveClearedLT') and do('HaveClawShot') and do('CanLaunchBombs')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Bridge Cliff Poe",
+                            "Conditions": "do('HaveClearedLT') and do('HaveClawShot') and do('CanLaunchBombs') and have('Crystal')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Wolf Grotto - Bubble Chest",
+                            "Conditions": "do('HaveClearedLT') and do('HaveClawShot') and do('CanLaunchBombs') and have('Crystal')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 69,
+                    "Kind": "Block",
+                    "Name": "Hyrule Castle Town",
+                    "Positions": {
+                        "x": 393,
+                        "y": 314
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Charlo Donation Blessing",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "STAR Prize 1",
+                            "Conditions": " do('HaveClearedLT') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "STAR Prize 2",
+                            "Conditions": "do('HaveClearedLT') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name" : "Central Fountain Hint Sign",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Goron Shop Arrow Refill (Dev 1.3)",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Goron Shop Hylian Shield (Dev 1.3)",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Goron Shop Lantern Oil (Dev 1.3)",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Goron Shop Red Potion (Dev 1.3)",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Malo Mart Magic Armor",
+                            "Conditions": "do('HaveClearedET') and do('HaveClearedLT') and (have('Big Wallet') or have('Giant Wallet') or haveAlternateValue('Wallet'))"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Jovani House Poe",
+                            "Conditions": "have('Crystal') and do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Jovani 20 Poe Souls Reward",
+                            "Conditions": "have('Crystal') and have('Poe Souls', '>=20')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Jovani 60 Poe Souls Reward",
+                            "Conditions": "have('Crystal') and have('Poe Souls', '==60')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Telma Invoice",
+                            "Conditions": "do('HaveClearedLT') and have('Renado Letter')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Medicine Scent",
+                            "Conditions": "do('HaveClearedLT') and have('Telma Invoice')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "East Balcony Small Chest",
+                            "Conditions": "do('HaveClearedLT') and have('Invoice') and have('Crystal')"
+                        }                                            
+                    ]
+                },
+                {
+                    "Id": 70,
+                    "Kind": "Block",
+                    "Name": "Agitha's Castle",
+                    "Positions": {
+                        "x": 381,
+                        "y": 327
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 1,
+                            "Name": "Agitha Male Ant Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Ant Male')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Agitha Female Ant Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Ant Female')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Agitha Male Mantis Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Mantis Male')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Agitha Female Mantis Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Mantis Female')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Agitha Male Butterfly Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Butterfly Male')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Agitha Female Butterfly Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Butterfly Female')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Agitha Male Phasmid Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Phasmid Male')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Agitha Female Phasmid Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Phasmid Female')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Agitha Male Dayfly Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Ladybug Female')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Agitha Female Dayfly Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Dayfly Male')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Agitha Male Stag Beetle Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Stag Beetle Male')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Agitha Female Stag Beetle Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Stag Beetle Female')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Agitha Male Ladybug Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Ladybug Male')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Agitha Female Ladybug Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Ladybug Female')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Agitha Male Grasshopper Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Grasshopper Male')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "Agitha Female Grasshopper Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Grasshopper Female')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "Agitha Male Beetle Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Beetle Male')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Agitha Female Beetle Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Beetle Female')"
+                        },
+                        {
+                            "Id": 19,
+                            "Name": "Agitha Male Pill Bug Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Pill Bug Male')"
+                        },
+                        {
+                            "Id": 20,
+                            "Name": "Agitha Female Pill Bug Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Pill Bug Female')"
+                        },
+                        {
+                            "Id": 21,
+                            "Name": "Agitha Male Snail Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Snail Male')"
+                        },
+                        {
+                            "Id": 22,
+                            "Name": "Agitha Female Snail Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Snail Female')"
+                        },
+                        {
+                            "Id": 23,
+                            "Name": "Agitha Male Dragonfly Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Dragonfly Male')"
+                        },
+                        {
+                            "Id": 24,
+                            "Name": "Agitha Female Dragonfly Reward",
+                            "Conditions": "do('CanAccessLanayru') and have('Dragonfly Female')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 71,
+                    "Kind": "SimpleCheck",
+                    "Name": "East Castle Town Bridge Poe",
+					"Zone": "Hyrule Castle Town",
+                    "Positions": {
+                        "x": 427,
+                        "y": 315
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 72,
+                    "Kind": "SimpleCheck",
+                    "Name": "Golden Wolf from Hidden Village Stone",
+					"Zone": "Castle Town",
+                    "Positions": {
+                        "x": 393,
+                        "y": 299
+                    },
+                    "Conditions": "do('CanAccessHiddenVillage') and have('Crystal') and do('CanCompleteMDH') and do('CanAttendHiddenSkillTraining')"
+                }, 
+                {
+                    "Id": 73,
+                    "Kind": "SimpleCheck",
+                    "Name": "Golden Wolf from Lost Woods Stone",
+					"Zone": "South Castle Town",
+                    "Positions": {
+                        "x": 382,
+                        "y": 344
+                    },
+                    "Conditions": "do('CanAccessNorthFaronWoods') and have('Crystal') and do('CanAttendHiddenSkillTraining')"
+                },
+                {
+                    "Id": 74,
+                    "Kind": "SimpleCheck",
+                    "Name": "Lake Chasm Chest",
+					"Zone": "Outside South Castle Town",
+                    "Positions": {
+                        "x": 380,
+                        "y": 359
+                    },
+                    "Conditions": "do('CanAccessLanayru') and have('Double Clawshot')"
+                },
+
+                {
+                    "Id": 75,
+                    "Kind": "Block",
+                    "Name": "Fountain",
+					"Zone": "Outside South Castle Town",
+                    "Positions": {
+                        "x": 394,
+                        "y": 351
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Tightrope Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('HaveClawShot') and have('Crystal')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Fountain Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('HaveClawShot') and have('Spinner')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "South Castle Town Poe",
+                            "Conditions": "do('CanAccessLanayru') and have('Crystal')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Male Ladybug",
+                            "Conditions": "do('CanAccessLanayru')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name" : "Fountain Hint Sign",
+                            "Conditions": "do('HaveClearedLT')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 76,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Ladybug",
+					"Zone": "Outside South Castle Town",
+                    "Positions": {
+                        "x": 409,
+                        "y": 346
+                    },
+                    "Conditions": "do('CanAccessLanayru')"
+                },
+                {
+                    "Id": 77,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wooden Statue",
+                    "Positions": {
+                        "x": 398,
+                        "y": 365
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Invoice') and (not rules('Use Scents for Logic') or have('Medicine Scent'))"
+                },
+                {
+                    "Id": 78,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Tektite Chest",
+					"Zone": "Outside South Castle Town",
+                    "Positions": {
+                        "x": 409,
+                        "y": 356
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal') and do('CanDefeatTektite')"
+                },
+                {
+                    "Id": 79,
+                    "Kind": "SimpleCheck",
+                    "Name": "Plumm Fruit Balloon Minigame",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 337,
+                        "y": 380
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 80,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Shell Blade Chest",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 283,
+                        "y": 353
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal') and do('CanDefeatShellBlade')"
+                },
+                {
+                    "Id": 81,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe above Shell Blade Grotto",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 273,
+                        "y": 358
+                    },
+                    "Conditions": "do('HaveClearedLT') and do('CanCompleteMDH') and have('Crystal')"
+                },
+                {
+                    "Id": 82,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe by the Dock",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 343,
+                        "y": 390
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 83,
+                    "Kind": "SimpleCheck",
+                    "Name": "Cucco Mini Game Hint Sign",
+                    "Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 283,
+                        "y": 343
+                    },
+                    "Conditions": "do('HaveClearedLT')"
+                },
+                {
+                    "Id": 84,
+                    "Kind": "Block",
+                    "Name": "Flight-by-Fowl",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 277,
+                        "y": 385
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Flight-By-Fowl First Chest",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Flight-By-Fowl Second Chest",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Flight-By-Fowl Third Chest",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Flight-By-Fowl Fourth Chest",
+                            "Conditions": "do('HaveClearedLT')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Flight-By-Fowl Fifth Chest",
+                            "Conditions": "do('HaveClearedLT')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 85,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe near Tower",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 252,
+                        "y": 412
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 86,
+                    "Kind": "SimpleCheck",
+                    "Name": "Flight-by-Fowl Poe",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 290,
+                        "y": 382
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 87,
+                    "Kind": "SimpleCheck",
+                    "Name": "Alcove Poe",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 303,
+                        "y": 415
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 88,
+                    "Kind": "SimpleCheck",
+                    "Name": "Outside Lanayru Spring Left Statue Small Chest",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 310,
+                        "y": 385
+                    },
+                    "Conditions": "do('HaveClearedLT')"
+                },
+                {
+                    "Id": 89,
+                    "Kind": "SimpleCheck",
+                    "Name": "Outside Lanayru Spring Right Statue Small Chest",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 320,
+                        "y": 385
+                    },
+                    "Conditions": "do('HaveClearedLT')"
+                },
+                {
+                    "Id": 90,
+                    "Kind": "SimpleCheck",
+                    "Name": "Underwater Chest",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 293,
+                        "y": 415
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Iron Boots')"
+                },
+                {
+                    "Id": 91,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Water Toadpoli Chest",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 278,
+                        "y": 419
+                    },
+                    "Conditions": "do('HaveClearedLT') and have('Crystal') and do('CanDefeatWaterToadpoli')"
+                }, 
+                {
+                    "Id": 92,
+                    "Kind": "SimpleCheck",
+                    "Name": "Auru's Memo",
+					"Zone": "Lake Hylia",
+                    "Positions": {
+                        "x": 262,
+                        "y": 409
+                    },
+                    "Conditions": "do('HaveClearedLT')"
+                },
+                {
+                    "Id": 94,
+                    "Kind": "Block",
+                    "Name": "Lanayru Spring",
+                    "Positions": {
+                        "x": 314,
+                        "y": 396
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Underwater Left Small Chest",
+                            "Conditions": "do('CanAccessLanayru') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Underwater Right Small Chest",
+                            "Conditions": "do('CanAccessLanayru') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Underwater Hint Sign",
+                            "Conditions": "do('CanAccessLanayru') and (have('Iron Boots') or have('Zora Armor'))"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Back Room Left Chest",
+                            "Conditions": "do('CanAccessLanayru') and  do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Back Room Right Chest",
+                            "Conditions": "do('CanAccessLanayru') and  do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Back Room Lantern Chest",
+                            "Conditions": "do('CanAccessLanayru') and  do('HaveClawShot') and have('Lantern')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "West Double Clawshot Chest",
+                            "Conditions": "do('CanAccessLanayru') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "East Double Clawshot Chest",
+                            "Conditions": "do('CanAccessLanayru') and have('Double Clawshot')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 95,
+                    "Kind": "Block",
+                    "Name": "Lake Lantern Cave",
+                    "Positions": {
+                        "x": 290,
+                        "y": 426
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "First Room West Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "First Room North Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Second Room West Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Third Room East Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Third Room Poe",
+                            "Conditions": "do('HaveClearedLT') and have('Crystal') and have('Lantern') and do('CanSmash')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Fourth Room North Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Fifth Room Lantern Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Fifth Room North Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Sixth Room North Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Lake Lantern Cave Hint Sign",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Seventh Room South Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Seventh Room West Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Eighth Room North Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Eighth Room East Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Eighth Room Poe",
+                            "Conditions": "do('HaveClearedLT') and have('Crystal') and have('Lantern') and do('CanSmash')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Ninth Room North Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "Tenth Room East Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "Eleventh Room Lantern Chest",
+                            "Conditions": "do('CanAccessLanayru') and do('CanSmash') and have('Lantern')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Eleventh Room Poe",
+                            "Conditions": "do('HaveClearedLT') and have('Crystal') and have('Lantern') and do('CanSmash')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 93,
+                    "Kind": "Block",
+                    "Name": "Lakebed Temple",
+                    "Positions": {
+                        "x": 293,
+                        "y": 365
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Lobby Left Chest",
+                            "Conditions": "do('CanAccessLakebedTemple')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Lobby Rear Chest",
+                            "Conditions": "do('CanAccessLakebedTemple')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Stalactite Room Small Chest",
+                            "Conditions": "do('CanAccessLakebedTemple') and (do('CanLaunchBombs') or (have('Open Lakebed') and rules('Use Added Drehen S2 Logic')))"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Central Room Small Chest",
+                            "Conditions": "do('CanAccessLakebedCentralRoom')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Ooccoo",
+                            "Conditions": "do('CanAccessLakebedCentralRoom')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Central Room Big Chest",
+                            "Conditions": "do('CanAccessLakebedCentralRoom')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Central Room Chandelier Chest",
+                            "Conditions": "do('CanAccessLakebedCentralRoom') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Central Room Center Spire Chest",
+                            "Conditions": "do('CanAccessLakebedCentralRoom') and (have('Lakebed Keys', '==3') or rules('Small Key Keysey')) and have('Iron Boots') and do('CanLaunchBombs')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "East Second Floor Southwest Chest",
+                            "Conditions": "do('CanAccessLakebedEast2F')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "East Second Floor Southeast Chest",
+                            "Conditions": "do('CanAccessLakebedEast2F') and (do('CanLaunchBombs') or (do('HaveClawShot') and do('CanSmash')))"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "East Water Supply Small Chest",
+                            "Conditions": "do('CanOpenEastWaterSupply')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "East Water Supply Clawshot Chest",
+                            "Conditions": "do('CanOpenEastWaterSupply') and do('HaveClawShot') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "East Stalactite Room Chest",
+                            "Conditions": "do('CanAccessLakebedCentralRoom') and do('CanLaunchBombs')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "East Stalactite Room Bridge Chest",
+                            "Conditions": "do('CanAccessLakebedCentralRoom') and do('CanLaunchBombs') and do('HaveClawShot') and (have('Lakebed Keys', '==3') or rules('Small Key Keysey'))"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Before Deku Toad Chest",
+                            "Conditions": "(do('CanAccessLakebedCentralRoom') and do('CanDefeatDekuToad') and have('Lakebed Keys', '>=2') and rules('Vanilla Small Key') and have('Zora Armor') and have('Iron Boots') and do('CanUseWaterBombs') and do('HaveClawShot')) or do('CanOpenEastWaterSupply')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Before Deku Toad Underwater Left Chest",
+                            "Conditions": "do('CanOpenEastWaterSupply') and have('Zora Armor') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "Before Deku Toad Underwater Right Chest",
+                            "Conditions": "do('CanOpenEastWaterSupply') and have('Zora Armor') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "Deku Toad Chest",
+                            "Conditions": "do('CanOpenEastWaterSupply') and have('Zora Armor') and have('Iron Boots') and do('CanUseWaterBombs') and do('CanDefeatDekuToad')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Before West Wing Hint Sign",
+                            "Conditions": "do('CanAccessLakebedCentralRoom')"
+                        },
+                        {
+                            "Id": 19,
+                            "Name": "West Lower Small Chest",
+                            "Conditions": "do('CanAccessLakebedWestWing') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 20,
+                            "Name": "West Second Floor Central Small Chest",
+                            "Conditions": "do('CanAccessLakebedWestWing') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 21,
+                            "Name": "West Water Supply Small Chest",
+                            "Conditions": "do('CanOpenWestWaterSupply')"
+                        },
+                        {
+                            "Id": 22,
+                            "Name": "West Water Supply Clawshot Chest",
+                            "Conditions": "do('CanOpenWestWaterSupply') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 23,
+                            "Name": "West Second Floor Southwest Underwater Chest",
+                            "Conditions": "do('CanOpenWestWaterSupply')"
+                        },
+                        {
+                            "Id": 24,
+                            "Name": "West Second Floor Northeast Chest",
+                            "Conditions": "do('CanAccessLakebedWestWing') and do('HaveClawShot') and do('CanLaunchBombs')"
+                        },
+                        {
+                            "Id": 25,
+                            "Name": "West Second Floor Southeast Chest",
+                            "Conditions": "do('CanAccessLakebedWestWing') and do('HaveClawShot') and do('CanLaunchBombs')"
+                        },
+                        {
+                            "Id": 26,
+                            "Name": "West Water Maze Small Chest",
+                            "Conditions": "do('CanAccessLakebedWestWing') and do('HaveClawShot') and have('Zora Armor') and do('CanLaunchBombs')"
+                        },
+                        {
+                            "Id": 27,
+                            "Name": "Big Key Chest",
+                            "Conditions": "do('CanAccessLakebedWestWing') and do('HaveClawShot') and have('Zora Armor') and have('Iron Boots') and do('CanLaunchBombs')"
+                        },
+                        {
+                            "Id": 28,
+                            "Name": "Morpheel",
+                            "Conditions": "(have('Lakebed Keys', '==3') or rules('Small Key Keysey')) and do('HaveClawShot') and do('CanLaunchBombs') and (have('Lakebed Big Key') or rules('Big Key Keysey')) and do('CanDefeatMorpheel')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 96,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Dragonfly",
+					"Zone": "Upper Zora River",
+                    "Positions": {
+                        "x": 482,
+                        "y": 108
+                    },
+                    "Conditions": "do('CanAccessDomain') and do('HaveClearedLT')"
+                },
+                {
+                    "Id": 97,
+                    "Kind": "SimpleCheck",
+                    "Name": "Upper Zora River Poe",
+					"Zone": "Upper Zora River",
+                    "Positions": {
+                        "x": 467,
+                        "y": 118
+                    },
+                    "Conditions": "do('CanAccessDomain') and do('HaveClearedLT') and have('Crystal')"
+                },
+                {
+                    "Id": 98,
+                    "Kind": "SimpleCheck",
+                    "Name": "Iza Helping Hand",
+					"Zone": "Upper Zora River",
+                    "Positions": {
+                        "x": 479,
+                        "y": 99
+                    },
+                    "Conditions": "do('HaveClearedLT') and (do('HaveSword') or do('CanDefeatShadowBeast')) and have('Hero Bow')"
+                },  
+                {
+                    "Id": 99,
+                    "Kind": "SimpleCheck",
+                    "Name": "Iza Raging Rapids Minigame",
+					"Zone": "Upper Zora River",
+                    "Positions": {
+                        "x": 489,
+                        "y": 99
+                    },
+                    "Conditions": "do('HaveClearedLT') and do('CanDefeatShadowBeast') and have('Hero Bow')"
+                },  
+                {
+                    "Id": 100,
+                    "Kind": "SimpleCheck",
+                    "Name": "Fishing Hole Bottle",
+					"Zone": "Upper Zora River",
+                    "Positions": {
+                        "x": 482,
+                        "y": 78
+                    },
+                    "Conditions": " do('CanAccessDomain') and do('CanFish')"
+                },  
+                {
+                    "Id": 101,
+                    "Kind": "SimpleCheck",
+                    "Name": "Fishing Hole Heart Piece",
+					"Zone": "Upper Zora River",
+                    "Positions": {
+                        "x": 472,
+                        "y": 74
+                    },
+                    "Conditions": "do('CanAccessDomain')"
+                },
+                {
+                    "Id": 102,
+                    "Kind": "SimpleCheck",
+                    "Name": "Fishing Hole Hint Sign",
+                    "Zone": "Upper Zora River",
+                    "Positions": {
+                        "x": 465,
+                        "y": 88
+                    },
+                    "Conditions": "do('CanAccessDomain')"
+                },  
+                {
+                    "Id": 103,
+                    "Kind": "Block",
+                    "Name": "Lower Domain",
+					"Zone": "Zora Domain",
+                    "Positions": {
+                        "x": 411,
+                        "y": 91
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Small Chest Near Mother and Child Isles",
+                            "Conditions": "do('CanAccessDomain')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Small Chest Under Waterfall",
+                            "Conditions": "do('CanAccessDomain') and have('Crystal')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Poe by Mother and Child",
+                            "Conditions": "do('HaveClearedLT') and do('CanAccessDomain') and have('Crystal')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Male Dragonfly",
+                            "Conditions": "do('HaveClearedLT') and do('CanAccessDomain')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Reekfish Scent",
+                            "Conditions": "do('HaveClearedLT') and do('CanAccessDomain') and have('Coral Earring')"
+                        }
+                    ]
+                }, 
+                {
+                    "Id": 104,
+                    "Kind": "SimpleCheck",
+                    "Name": "Extinguish All Torches Chest",
+					"Zone": "Zora Domain",
+                    "Positions": {
+                        "x": 397,
+                        "y": 73
+                    },
+                    "Conditions": "do('CanAccessDomain') and do('HaveClearedLT') and have('Gale Boomerang') and have('Iron Boots')"
+                },  
+                {
+                    "Id": 105,
+                    "Kind": "SimpleCheck",
+                    "Name": "Light All Torches Chest",
+					"Zone": "Zora Domain",
+                    "Positions": {
+                        "x": 407,
+                        "y": 73
+                    },
+                    "Conditions": "do('CanAccessDomain') and do('HaveClearedLT') and have('Lantern') and have('Iron Boots')"
+                },  
+                {
+                    "Id": 106,
+                    "Kind": "SimpleCheck",
+                    "Name": "Underwater Goron",
+					"Zone": "Zora Domain",
+                    "Positions": {
+                        "x": 402,
+                        "y": 62
+                    },
+                    "Conditions": "do('CanAccessDomain') and do('HaveClearedLT') and have('Zora Armor') and have('Iron Boots') and do('CanUseWaterBombs')"
+                },
+                {
+                    "Id": 107,
+                    "Kind": "SimpleCheck",
+                    "Name": "Zora Domain Hint Sign",
+					"Zone": "Zora Domain",
+                    "Positions": {
+                        "x": 393,
+                        "y": 95
+                    },
+                    "Conditions": "do('HaveClearedLT') and do('CanAccessDomain') and have('Crystal')"
+                },
+                {
+                    "Id": 108,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe Behind Waterfall",
+					"Zone": "Zora Domain",
+                    "Positions": {
+                        "x": 395,
+                        "y": 83
+                    },
+                    "Conditions": "do('HaveClearedLT') and do('CanAccessDomain') and have('Crystal')"
+                },
+                {
+                    "Id": 109,
+                    "Kind": "SimpleCheck",
+                    "Name": "Grotto - Outside Poe",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 243,
+                        "y": 458
+                    },
+                    "Conditions": "do('CanAccessDesert') and have('Crystal')"
+                }, 
+                {
+                    "Id": 110,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Skulltula Chest",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 255,
+                        "y": 458
+                    },
+                    "Conditions": "do('CanAccessDesert') and have('Crystal') and do('CanDefeatSkulltula')"
+                }, 
+                {
+                    "Id": 111,
+                    "Kind": "SimpleCheck",
+                    "Name": "Peahat Chest",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 219,
+                        "y": 459
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('HaveClawShot')"
+                }, 
+                {
+                    "Id": 112,
+                    "Kind": "SimpleCheck",
+                    "Name": "East Canyon Chest",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 219,
+                        "y": 434
+                    },
+                    "Conditions": "do('CanAccessDesert')"
+                }, 
+                {
+                    "Id": 113,
+                    "Kind": "SimpleCheck",
+                    "Name": "South Chest Behind Gate",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 196,
+                        "y": 466
+                    },
+                    "Conditions": "do('CanAccessDesert')"
+                },
+                {
+                    "Id": 114,
+                    "Kind": "SimpleCheck",
+                    "Name": "Gerudo Desert Sky Character",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 158,
+                        "y": 452
+                    },
+                    "Conditions": "do('CanAccessDesert') and have('Dominion Rod 2')"
+                },
+                {
+                    "Id": 115,
+                    "Kind": "SimpleCheck",
+                    "Name": "Gerudo Desert Owl Statue Chest",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 158,
+                        "y": 464
+                    },
+                    "Conditions": "do('CanAccessDesert') and have('Dominion Rod 2')"
+                },
+                {
+                    "Id": 116,
+                    "Kind": "SimpleCheck",
+                    "Name": "Lone Small Chest",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 171,
+                        "y": 439
+                    },
+                    "Conditions": "do('CanAccessDesert')"
+                },
+                {
+                    "Id": 117,
+                    "Kind": "SimpleCheck",
+                    "Name": "Gerudo Desert Hint Sign",
+                    "Zone": "Gerudo Desert",
+                    "Positions": {
+                        "x": 151,
+                        "y": 419
+                    },
+                    "Conditions": "do('CanAccessDesert')"
+                },
+                {
+                    "Id": 118,
+                    "Kind": "SimpleCheck",
+                    "Name": "Male Dayfly",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 176,
+                        "y": 461
+                    },
+                    "Conditions": "do('CanAccessDesert')"
+                },
+                {
+                    "Id": 119,
+                    "Kind": "SimpleCheck",
+                    "Name": "Female Dayfly",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 138,
+                        "y": 453
+                    },
+                    "Conditions": "do('CanAccessDesert')"
+                },
+                {
+                    "Id": 120,
+                    "Kind": "SimpleCheck",
+                    "Name": "West Canyon Chest",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 112,
+                        "y": 439
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('HaveClawShot')"
+                }, 
+                {
+                    "Id": 121,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe above CoO",
+					"Zone": "Gerudo Desert (Southern)",
+                    "Positions": {
+                        "x": 112,
+                        "y": 452
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('HaveClawShot') and do('CanDefeatShadowBeast') and have('Crystal')" 
+                },
+                {
+                    "Id": 122,
+                    "Kind": "Block",
+                    "Name": "Campfire",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 122,
+                        "y": 393
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "West Chest",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "East Chest",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "North Chest",
+                            "Conditions": "do('CanAccessDesert')"
+                        }
+                    ]
+                },
+				{
+                    "Id": 123,
+                    "Kind": "SimpleCheck",
+                    "Name": "Northwest Chest Behind Gates",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 101,
+                        "y": 382
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                },
+                {
+                    "Id": 124,
+                    "Kind": "SimpleCheck",
+                    "Name": "Northeast Chest Behind Gates",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 136,
+                        "y": 380
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                },
+                {
+                    "Id": 125,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe above Grotto",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 170,
+                        "y": 386
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('HaveClawShot') and have('Crystal')"
+                },
+                {
+                    "Id": 126,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Rock Lantern Chest",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 158,
+                        "y": 386
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('HaveClawShot') and have('Crystal') and do('CanSmash') and have('Lantern')"
+                },
+                {
+                    "Id": 127,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe in Grotto 1",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 158,
+                        "y": 398
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('HaveClawShot') and have('Crystal')"
+                },
+                {
+                    "Id": 128,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe in Grotto 2",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 170,
+                        "y": 398
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('HaveClawShot') and have('Crystal')"
+                },
+                {
+                    "Id": 129,
+                    "Kind": "SimpleCheck",
+                    "Name": "Golden Wolf from Lake Stone",
+					"Zone": "Gerudo Desert",
+                    "Positions": {
+                        "x": 117,
+                        "y": 362
+                    },
+                    "Conditions": "do('CanAccessDesert') and have('Crystal') and do('CanAttendHiddenSkillTraining')"
+                },
+                {
+                    "Id": 130,
+                    "Kind": "SimpleCheck",
+                    "Name": "Small Chest before Bulblin Camp",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 129,
+                        "y": 365
+                    },
+                    "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                },
+                {
+                    "Id": 131,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe near Bulblin Camp",
+					"Zone": "Gerudo Desert (Northern)",
+                    "Positions": {
+                        "x": 105,
+                        "y": 362
+                    },
+                    "Conditions": "do('CanAccessDesert') and have('Crystal')"
+                },
+                {
+                    "Id": 132,
+                    "Kind": "Block",
+                    "Name": "Cave of Ordeals",
+                    "Positions": {
+                        "x": 112,
+                        "y": 464
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Entrance Hint Sign",
+                            "Conditions": "do('CanAccessDesert') and do('HaveClawShot') and do('CanDefeatShadowBeast')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Poe Floor 17",
+                            "Conditions": "do('CanAccessOrdealsFloor12') and have('Spinner') and have('Crystal') and do('CanDefeatChuWorm')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Poe Floor 33",
+                            "Conditions": "do('CanAccessOrdealsFloor32') and have('Dominion Rod 2') and do('CanDefeatBeamos') and have('Crystal')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Poe Floor 44",
+                            "Conditions": "do('CanAccessOrdealsFloor42') and have('Double Clawshot') and have('Crystal')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Great Fairy Reward",
+                            "Conditions": "do('CanAccessOrdealsFloor42') and have('Double Clawshot')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 133,
+                    "Kind": "Block",
+                    "Name": "Bulblin Camp",
+                    "Positions": {
+                        "x": 117,
+                        "y": 342
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Watchtower at Entrance Chest",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Bulblin Camp Poe",
+                            "Conditions": "do('CanAccessDesert') and have('Crystal') and ((do('CanDefeatKingBulblinCastle') and have('Desert Key')) or have('Open Grounds'))"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "East Camp Tent Small Chest",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "East Camp Freestanding",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "East Camp Roasted Boar",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "West Camp Hint Sign",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Outside Arbiter's Grounds Lantern Chest",
+                            "Conditions": "do('CanAccessDesert') and do('CanDefeatBulblin') and ((do('CanDefeatKingBulblinCastle') and have('Desert Key')) or have('Open Grounds')) and have('Lantern')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Outside Arbiter's Grounds Poe",
+                            "Conditions": "do('CanAccessDesert') and have('Crystal') and ((do('CanDefeatKingBulblinCastle') and have('Desert Key')) or have('Open Grounds'))"
+                        }
+                    ]
+                },
+                {
+                    "Id": 134,
+                    "Kind": "Block",
+                    "Name": "Arbiter's Grounds",
+                    "Positions": {
+                        "x": 117,
+                        "y": 317
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Entrance Chest",
+                            "Conditions": "do('CanAccessDesert') and ((do('CanDefeatKingBulblinCastle') and have('Desert Key')) or have('Open Grounds')) and do('CanBreakWoodenDoor')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Lobby Poe",
+                            "Conditions": "do('CanAccesGroundsLobby') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Poe Scent",
+                            "Conditions": "do('CanAccesGroundsLobby') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Before Poe Door Hint Sign",
+                            "Conditions": "do('CanAccesGroundsLobby')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Lobby West Chest",
+                            "Conditions": "do('CanAccesGroundsLobby')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Lobby East Chest",
+                            "Conditions": "do('CanAccesGroundsLobby')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "West Small Chest Behind Block",
+                            "Conditions": "do('CanAccesGroundsLobby')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "East Redead Lower Small Chest",
+                            "Conditions": "do('CanAccesGroundsLobby') and have('Crystal') and (have('Poe Scent') or not rules('Use Scents for Logic'))"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "East Turning Room Poe",
+                            "Conditions": "do('CanAccesGroundsLobby') and have('Crystal') and (have('Poe Scent') or not rules('Use Scents for Logic')) and do('HaveClawShot') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "East Upper Turnable Chest",
+                            "Conditions": "do('CanAccessGroundsEastWing')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "East Upper Turnable Redead Chest",
+                            "Conditions": "do('CanAccessGroundsEastWing')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Hidden Wall Poe",
+                            "Conditions": "do('CanAccessGroundsEastWing') and (have('Grounds Keys', '>=3') or rules('Small Key Keysey')) and do('CanDefeatRedeadKnight') and (have('Poe Scent') or not rules('Use Scents for Logic')) and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Ghoul Rat Small Chest",
+                            "Conditions": "do('CanAccessGroundsEastWing') and (have('Grounds Keys', '>=3') or rules('Small Key Keysey')) and do('CanDefeatBubble') and do('CanDefeatStalchild') and do('CanDefeatRedeadKnight')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "West Chandelier Chest",
+                            "Conditions": "do('CanPushGroundsBlock')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Stalfos West Small Chest",
+                            "Conditions": "do('CanPushGroundsBlock') and do('CanBreakWoodenDoor') and do('CanDefeatRedeadKnight') and do('CanDefeatStalchild') and do('CanDefeatBubble') and do('CanDefeatGhoulRat')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Stalfos Northeast Small Chest",
+                            "Conditions": "do('CanPushGroundsBlock') and do('CanBreakWoodenDoor') and do('CanDefeatRedeadKnight') and do('CanDefeatStalchild') and do('CanDefeatBubble') and do('CanDefeatGhoulRat')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "West Poe",
+                            "Conditions": "do('CanPushGroundsBlock') and do('CanBreakWoodenDoor') and do('CanDefeatStalfos') and do('CanDefeatRedeadKnight') and do('CanDefeatStalchild') and do('CanDefeatBubble') and do('CanDefeatGhoulRat') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "North Turning Room Chest",
+                            "Conditions": "do('CanPassPoeDoor') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Ooccoo",
+                            "Conditions": "do('CanPassPoeDoor')"
+                        },
+                        {
+                            "Id": 19,
+                            "Name": "Death Sword Chest",
+                            "Conditions": "do('CanPassPoeDoor') and do('CanDefeatDeathSword') and do('CanDefeatBubble') and do('CanDefeatStalfos') and (have('Grounds Keys', '==5') or rules('Small Key Keysey'))"
+                        },
+                        {
+                            "Id": 20,
+                            "Name": "Spinner Room First Small Chest",
+                            "Conditions": "do('CanAccessSpinnerRoom')"
+                        },
+                        {
+                            "Id": 21,
+                            "Name": "Spinner Room Second Small Chest",
+                            "Conditions": "do('CanAccessSpinnerRoom')"
+                        },
+                        {
+                            "Id": 22,
+                            "Name": "Spinner Room Lower Central Small Chest",
+                            "Conditions": "do('CanAccessSpinnerRoom')"
+                        },
+                        {
+                            "Id": 23,
+                            "Name": "Spinner Room Heart Piece Chest",
+                            "Conditions": "do('CanAccessSpinnerRoom')"
+                        },
+                        {
+                            "Id": 24,
+                            "Name": "Spinner Room Lower North Chest",
+                            "Conditions": "do('CanAccessSpinnerRoom')"
+                        },
+                        {
+                            "Id": 25,
+                            "Name": "Big Key Chest",
+                            "Conditions": "do('CanPassPoeDoor') and do('HaveClawShot') and have('Spinner') and do('CanSmash') and (have('Grounds Keys', '==5') or rules('Small Key Keysey'))"
+                        },
+                        {
+                            "Id": 26,
+                            "Name": "Stallord",
+                            "Conditions": "do('CanPassPoeDoor') and have('Spinner') and (have('Grounds Big Key') or rules('Big Key Keysey')) and do('CanDefeatStallord')"
+                        }
+                    ]
+				},
+                {
+                    "Id": 135,
+                    "Kind": "SimpleCheck",
+                    "Name": "Ashei Sketch",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 372,
+                        "y": 92
+                    },
+                    "Conditions": "do('CanAccessDomain') and do('HaveClearedLT')"
+                },
+                {
+                    "Id": 136,
+                    "Kind": "SimpleCheck",
+                    "Name": "Snowpeak Province Hint Sign",
+                    "Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 355,
+                        "y": 87
+                    },
+                    "Conditions": "do('CanAccessDomain') and do('HaveClearedLT')"
+                },
+                {
+                    "Id": 137,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe in Blizzard",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 320,
+                        "y": 63
+                    },
+                    "Conditions": "do('CanAccessSnowCave')"
+                },
+                {
+                    "Id": 138,
+                    "Kind": "SimpleCheck",
+                    "Name": "Wolf Grotto - Freezard Chest",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 320,
+                        "y": 75
+                    },
+                    "Conditions": "do('CanAccessSnowCave') and have('Ball and Chain')"
+                },  
+                {
+                    "Id": 139,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe above Freezard Grotto",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 330,
+                        "y": 75
+                    },
+                    "Conditions": "do('CanAccessSnowCave')"
+                },
+                {
+                    "Id": 140,
+                    "Kind": "SimpleCheck",
+                    "Name": "Poe among Trees",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 304,
+                        "y": 77
+                    },
+                    "Conditions": "do('CanAccessSnowCave')"
+                },
+                {
+                    "Id": 141,
+                    "Kind": "SimpleCheck",
+                    "Name": "Snowpeak Cave Ice Lantern Chest",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 287,
+                        "y": 95
+                    },
+                    "Conditions": "do('CanAccessSnowCave') and have('Ball and Chain') and have('Lantern')"
+                },
+                {
+                    "Id": 142,
+                    "Kind": "SimpleCheck",
+                    "Name": "Snowpeak Cave Ice Poe",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 278,
+                        "y": 95
+                    },
+                    "Conditions": "do('CanAccessSnowCave') and have('Ball and Chain') and do('CanDefeatPoe')"
+                },
+                {
+                    "Id": 143,
+                    "Kind": "SimpleCheck",
+                    "Name": "Snowboard Racing",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 269,
+                        "y": 95
+                    },
+                    "Conditions": "do('CanAccessSnowCave') and have('Ruins')"
+                },
+                {
+                    "Id": 144,
+                    "Kind": "SimpleCheck",
+                    "Name": "Icy Summit Poe",
+					"Zone": "Snowpeak Province",
+                    "Positions": {
+                        "x": 166,
+                        "y": 248
+                    },
+                    "Conditions": "do('CanAccessSnowpeakRuins') and have('Crystal')"
+                },
+                {
+                    "Id": 145,
+                    "Kind": "Block",
+                    "Name": "Snowpeak Ruins",
+                    "Positions": {
+                        "x": 160,
+                        "y": 220
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Lobby Left Armor Small Chest",
+                            "Conditions": "do('CanAccessSnowpeakRuins') and have('Ball and Chain')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Lobby Right Armor Small Chest",
+                            "Conditions": "do('CanAccessSnowpeakRuins') and have('Ball and Chain')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Lobby Armor Poe",
+                            "Conditions": "do('CanAccessSnowpeakRuins') and have('Ball and Chain') and do('CanDefeatPoe')"
+                        }, 
+                        {
+                            "Id": 3,
+                            "Name": "Lobby Poe",
+                            "Conditions": "do('CanAccessSnowpeakRuins') and do('CanDefeatPoe')"
+                        }, 
+                        {
+                            "Id": 4,
+                            "Name": "Yeta Map",
+                            "Conditions": "do('CanAccessSnowpeakRuins')"
+                        }, 
+                        {
+                            "Id": 5,
+                            "Name": "Living Room Hint Sign",
+                            "Conditions": "do('CanAccessSnowpeakRuins')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Ooccoo",
+                            "Conditions": "do('CanAccessSnowpeakRuins')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Courtyard East Partially Buried Small Chest",
+                            "Conditions": "do('CanAccessRuinsEastCourtyard') and have('Crystal')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Courtyard East Open Chest",
+                            "Conditions": "do('CanAccessRuinsEastCourtyard')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Ordon Pumpkin Chest",
+                            "Conditions": "do('CanAccessRuinsEastCourtyard') and (have('Ruins Keys', '>=4') or (have('Ruins Keys', '>=2') and do('HaveClawShot')) or rules('Small Key Keysey')) and do('CanDefeatMiniFreezard') and do('CanDefeatChilfos')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Courtyard West Buried Small Chest",
+                            "Conditions": "do('CanAccessRuinsWestCourtyard') and have('Crystal')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Courtyard South Ice Wall Small Chest",
+                            "Conditions": "do('CanAccessRuinsEastCourtyard') and (have('Ball and Chain') or do('CanUseRuinsCourtyardCannon'))"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Wooden Beam Room Lower Small Chest",
+                            "Conditions": "do('CanAccessRuinsWestCourtyard') and do('CanSmash') and do('CanDefeatIceKeese')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Wooden Beam Room Lower Big Chest",
+                            "Conditions": "do('CanAccessRuinsWestCourtyard') and do('CanSmash') and do('CanDefeatIceKeese')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Ball and Chain",
+                            "Conditions": "(do('CanAccessRuinsEastCourtyard') and have('Ball and Chain')) or (do('CanUseRuinsCourtyardCannon') and do('CanDefeatDarkhammer'))"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Ordon Goat Cheese Chest",
+                            "Conditions": "do('CanAccessRuinsEastCourtyard') and have('Ball and Chain') and do('CanDefeatDarkhammer')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "West Breakable Floor Chest",
+                            "Conditions": "do('CanAccessRuinsCagedFreezard') and have('Ball and Chain')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "Wooden Beam Room Chandelier Chest",
+                            "Conditions": "do('CanAccessRuinsCagedFreezard') and have('Ball and Chain')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Lobby Chandelier Chest",
+                            "Conditions": "do('CanAccessRuinsCagedFreezard') and (have('Ruins Keys', '>=3') or rules('Small Key Keysey')) and have('Ball and Chain')"
+                        },    
+                        {
+                            "Id": 19,
+                            "Name": "East Ice Room Poe",
+                            "Conditions": "do('CanAccessRuinsCagedFreezard') and (have('Ruins Keys', '>=3') or rules('Small Key Keysey')) and have('Ball and Chain') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 20,
+                            "Name": "Northeast Chandelier Chest",
+                            "Conditions": "do('CanAccessRuinsCagedFreezard') and (have('Ruins Keys', '>=3') or rules('Small Key Keysey')) and have('Ball and Chain') and do('HaveClawShot') and do('CanDefeatChilfos')"
+                        },
+                        {
+                            "Id": 21,
+                            "Name": "West Cannon Room Central Chest",
+                            "Conditions": "do('CanAccessRuinsWestCourtyard') and have('Ball and Chain')"
+                        },
+                        {
+                            "Id": 22,
+                            "Name": "West Cannon Room Corner Chest",
+                            "Conditions": "do('CanAccessRuinsWestCourtyard') and do('CanSmash')"
+                        },
+                        {
+                            "Id": 23,
+                            "Name": "Chapel Chest",
+                            "Conditions": "do('CanAccessRuinsUpperCourtyard') and do('CanDefeatChilfos')"
+                        },
+                        {
+                            "Id": 24,
+                            "Name": "Blizzeta",
+                            "Conditions": "do('CanAccessRuinsUpperCourtyard') and (have('Ruins Bedroom Key') or rules('Big Key Keysey')) and do('CanDefeatBlizzeta')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 146,
+                    "Kind": "SimpleCheck",
+                    "Name": "Lost Woods Waterfall Poe",
+					"Zone": "Sacred Grove & Lost Woods",
+                    "Positions": {
+                        "x": 280,
+                        "y": 526
+                    },
+                    "Conditions": "do('CanCompletePrologue') and have('Crystal')"
+                },
+                {
+                    "Id": 147,
+                    "Kind": "Block",
+                    "Name": "Deep Grove",
+					"Zone": "Sacred Grove & Lost Woods",
+                    "Positions": {
+                        "x": 316,
+                        "y": 527
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Male Snail",
+                            "Conditions": "do('CanAccessSacredGrove') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Hint Sign near Past Entrance",
+                            "Conditions": "do('CanAccessSacredGrove')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Past - Female Snail",
+                            "Conditions": "do('CanAccessPast') and (do('HaveClawShot') or have('Gale Boomerang'))"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Past - Owl Statue Chest",
+                            "Conditions": "do('CanAccessPast') and do('HaveRod')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Past - Owl Statue Poe",
+                            "Conditions": "do('CanAccessPast') and do('HaveRod') and have('Crystal')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Poe under Rock",
+                            "Conditions": "do('CanAccessSacredGrove') and do('CanSmash') and have('Crystal')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Wolf Grotto - Baba Serpent Chest",
+                            "Conditions": "do('CanAccessSacredGrove') and do('CanSmash') and do('CanKnockDownHangingBaba')"
+                        },
+						{
+							"Id": 7,
+							"Name": "Sacred Grove Spinner Chest",
+							"Conditions": "do('CanAccessSacredGrove') and have('Spinner')"
+						}
+                    ]
+                },
+                {
+                    "Id": 148,
+                    "Kind": "Block",
+                    "Name": "Master Sword Pedestal",
+					"Zone": "Sacred Grove & Lost Woods",
+                    "Positions": {
+                        "x": 323,
+                        "y": 500
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Master Sword",
+                            "Conditions": "do('CanAccessSacredGrove')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Shadow Crystal",
+                            "Conditions": "do('CanAccessSacredGrove')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Master Sword Poe",
+                            "Conditions": "do('CanAccessSacredGrove')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 149,
+                    "Kind": "Block",
+                    "Name": "Temple of Time",
+                    "Positions": {
+                        "x": 323,
+                        "y": 480
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Hint Sign beside Ooccoo",
+                            "Conditions": "do('CanAccessPast') and (do('CanStrikeDownPedestal') or have('ToT 0 Sword') or rules('Open Temple of Time'))"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Ooccoo",
+                            "Conditions": "do('CanAccessPast') and (do('CanStrikeDownPedestal') or have('ToT 0 Sword') or rules('Open Temple of Time'))"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Lobby Lantern Chest",
+                            "Conditions": "do('CanAccessPast') and (do('CanStrikeDownPedestal') or have('ToT 0 Sword') or rules('Open Temple of Time')) and have('Lantern')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "First Stair Gohma Gate Small Chest",
+                            "Conditions": "do('CanAccessTotCorridors') and do('CanDefeatYoungGohma')" 
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "First Stair Window Small Chest",
+                            "Conditions": "do('CanAccessTotCorridors') and do('HaveRangedItem')"
+                        },                          
+                        {
+                            "Id": 5,
+                            "Name": "First Stair Armos Chest",
+                            "Conditions": "do('CanAccessTotCorridors') and do('HaveRangedItem') and do('CanDefeatArmos')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Poe Behind Gate",
+                            "Conditions": "do('CanAccessTotCorridors') and do('HaveRangedItem') and do('CanDefeatYoungGohma') and do('CanDefeatLizalfos') and do('HaveRod') and do('CanDefeatPoe')"
+                        },   
+                        {
+                            "Id": 7,
+                            "Name": "Armos Room North Chest",
+                            "Conditions": "do('CanAccessTotArmosAntechamber')"
+                        },   
+                        {
+                            "Id": 8,
+                            "Name": "Armos Room Armos Chest",
+                            "Conditions": "do('CanAccessTotArmosAntechamber') and do('CanDefeatArmos')"
+                        },   
+                        {
+                            "Id": 9,
+                            "Name": "Armos Room Statue Chest",
+                            "Conditions": "do('CanAccessTotArmosAntechamber') and do('HaveRod')"
+                        }, 
+                        {
+                            "Id": 10,
+                            "Name": "Moving Wall Beamos Room Chest",
+                            "Conditions": "do('CanAccessTotMovingWallHallways') and have('Hero Bow')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Moving Wall Hint Sign",
+                            "Conditions": "do('CanAccessTotMovingWallHallways') and have('Hero Bow')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Moving Wall Dynalfos Room Chest",
+                            "Conditions": "do('CanAccessTotMovingWallHallways') and do('CanDefeatDynalfos') and do('HaveRod') and  have('Hero Bow')"
+                        },  
+                        {
+                            "Id": 13,
+                            "Name": "Scale Room Spider Chest",
+                            "Conditions": "do('CanAccessTotScalesofTime') and do('CanDefeatYoungGohma') and do('CanDefeatBabyGohma')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Poe above Scales",
+                            "Conditions": "do('CanAccessTotPuzzleRoom') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Scale Room Upper Chest",
+                            "Conditions": "do('CanAccessTotPuzzleRoom')"
+                        },  
+                        {
+                            "Id": 16,
+                            "Name": "Helmasaur Room Small Chest",
+                            "Conditions": "do('CanAccessTotPuzzleRoom') and do('HaveClawShot')"
+                        },   
+                        {
+                            "Id": 17,
+                            "Name": "Big Key Chest",
+                            "Conditions": "do('CanAccessTotPuzzleRoom') and do('HaveClawShot') and do('CanDefeatHelmasaur')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Third Stair Swinging Guillotine Chest",
+                            "Conditions": "do('CanAccessTotScalesofTime')"
+                        },   
+                        {
+                            "Id": 19,
+                            "Name": "Third Stair Window Chest",
+                            "Conditions": "do('CanAccessTotScalesofTime') and do('CanDefeatArmos') and do('CanDefeatBabyGohma') and do('CanDefeatYoungGohma')"
+                        },   
+                        {
+                            "Id": 20,
+                            "Name": "Darknut Chest",
+                            "Conditions": "do('CanAccessTotDarknutRoom') and do('CanDefeatDarknut')"
+                        }, 
+                        {
+                            "Id": 21,
+                            "Name": "Armogohma",
+                            "Conditions": "do('CanAccessPast') and (have('Master Sword') or have('Light Sword') or rules('Open Temple of Time')) and (do('CanAccessTotDarknutRoom') or rules('Open Door of Time')) and do('CanDefeatArmogohma') and (have('Time Big Key') or rules('Big Key Keysey'))"
+                        }
+                    ]
+                },
+                {
+                    "Id": 150,
+                    "Kind": "Block",
+                    "Name": "City in the Sky",
+                    "Positions": {
+                        "x": 255,
+                        "y": 347
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Ooccoo",
+                            "Conditions": "do('CanAccessSky')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Underwater Southwest Chest",
+                            "Conditions": "do('CanAccessSky') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Underwater Southeast Chest",
+                            "Conditions": "do('CanAccessSky') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "West First Chest",
+                            "Conditions": "do('CanAccessSkyWestWing')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "West Baba Serpent Alcove Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "West Narrow Ledge Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "West Tile Worm Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Big Baba Tower West Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatBabaSerpent') and do('CanDefeatBigBaba')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Big Baba Tower North Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatBabaSerpent') and do('CanDefeatBigBaba')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Big Baba Tower Heart Piece Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatBabaSerpent') and do('CanDefeatBigBaba')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "West Garden Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "West Garden Lone Island Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "West Garden Lone Island Poe",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "West Garden Lower Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "West Garden Heart Piece Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Central Outside Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatDynalfos') and do('CanDefeatWalltula') and do('CanDefeatKargarok') and have('Crystal')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "Poe above Central Fan",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatDynalfos') and do('CanDefeatWalltula') and do('CanDefeatKargarok') and do('CanDefeatPoe')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "Central Outside Poe Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatDynalfos') and do('CanDefeatWalltula') and do('CanDefeatKargarok') and have('Crystal')"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Big Key Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatDynalfos') and do('CanDefeatWalltula') and do('CanDefeatKargarok') and have('Crystal') and have('Iron Boots')"
+                        },
+                        {
+                            "Id": 19,
+                            "Name": "Central Upper Small Chest",
+                            "Conditions": "do('CanAccessSkyWestWing') and have('Double Clawshot') and do('CanDefeatHelmasaur')"
+                        },
+                        {
+                            "Id": 20,
+                            "Name": "Before East Wing Hint Sign",
+                            "Conditions": "do('CanAccessSky')"
+                        },
+                        {
+                            "Id": 21,
+                            "Name": "East First Wing Chest After Fans",
+                            "Conditions": "do('CanAccessSkyEastWing') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 22,
+                            "Name": "East Tile Worm Small Chest",
+                            "Conditions": "do('CanAccessSkyEastWing') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 23,
+                            "Name": "East After Dynalfos Alcove Chest",
+                            "Conditions": "do('CanAccessSkyEastWing') and do('HaveClawShot') and do('CanDefeatTileWorm') and do('CanDefeatDynalfos')"
+                        },
+                        {
+                            "Id": 24,
+                            "Name": "East After Dynalfos Ledge Chest",
+                            "Conditions": "do('CanAccessSkyEastWing') and do('HaveClawShot') and do('CanDefeatTileWorm') and do('CanDefeatDynalfos')"
+                        },
+                        {
+                            "Id": 25,
+                            "Name": "Aeralfos Chest",
+                            "Conditions": "do('CanAccessSkyEastWing') and do('HaveClawShot') and do('CanDefeatTileWorm') and do('CanDefeatDynalfos') and have('Iron Boots') and do('CanDefeatAeralfos')"
+                        },
+                        {
+                            "Id": 26,
+                            "Name": "East Wing Lower Level Chest",
+                            "Conditions": "do('CanAccessSkyEastWing') and have('Double Clawshot') and do('CanDefeatTileWorm') and do('CanDefeatDynalfos')"
+                        },
+                        {
+                            "Id": 27,
+                            "Name": "North Fan Chest",
+                            "Conditions": "do('CanAccessSkyNorthWing')"
+                        },
+                        {
+                            "Id": 28,
+                            "Name": "Argorok",
+                            "Conditions": "do('CanAccessSkyNorthWing') and do('CanDefeatAeralfos') and (have('Sky Big Key') or rules('Big Key Keysey')) and do('CanDefeatArgorok')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 151,
+                    "Kind": "Block",
+                    "Name": "Palace of Twilight",
+                    "Positions": {
+                        "x": 117,
+                        "y": 289
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Hint Sign at Entrance",
+                            "Conditions": "do('CanAccessPalaceOfTwilight')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "West First Room Central Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and do('CanDefeatZantHead')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "West Behind Wall of Darkness Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and have('Light Sword') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "West Second Room Central Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and (have('Twilight Keys', '>=6') or (have('Twilight Keys', '>=3') and rules('Vanilla Small Key')) or rules('Small Key Keysey') or rules('Use Added Drehen S2 Logic')) and do('CanDefeatZantHead') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "West Second Room Lower South Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and (have('Twilight Keys', '>=6') or (have('Twilight Keys', '>=3') and rules('Vanilla Small Key')) or rules('Small Key Keysey') or rules('Use Added Drehen S2 Logic')) and do('CanDefeatZantHead') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "West Second Room Southeast Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and (have('Twilight Keys', '>=6') or (have('Twilight Keys', '>=3') and rules('Vanilla Small Key')) or rules('Small Key Keysey') or rules('Use Added Drehen S2 Logic')) and do('CanDefeatZantHead') and have('Double Clawshot')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "East First Room North Small Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and (do('HaveClawShot') or (have('Light Sword') and rules('Use 1.3 Logic')))"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "East First Room Zant Head Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and ((do('HaveClawShot') and do('CanDefeatZantHead')) or (have('Light Sword') and rules('Use 1.3 Logic')))"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "East Second Room Northwest Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and do('CanDefeatZantHead') and do('CanDefeatShadowBeast') and do('HaveClawShot') and (have('Twilight Keys', '>=6') or (have('Twilight Keys', '>=3') and rules('Vanilla Small Key')) or rules('Small Key Keysey') or rules('Use Added Drehen S2 Logic'))"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "East Second Room Northeast Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and do('CanDefeatZantHead') and do('CanDefeatShadowBeast') and have('Double Clawshot') and (have('Twilight Keys', '>=6') or (have('Twilight Keys', '>=3') and rules('Vanilla Small Key')) or rules('Small Key Keysey') or rules('Use Added Drehen S2 Logic'))"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "East Second Room Southwest Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and do('CanDefeatZantHead') and do('CanDefeatShadowBeast') and have('Double Clawshot') and (have('Twilight Keys', '>=6') or (have('Twilight Keys', '>=3') and rules('Vanilla Small Key')) or rules('Small Key Keysey') or rules('Use Added Drehen S2 Logic'))"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "East Second Room Southeast Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and do('CanDefeatZantHead') and do('CanDefeatShadowBeast') and have('Double Clawshot') and (have('Twilight Keys', '>=6') or (have('Twilight Keys', '>=3') and rules('Vanilla Small Key')) or rules('Small Key Keysey') or rules('Use Added Drehen S2 Logic'))"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "East First Room West Alcove Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and (have('Light Sword') or (do('CanDefeatPhantomZant') and do('HaveClawShot') and do('CanDefeatZantHead') and do('CanDefeatShadowBeast') and (have('Twilight Keys', '==7') or rules('Small Key Keysey') or (rules('Use Added Drehen S2 Logic') and have('Twilight Keys', '>=5')))))"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "East First Room East Alcove Chest",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and (have('Light Sword') or (do('CanDefeatPhantomZant') and do('HaveClawShot') and do('CanDefeatZantHead') and do('CanDefeatShadowBeast') and (have('Twilight Keys', '==7') or rules('Small Key Keysey') or (rules('Use Added Drehen S2 Logic') and have('Twilight Keys', '>=5')))))"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Collect Both Sols",
+                            "Conditions": "do('CanAccessPalaceOfTwilight') and do('CanDefeatPhantomZant') and do('CanDefeatZantHead') and do('CanDefeatShadowBeast') and do('HaveClawShot') and (have('Twilight Keys', '==7') or rules('Small Key Keysey') or (rules('Use Added Drehen S2 Logic') and have('Twilight Keys', '>=5')))"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Central First Room Chest",
+                            "Conditions": "do('CanAccessPalaceTower') and do('CanDefeatZantHead') and have('Light Sword')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "Big Key Chest",
+                            "Conditions": "do('CanAccessPalaceTower') and do('CanDefeatZantHead') and have('Light Sword') and have('Double Clawshot') and (have('Twilight Keys', '>=5') or rules('Small Key Keysey') or (rules('Use Added Drehen S2 Logic') and have('Twilight Keys', '>=3')))"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "Central Outdoor Chest",
+                            "Conditions": "do('CanAccessPalaceTower') and do('CanDefeatZantHead') and have('Light Sword') and (have('Twilight Keys', '>=5') or rules('Small Key Keysey') or (rules('Use Added Drehen S2 Logic') and have('Twilight Keys', '>=3')))"
+                        },
+                        {
+                            "Id": 18,
+                            "Name": "Central Tower Chest",
+                            "Conditions": "do('CanAccessPalaceTower') and do('CanDefeatZantHead') and have('Light Sword') and do('HaveClawShot') and (have('Twilight Keys', '>=6') or rules('Small Key Keysey') or (rules('Use Added Drehen S2 Logic') and have('Twilight Keys', '>=4')))"
+                        },
+                        {
+                            "Id": 19,
+                            "Name": "Zant",
+                            "Conditions": "do('CanAccessPalaceTower') and do('CanDefeatZantHead') and have('Light Sword') and do('CanDefeatShadowBeast') and do('HaveClawShot') and (have('Twilight Keys', '==7') or rules('Small Key Keysey') or (rules('Use Added Drehen S2 Logic') and have('Twilight Keys', '>=5'))) and (have('Twilight Big Key') or rules('Big Key Keysey')) and do('CanDefeatZant')"
+                        }
+                    ]
+                },
+                {
+                    "Id": 152,
+                    "Kind": "Block",
+                    "Name": "Hyrule Castle",
+                    "Positions": {
+                        "x": 393,
+                        "y": 275
+                    },
+                    "Checks" : [
+                        {
+                            "Id": 0,
+                            "Name": "Hint Sign at Entrance",
+                            "Conditions": "do('CanAccessHyruleCastle')"
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "West Courtyard Northern Small Chest",
+                            "Conditions": "do('CanAccessHyruleCastle') and do('CanDefeatBokoblinRed')"
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "West Courtyard Central Small Chest",
+                            "Conditions": "do('CanAccessHyruleCastle') and do('CanDefeatBokoblinRed')"
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "King Bulblin Key",
+                            "Conditions": "do('CanAccessHyruleCastle') and do('CanDefeatBokoblinRed') and do('CanDefeatKingBulblinCastle')"
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "East Wing Boomerang Puzzle Chest",
+                            "Conditions": "do('CanAccessHyruleCastle') and have('Gale Boomerang')"
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "East Wing Balcony Chest",
+                            "Conditions": "do('CanAccessHyruleCastle') and have('Gale Boomerang')"
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Grvyrd Grave Switch Room Right Chest",
+                            "Conditions": "do('CanAccessHyruleCastle') and have('Crystal') and do('CanSmash')"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Grvyrd Grave Switch Room Front Left",
+                            "Conditions": "do('CanAccessHyruleCastle') and have('Crystal') and do('CanSmash')"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Grvyrd Grave Switch Room Back Left",
+                            "Conditions": "do('CanAccessHyruleCastle') and have('Crystal') and do('CanSmash')"
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Graveyard Owl Statue",
+                            "Conditions": "do('CanAccessHyruleCastle') and have('Crystal') and do('CanSmash') and have('Lantern') and have('Dominion Rod 2')"
+                        },
+                        {
+                            "Id": 10,
+                            "Name": "Main Hall Northeast Chest",
+                            "Conditions": "do('CanAccessHyruleCastle') and (have('Hyrule Castle Keys', '>=1') or rules('Small Key Keysey')) and do('CanDefeatBokoblin') and do('CanDefeatLizalfos') and do('HaveClawShot')"
+                        },
+                        {
+                            "Id": 11,
+                            "Name": "Lantern Staircase Chest",
+                            "Conditions": "do('CanPassCastleLanternStair') or do('CanUseLoweredChandelier')"
+                        },
+                        {
+                            "Id": 12,
+                            "Name": "Main Hall Southwest Chest",
+                            "Conditions": "((do('CanPassCastleLanternStair') and do('CanKnockDownHCPainting') and do('CanDefeatLizalfos')) or do('CanUseLoweredChandelier')) and do('CanDefeatDarknut')"
+                        },
+                        {
+                            "Id": 13,
+                            "Name": "Main Hall Northwest Chest",
+                            "Conditions": "((do('CanPassCastleLanternStair') and do('CanKnockDownHCPainting') and do('CanDefeatLizalfos')) or do('CanUseLoweredChandelier')) and do('CanDefeatDarknut')"
+                        },
+                        {
+                            "Id": 14,
+                            "Name": "Southeast Balcony Tower Chest",
+                            "Conditions": "do('CanAccessCastleBalcony') and do('CanDefeatAeralfos')"
+                        },
+                        {
+                            "Id": 15,
+                            "Name": "Big Key Chest",
+                            "Conditions": "do('CanAccessCastleBalcony')"
+                        },
+                        {
+                            "Id": 16,
+                            "Name": "Treasure Room 1st Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 17,
+                            "Name": "Treasure Room 2nd Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },                        
+                        {
+                            "Id": 18,
+                            "Name": "Treasure Room 3rd Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },                        
+                        {
+                            "Id": 19,
+                            "Name": "Treasure Room 4th Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 20,
+                            "Name": "Treasure Room 5th Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 21,
+                            "Name": "Treasure Room 1st Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 22,
+                            "Name": "Treasure Room 2nd Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 23,
+                            "Name": "Treasure Room 3rd Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 24,
+                            "Name": "Treasure Room 4th Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 25,
+                            "Name": "Treasure Room 5th Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 26,
+                            "Name": "Treasure Room 6th Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 27,
+                            "Name": "Treasure Room 7th Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 28,
+                            "Name": "Treasure Room 8th Small Chest",
+                            "Conditions": "do('CanAccessTreasureRoom')"
+                        },
+                        {
+                            "Id": 29,
+                            "Name": "Defeat Ganondorf",
+                            "Conditions": "((do('CanAccessCastleBalcony') and (((have('Hyrule Castle Keys', '>=2') or rules('Small Key Keysey')) and (have('Hyrule Castle Big Key') or rules('Big Key Keysey')))) and do('CanDefeatLizalfos') and have('Spinner') and have('Double Clawshot') and do('CanDefeatDarknut')) or (do('CanAccessHyruleCastle') and rules('Hyrule Castle Skip'))) and do('CanDefeatGanondorf')"
+                        }  
+                    ]
+                }
+            ]                                                                                                            
+    }
+]

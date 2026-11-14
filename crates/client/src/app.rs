@@ -544,7 +544,8 @@ mod tests {
 
     impl Harness {
         fn new() -> Self {
-            let dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../public/sources/compact");
+            let dir =
+                Path::new(env!("CARGO_MANIFEST_DIR")).join("../../public/sources/restream/compact");
             let json = std::fs::read_to_string(dir.join("tracker.json")).unwrap();
             let tracker = Tracker::parse(&json).unwrap();
             let ctx = egui::Context::default();

@@ -1,0 +1,535 @@
+[
+    {
+        "Informations": {
+            "Creator": "LinSoraK",
+            "Name": "2.4 Update",
+            "Version": "2.4",
+            "Credits": "LinSoraK"
+        }
+    },
+    {
+        "Datas": {
+            "Dimensions": {
+                "width": 455,
+                "height": 731
+            },
+            "Background": "background.png",
+            "BackgroundColor": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            },
+            "Items": {
+                "Normal": {
+                    "ItemsSheet": "itemsOOT3D.png",
+                    "ItemsSheetDimensions": {
+                        "width": 35,
+                        "height": 35
+                    }
+                }              
+            }
+        }
+    },
+    {
+        "Fonts": {
+            "incrementalItemFont": {
+                "Name": "visitor1.ttf",
+                "Size": 18,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 0
+                    }
+                }
+            },
+            "evolutionItemFont": {
+                "Name": "visitor1.ttf",
+                "Size": 18,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 0
+                    }
+                }
+            },
+            "countItemFont": {
+                "Name": "visitor1.ttf",
+                "Size": 18,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 0
+                    }
+                }
+            },
+            "labelItemFont": {
+                "Name": "cmd.ttf",
+                "Size": 13,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 255
+                    }
+                }
+            },
+            "hintFont": {
+                "Name": "lm.ttf",
+                "Size": 11,
+                "Colors": {
+                    "Normal": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 255
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Items": [
+            {
+                "Id": 0,
+                "Kind": "DraggableEvolutionItem",
+                "Name": "???",
+                "Positions": {
+                    "x": 211,
+                    "y": 121
+                },
+                "SheetInformation": {
+                    "row": 10,
+                    "column": 5,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": false,
+                "Hint": null,
+                "OpacityDisable": 0.5,
+                "Label": null,
+                "LabelCenter": false,
+                "NextItems": [
+                    {
+                        "Id": 0,
+                        "Name": "Sold Out",
+                        "SheetInformation": {
+                            "row": 4,
+                            "column": 9,
+                            "SpriteSheet": "Normal"
+                        },
+                        "Label": null
+                    },
+                    {
+                        "Id": 1,
+                        "Name": "Light Arrow",
+                        "SheetInformation": {
+                            "row": 2,
+                            "column": 7,
+                            "SpriteSheet": "Normal"
+                        },
+                        "Label": null
+                    },
+                    {
+                        "Id": 2,
+                        "Name": "Big Poe",
+                        "SheetInformation": {
+                            "row": 3,
+                            "column": 7,
+                            "SpriteSheet": "Normal"
+                        },
+                        "Label": null
+                    }
+                ]
+            },
+			{
+                "Id": 1,
+                "Kind": "LabelItem",
+                "Name": "Kokiri Emerald",
+                "Positions": {
+                    "x": 153,
+                    "y": 189
+                },
+                "SheetInformation": {
+                    "row": 8,
+                    "column": 5,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": false,
+                "Hint": "MQ",
+                "OpacityDisable": 0.4,
+                "LabelList": [
+                    "????",
+                    "FREE",
+                    "DEKU",
+                    "DC",
+                    "JABU",
+                    "FOREST",
+                    "FIRE",
+                    "WATER",
+                    "SHADOW",
+                    "SPIRIT"
+                ]
+            },
+            {
+                "Id": 2,
+                "Kind": "IncrementalItem",
+                "Name": "Deku Nut",
+                "Positions": {
+                    "x": 211,
+                    "y": 191
+                },
+                "SheetInformation": {
+                    "row": 1,
+                    "column": 2,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": false,
+                "Hint": null,
+                "OpacityDisable": 0.5,
+                "Increment": [
+                    "30",
+                    "40"
+                ]
+            },
+            {
+                "Id": 3,
+                "Kind": "EvolutionItem",
+                "Name": "Fairy Ocarina",
+                "Positions": {
+                    "x": 268,
+                    "y": 191
+                },
+                "SheetInformation": {
+                    "row": 1,
+                    "column": 8,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": false,
+                "Hint": null,
+                "OpacityDisable": 0.5,
+                "Label": null,
+                "LabelCenter": false,
+                "NextItems": [
+                    {
+                        "Id": 0,
+                        "Name": "Ocarina of Time",
+                        "SheetInformation": {
+                            "row": 1,
+                            "column": 9,
+                            "SpriteSheet": "Normal"
+                        },
+                        "Label": null
+                    }
+                ]
+            },
+            {
+                "Id": 4,
+                "Kind": "EditableBox",
+                "Name": "HintBoxOne",
+                "Positions": {
+                    "x": 118,
+                    "y": 293
+                },
+                "Sizes": {
+                    "w": 225,
+                    "h": 40
+                },
+                "PlaceHolder": "It's a HINT!!!",
+                "Style": {
+                    "BackgroundColor": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    }, 
+                    "NormalTextColor" : {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0  
+                    },    
+                    "SelectedTextColor" : {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255  
+                    }, 
+                    "SelectedBackgroundColor": {
+                        "r": 255,
+                        "g": 0,
+                        "b": 0
+                    },                    
+                    "HoveredBackgroundColor": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 50  
+                    },
+                    "HoveredTextColor" : {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255  
+                    }
+                },
+                "Lines" : [
+                    "Hyrule",
+                    "Test",
+                    "Triforce"
+                ]
+            },            
+            {
+                "Id": 1,
+                "Kind": "Item",
+                "Name": "Boomerang",
+                "Positions": {
+                    "x": 216,
+                    "y": 406
+                },
+                "SheetInformation": {
+                    "row": 2,
+                    "column": 3,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": false,
+                "Hint": "MQ",
+                "OpacityDisable": 0.5,
+                "HintItems" : [
+                    {
+                        "Id": 29,
+                        "Kind": "Item",
+                        "Name": "Mirror Shield",
+                        "Positions": {
+                            "x": 275,
+                            "y": 461
+                        },
+                        "SheetInformation": {
+                            "row": 6,
+                            "column": 2,
+                            "SpriteSheet": "Normal"
+                        },
+                        "isActive": false,
+                        "Hint": null,
+                        "OpacityDisable": 0.5
+                    }
+                ],
+                "ActiveItems" : [
+                    {
+                        "Id": 2,
+                        "Kind": "Item",
+                        "Name": "Bomb",
+                        "Positions": {
+                            "x": 157,
+                            "y": 404
+                        },
+                        "SheetInformation": {
+                            "row": 1,
+                            "column": 3,
+                            "SpriteSheet": "Normal"
+                        },
+                        "isActive": false,
+                        "Hint": "SUB",
+                        "OpacityDisable": 0.5,
+                        "ActiveItems" : [
+                            {
+                                "Id": 3,
+                                "Kind": "IncrementalItem",
+                                "Name": "Fairy Bow",
+                                "Positions": {
+                                    "x": 157,
+                                    "y": 462
+                                },
+                                "SheetInformation": {
+                                    "row": 1,
+                                    "column": 4,
+                                    "SpriteSheet": "Normal"
+                                },
+                                "isActive": false,
+                                "Hint": null,
+                                "OpacityDisable": 0.5,
+                                "Increment": [
+                                    "40",
+                                    "50"
+                                ],
+                                "ActiveItems" : [
+                                    {
+                                        "Id": 16,
+                                        "Kind": "Item",
+                                        "Name": "Light Arrow",
+                                        "Positions": {
+                                            "x": 158,
+                                            "y": 519
+                                        },
+                                        "SheetInformation": {
+                                            "row": 2,
+                                            "column": 7,
+                                            "SpriteSheet": "Normal"
+                                        },
+                                        "isActive": false,
+                                        "Hint": null,
+                                        "OpacityDisable": 0.5
+                                    },
+                                    {
+                                        "Id": 16,
+                                        "Kind": "Item",
+                                        "Name": "Fire Arrow",
+                                        "Positions": {
+                                            "x": 216,
+                                            "y": 519
+                                        },
+                                        "SheetInformation": {
+                                            "row": 1,
+                                            "column": 5,
+                                            "SpriteSheet": "Normal"
+                                        },
+                                        "isActive": false,
+                                        "Hint": null,
+                                        "OpacityDisable": 0.5
+                                    },
+                                    {
+                                        "Id": 16,
+                                        "Kind": "Item",
+                                        "Name": "Ice Arrow",
+                                        "Positions": {
+                                            "x": 274,
+                                            "y": 519
+                                        },
+                                        "SheetInformation": {
+                                            "row": 2,
+                                            "column": 1,
+                                            "SpriteSheet": "Normal"
+                                        },
+                                        "isActive": false,
+                                        "Hint": null,
+                                        "OpacityDisable": 0.5
+                                    }                                       
+                                ],
+                                "InactiveItems" : [
+                                    {
+                                        "Id": 0,
+                                        "Kind": "IncrementalItem",
+                                        "Name": "Deku Stick",
+                                        "Positions": {
+                                            "x": 215,
+                                            "y": 462
+                                        },
+                                        "SheetInformation": {
+                                            "row": 1,
+                                            "column": 1,
+                                            "SpriteSheet": "Normal"
+                                        },
+                                        "isActive": false,
+                                        "Hint": null,
+                                        "OpacityDisable": 0.5,
+                                        "Increment": [
+                                            "20",
+                                            "30"
+                                        ]
+                                    }
+                                ]
+                            }                   
+                        ]
+                    }
+                ],
+                "InactiveItems" : [
+                    {
+                        "Id": 1,
+                        "Kind": "IncrementalItem",
+                        "Name": "Deku Nut",
+                        "Positions": {
+                            "x": 272,
+                            "y": 405
+                        },
+                        "SheetInformation": {
+                            "row": 1,
+                            "column": 2,
+                            "SpriteSheet": "Normal"
+                        },
+                        "isActive": false,
+                        "Hint": null,
+                        "OpacityDisable": 0.5,
+                        "Increment": [
+                            "30",
+                            "40"
+                        ]
+                    }				
+                ]             
+            },
+            {
+                "Id": 6,
+                "Kind": "OpenLinkItem",
+                "Name": "PayPal",
+                "Positions": {
+                    "x": 186,
+                    "y": 636
+                },
+                "SheetInformation": {
+                    "row": 10,
+                    "column": 6,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": true,
+                "Hint": null,
+                "OpacityDisable": 0.5,
+                "Link": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3RNQCK64GWBMS&source=url"
+            },
+            {
+                "Id": 6,
+                "Kind": "OpenLinkItem",
+                "Name": "PayPal",
+                "Positions": {
+                    "x": 186,
+                    "y": 636
+                },
+                "SheetInformation": {
+                    "row": 10,
+                    "column": 6,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": true,
+                "Hint": null,
+                "OpacityDisable": 0.5,
+                "Link": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3RNQCK64GWBMS&source=url"
+            },
+            {
+                "Id": 7,
+                "Kind": "OpenLinkItem",
+                "Name": "Discord",
+                "Positions": {
+                    "x": 245,
+                    "y": 636
+                },
+                "SheetInformation": {
+                    "row": 10,
+                    "column": 7,
+                    "SpriteSheet": "Normal"
+                },
+                "isActive": true,
+                "Hint": null,
+                "OpacityDisable": 0.5,
+                "Link": "https://discord.com/invite/5MQvh7MAGN"
+            }                         
+        ]
+    }
+]

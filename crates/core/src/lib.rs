@@ -1,5 +1,6 @@
 //! Tracker model, item rules and sync protocol, shared by client and server.
 
+pub mod linso;
 pub mod logic;
 pub mod model;
 pub mod protocol;

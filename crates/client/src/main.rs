@@ -5,6 +5,7 @@ mod assets;
 mod home;
 #[cfg(not(target_arch = "wasm32"))]
 mod instance;
+mod local;
 #[cfg(any(target_os = "macos", target_os = "windows"))]
 mod menu;
 mod net;
@@ -32,7 +33,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     #[derive(Parser)]
     #[command(about = "Randomizer tracker")]
     struct Args {
-        /// Tracker to open directly, e.g. `compact`. Shows the menu otherwise.
+        /// Tracker to open directly, e.g. `compact`, or `local/oot64` for a
+        /// LinSoTracker template. Shows the menu otherwise.
         tracker: Option<String>,
         /// Shared room to join. Without it the tracker stays local.
         #[arg(long, requires = "tracker")]
@@ -52,9 +54,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let args = Args::parse();
     let route = match args.tracker {
-        Some(name) => Route::Tracker {
-            name,
-            room: args.room,
+        Some(name) => match name.strip_prefix("local/") {
+            Some(_) if args.room.is_some() => {
+                return Err("LinSoTracker templates cannot go online".into());
+            }
+            Some(local) => Route::Local {
+                name: local.to_owned(),
+            },
+            None => Route::Tracker {
+                name,
+                room: args.room,
+            },
         },
         None => Route::Home,
     };

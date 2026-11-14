@@ -8,7 +8,15 @@ const SEGMENT: &AsciiSet = &NON_ALPHANUMERIC.remove(b'-').remove(b'_').remove(b'
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Route {
     Home,
-    Tracker { name: String, room: Option<String> },
+    /// A restream tracker, alone or in an online room.
+    Tracker {
+        name: String,
+        room: Option<String>,
+    },
+    /// A LinSoTracker template, which never goes online.
+    Local {
+        name: String,
+    },
 }
 
 /// Tracker names become file paths, so only plain folder names are valid.
@@ -34,6 +42,9 @@ impl Route {
                 name: name.to_owned(),
                 room: None,
             }),
+            ["local", name] if is_tracker_name(name) => Some(Self::Local {
+                name: name.to_owned(),
+            }),
             ["tracker", name, room] if is_tracker_name(name) => Some(Self::Tracker {
                 name: name.to_owned(),
                 room: Some(room.to_owned()),
@@ -46,6 +57,7 @@ impl Route {
         match self {
             Self::Home => "/".to_owned(),
             Self::Tracker { name, room: None } => format!("/{name}"),
+            Self::Local { name } => format!("/local/{name}"),
             Self::Tracker {
                 name,
                 room: Some(room),
@@ -75,6 +87,20 @@ mod tests {
             Route::parse("/tracker/compact/my-room"),
             Some(tracker("compact", Some("my-room")))
         );
+    }
+
+    #[test]
+    fn linso_templates_live_under_local() {
+        let route = Route::parse("/local/oot64").unwrap();
+        assert_eq!(
+            route,
+            Route::Local {
+                name: "oot64".into()
+            }
+        );
+        assert_eq!(route.path(), "/local/oot64");
+        // There is no online page for them.
+        assert_eq!(Route::parse("/local/oot64/room"), None);
     }
 
     #[test]

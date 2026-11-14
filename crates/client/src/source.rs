@@ -10,7 +10,7 @@ type FileResult = (String, Result<Vec<u8>, String>);
 #[cfg(not(target_arch = "wasm32"))]
 #[derive(rust_embed::RustEmbed)]
 #[folder = "../../public/"]
-#[exclude = "sources/archives/*"]
+#[exclude = "sources/restream/archives/*"]
 #[exclude = "*.DS_Store"]
 #[exclude = "*.wav"]
 struct Bundled;
@@ -41,7 +41,16 @@ impl Source {
 
     #[cfg(target_arch = "wasm32")]
     fn read(&self, path: String, tx: Sender<FileResult>, ctx: Context) {
-        ehttp::fetch(ehttp::Request::get(format!("/{path}")), move |response| {
+        // Some LinSoTracker files have spaces in their names.
+        let url: String = path
+            .split('/')
+            .map(|segment| {
+                percent_encoding::utf8_percent_encode(segment, percent_encoding::NON_ALPHANUMERIC)
+                    .to_string()
+            })
+            .collect::<Vec<_>>()
+            .join("/");
+        ehttp::fetch(ehttp::Request::get(format!("/{url}")), move |response| {
             let result = match response {
                 Ok(response) if response.ok => Ok(response.bytes),
                 Ok(response) => Err(format!("{path}: HTTP {}", response.status)),

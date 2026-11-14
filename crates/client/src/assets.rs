@@ -43,7 +43,7 @@ fn get<'a>(files: &'a Files, name: &str) -> Result<&'a [u8], Error> {
         .ok_or_else(|| format!("{name}: missing").into())
 }
 
-fn read_png(files: &Files, name: &str) -> Result<ColorImage, Error> {
+pub(crate) fn read_png(files: &Files, name: &str) -> Result<ColorImage, Error> {
     let image = image::load_from_memory(get(files, name)?)
         .map_err(|e| format!("{name}: {e}"))?
         .into_rgba8();
@@ -84,7 +84,7 @@ fn grayscale(image: &ColorImage) -> ColorImage {
 }
 
 /// egui only reads TTF/OTF, and panics on anything else.
-fn to_sfnt(bytes: Vec<u8>) -> Result<Vec<u8>, Error> {
+pub(crate) fn to_sfnt(bytes: Vec<u8>) -> Result<Vec<u8>, Error> {
     match bytes.get(..4) {
         Some(b"wOFF") => Ok(wuff::decompress_woff1(&bytes)?),
         Some(b"wOF2") => Ok(wuff::decompress_woff2(&bytes)?),
@@ -196,7 +196,7 @@ mod tests {
 
     #[test]
     fn every_tracker_loads_and_its_fonts_can_be_used() {
-        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../public/sources");
+        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../public/sources/restream");
         let mut dirs = Vec::new();
         tracker_dirs(&root, &mut dirs);
         assert!(dirs.len() >= 12, "found only {} trackers", dirs.len());

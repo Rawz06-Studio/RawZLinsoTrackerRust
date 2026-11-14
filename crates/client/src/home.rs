@@ -1,5 +1,6 @@
 //! Tracker selection screen, ported from the old `pages/index.vue`.
 
+use crate::route::Route;
 use crate::source::Bundle;
 use eframe::egui::{
     self, Align, Align2, Color32, ColorImage, Context, CursorIcon, FontData, FontFamily, FontId,
@@ -8,19 +9,39 @@ use eframe::egui::{
 use std::collections::HashMap;
 use std::sync::Arc;
 use tracker_core::Tracker;
+use tracker_core::linso::Template;
 use tracker_core::model::Info;
 
 pub const SIZE: Vec2 = vec2(1280.0, 720.0);
-const TRACKERS: [&str; 5] = [
+/// The restream trackers, which can go online.
+const RESTREAM: [&str; 5] = [
     "compact",
     "compactfr",
     "compactrsl",
     "compactrot",
     "compacttp",
 ];
+/// LinSoTracker's own templates, local only.
+const LOCAL: [&str; 12] = [
+    "oot64",
+    "oot64keysanity",
+    "oot3D",
+    "oot3Dkeysanity",
+    "majorasmask64",
+    "majorasmask3D",
+    "OoTxMM",
+    "alttp",
+    "twilightprincess",
+    "twilightprincessmap",
+    "Tutorial",
+    "NewFeatures",
+];
 const FONT: &str = "ViceCitySans";
 
-const GRID_ORIGIN: Vec2 = vec2(40.0, 100.0);
+const GRID_LEFT: f32 = 40.0;
+/// Each section is a title, then rows of trackers under it.
+const SECTIONS: [(&str, f32); 2] = [("Restream", 92.0), ("Local - LinSoTracker", 248.0)];
+const SECTION_TITLE_HEIGHT: f32 = 20.0;
 const GRID_COLUMNS: usize = 5;
 const CELL: f32 = 122.0;
 const DETAIL_LEFT: f32 = 640.0;
@@ -42,7 +63,7 @@ const CREDITS: [(&str, Color32); 4] = [
         Color32::from_rgb(0xf3, 0xf4, 0xf6),
     ),
     (
-        "Only for Restream use, please use Linsotracker app for personal use",
+        "Restream layouts are for Restream use only, use Local ones for personal use",
         Color32::from_rgb(0xfb, 0x2c, 0x36),
     ),
 ];
@@ -51,7 +72,8 @@ type Files = HashMap<String, Vec<u8>>;
 type Error = Box<dyn std::error::Error + Send + Sync>;
 
 struct Entry {
-    key: &'static str,
+    section: usize,
+    route: Route,
     info: Info,
     icon: TextureHandle,
     illustration: TextureHandle,
@@ -93,9 +115,9 @@ impl Home {
         ] {
             bundle.request(file);
         }
-        for tracker in TRACKERS {
+        for dir in Self::dirs() {
             for file in ["tracker.json", "icon.png", "illustration.png"] {
-                bundle.request(&format!("sources/{tracker}/{file}"));
+                bundle.request(&format!("{dir}/{file}"));
             }
         }
     }
@@ -115,15 +137,26 @@ impl Home {
         ctx.set_fonts(fonts);
 
         let mut entries = Vec::new();
-        for key in TRACKERS {
-            let dir = format!("sources/{key}");
+        for (index, dir) in Self::dirs().enumerate() {
             let json = files
                 .get(&format!("{dir}/tracker.json"))
                 .ok_or_else(|| format!("{dir}: tracker.json missing"))?;
-            let tracker = Tracker::parse(std::str::from_utf8(json)?)?;
+            let json = std::str::from_utf8(json)?;
+            let (section, route, info) = match index.checked_sub(RESTREAM.len()) {
+                None => {
+                    let name = RESTREAM[index].to_owned();
+                    let route = Route::Tracker { name, room: None };
+                    (0, route, Tracker::parse(json)?.info)
+                }
+                Some(local) => {
+                    let name = LOCAL[local].to_owned();
+                    (1, Route::Local { name }, Template::parse(json)?.info)
+                }
+            };
             entries.push(Entry {
-                key,
-                info: tracker.info,
+                section,
+                route,
+                info,
                 icon: texture(ctx, files, &format!("{dir}/icon.png"))?,
                 illustration: texture(ctx, files, &format!("{dir}/illustration.png"))?,
             });
@@ -137,31 +170,54 @@ impl Home {
         })
     }
 
+    fn dirs() -> impl Iterator<Item = String> {
+        let restream = RESTREAM
+            .iter()
+            .map(|name| format!("sources/restream/{name}"));
+        let local = LOCAL.iter().map(|name| format!("sources/linso/{name}"));
+        restream.chain(local)
+    }
+
     /// Returns the tracker the user clicked on.
-    pub fn show(&mut self, ui: &mut egui::Ui) -> Option<&'static str> {
+    pub fn show(&mut self, ui: &mut egui::Ui) -> Option<Route> {
         let origin = ui.max_rect().min;
         let painter = ui.painter().clone();
         let background = Rect::from_min_size(origin, self.background.size_vec2());
         painter.image(self.background.id(), background, UNIT_UV, Color32::WHITE);
         self.draw_credits(&painter, origin);
 
+        let title_font = FontId::new(18.0, FontFamily::Name(FONT.into()));
+        for (title, top) in SECTIONS {
+            painter.text(
+                origin + vec2(GRID_LEFT, top),
+                Align2::LEFT_TOP,
+                title,
+                title_font.clone(),
+                Color32::from_rgb(0xf3, 0xf4, 0xf6),
+            );
+        }
+
         let mut chosen = None;
         self.hovered = None;
+        let mut in_section = [0usize; SECTIONS.len()];
         for index in 0..self.entries.len() {
             let entry = &self.entries[index];
-            let (column, row) = (index % GRID_COLUMNS, index / GRID_COLUMNS);
+            let place = in_section[entry.section];
+            in_section[entry.section] += 1;
+            let (column, row) = (place % GRID_COLUMNS, place / GRID_COLUMNS);
+            let top = SECTIONS[entry.section].1 + SECTION_TITLE_HEIGHT;
             let cell = Rect::from_min_size(
-                origin + GRID_ORIGIN + vec2(column as f32, row as f32) * CELL,
+                origin + vec2(GRID_LEFT, top) + vec2(column as f32, row as f32) * CELL,
                 Vec2::splat(CELL),
             );
             let response = ui
-                .interact(cell, ui.scope_id().with(entry.key), Sense::click())
+                .interact(cell, ui.scope_id().with(entry.route.path()), Sense::click())
                 .on_hover_cursor(CursorIcon::PointingHand);
             if response.hovered() {
                 self.hovered = Some(index);
             }
             if response.clicked() {
-                chosen = Some(entry.key);
+                chosen = Some(entry.route.clone());
             }
 
             let fade =

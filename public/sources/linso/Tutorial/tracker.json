@@ -1,0 +1,1471 @@
+[
+    {
+        "Informations": {
+            "Creator": "BusinessAlex",
+            "Name": "Tutorial",
+            "Version": "1.1",
+            "Credits": "Nintendo, BusinessAlex"
+        }
+    },
+    {
+        "Datas": {
+            "Dimensions": {
+                "width": 1280,
+                "height": 720
+            },
+            "Background": "background.png",
+            "BackgroundColor": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+            },
+            "Items": {
+                "Item": {
+                    "ItemsSheet": "items.png",
+                    "ItemsSheetDimensions": {
+                        "width": 32,
+                        "height": 32
+                    }
+				},
+				"Basic": {
+                    "ItemsSheet": "preparation_chapters.png",
+                    "ItemsSheetDimensions": {
+                        "width": 400,
+                        "height": 40
+                    }
+				},
+				"Chapter": {
+                    "ItemsSheet": "item_chapters.png",
+                    "ItemsSheetDimensions": {
+                        "width": 200,
+                        "height": 96
+                    }
+				}
+            }
+        }
+    },
+    {
+        "Fonts": {
+            "incrementalItemFont": {
+                "Name": "ChiaroStd.otf",
+                "Size": 12,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 0
+                    }
+                }
+            },
+            "evolutionItemFont": {
+                "Name": "ChiaroStd.otf",
+                "Size": 12,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 0
+                    }
+                }
+            },
+            "countItemFont": {
+                "Name": "ChiaroStd.otf",
+                "Size": 12,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 0
+                    }
+                }
+            },
+            "labelItemFont": {
+                "Name": "ChiaroStd.otf",
+                "Size": 10,
+                "Colors": {
+                    "Normal": {
+                        "r": 255,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 255
+                    }
+                }
+            },
+            "hintFont": {
+                "Name": "CharlemagneStd-Bold.otf",
+                "Size": 8,
+                "Colors": {
+                    "Normal": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 255
+                    },
+                    "Max": {
+                        "r": 0,
+                        "g": 255,
+                        "b": 255
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Items": [
+			{
+				"Id": 19,
+				"Kind": "SubMenuItem",
+				"Name": "Help",
+				"Positions": {
+					"x": 1218,
+					"y": 30
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 8,
+					"SpriteSheet": "Item"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "help.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 20,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 1000,
+							"y": 1000
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.0
+					}
+				]
+			},
+			{
+				"Id": 1,
+				"Kind": "SubMenuItem",
+				"Name": "Helpful Tools",
+				"Positions": {
+					"x": 120,
+					"y": 368
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 1,
+					"SpriteSheet": "Basic"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "helpful_tools.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 100,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 1000,
+							"y": 1000
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.0
+					}
+				]
+			},
+			{
+				"Id": 2,
+				"Kind": "SubMenuItem",
+				"Name": "Starting out",
+				"Positions": {
+					"x": 120,
+					"y": 416
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 1,
+					"SpriteSheet": "Basic"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "starting_out.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 200,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 1000,
+							"y": 1000
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.0
+					}
+				]
+			},
+			{
+				"Id": 3,
+				"Kind": "SubMenuItem",
+				"Name": "Image structure",
+				"Positions": {
+					"x": 120,
+					"y": 464
+				},
+				"SheetInformation": {
+					"row": 3,
+					"column": 1,
+					"SpriteSheet": "Basic"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "image_structure.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 300,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 1000,
+							"y": 1000
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.0
+					}
+				]
+			},
+			{
+				"Id": 4,
+				"Kind": "SubMenuItem",
+				"Name": "Fonts",
+				"Positions": {
+					"x": 120,
+					"y": 512
+				},
+				"SheetInformation": {
+					"row": 4,
+					"column": 1,
+					"SpriteSheet": "Basic"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "fonts.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 400,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 1000,
+							"y": 1000
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.0
+					}
+				]
+			},
+			{
+				"Id": 5,
+				"Kind": "SubMenuItem",
+				"Name": "json structure",
+				"Positions": {
+					"x": 120,
+					"y": 560
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 1,
+					"SpriteSheet": "Basic"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "json_structure.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 500,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 1000,
+							"y": 1000
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.0
+					}
+				]
+			},
+			{
+				"Id": 7,
+				"Kind": "SubMenuItem",
+				"Name": "Items",
+				"Positions": {
+					"x": 812,
+					"y": 252
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 1,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "normalitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 700,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 427,
+							"y": 229
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5
+					},
+					{
+						"Id": 700,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 427,
+							"y": 346
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 2,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5
+					},
+					{
+						"Id": 701,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 427,
+							"y": 429
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5
+					},
+					{
+						"Id": 721,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 547,
+							"y": 429
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": true,
+						"Hint": null,
+						"OpacityDisable": 0.5
+					},
+					{
+						"Id": 702,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 427,
+							"y": 529
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5
+					},
+					{
+						"Id": 702,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 547,
+							"y": 529
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": "Hint",
+						"OpacityDisable": 0.5
+					},
+					{
+						"Id": 703,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 427,
+							"y": 612
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 1.0
+					},
+					{
+						"Id": 704,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 547,
+							"y": 612
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5
+					},
+					{
+						"Id": 705,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 667,
+							"y": 612
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.2
+					},
+					{
+						"Id": 706,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 787,
+							"y": 612
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.0
+					}
+				]
+			},
+			{
+				"Id": 8,
+				"Kind": "SubMenuItem",
+				"Name": "CountItems",
+				"Positions": {
+					"x": 604,
+					"y": 356
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 2,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "countitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 803,
+						"Kind": "CountItem",
+						"Name": "Heart Container",
+						"Positions": {
+							"x": 427,
+							"y": 253
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 6,
+							"SpriteSheet": "Item"
+						},
+						"isActive": true,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"valueMin": 3,
+						"valueMax": 20,
+						"valueIncrease": 1,
+						"valueStart": 3
+					},
+					{
+						"Id": 800,
+						"Kind": "CountItem",
+						"Name": "Gold Skulltulas",
+						"Positions": {
+							"x": 427,
+							"y": 319
+						},
+						"SheetInformation": {
+							"row": 3,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": true,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"valueMin": 0,
+						"valueMax": 100,
+						"valueIncrease": 1,
+						"valueStart": 0
+					},
+					{
+						"Id": 801,
+						"Kind": "CountItem",
+						"Name": "Gold Skulltulas",
+						"Positions": {
+							"x": 427,
+							"y": 385
+						},
+						"SheetInformation": {
+							"row": 3,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": true,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"valueMin": 0,
+						"valueMax": 100,
+						"valueIncrease": 10,
+						"valueStart": 0
+					},
+					{
+						"Id": 802,
+						"Kind": "CountItem",
+						"Name": "Heart Container",
+						"Positions": {
+							"x": 427,
+							"y": 451
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 6,
+							"SpriteSheet": "Item"
+						},
+						"isActive": true,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"valueMin": 0,
+						"valueMax": 20,
+						"valueIncrease": 1,
+						"valueStart": 3
+					}
+				]
+			},
+			{
+				"Id": 9,
+				"Kind": "SubMenuItem",
+				"Name": "AlternateCountItems",
+				"Positions": {
+					"x": 812,
+					"y": 356
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 1,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "alternatecountitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 900,
+						"Kind": "AlternateCountItem",
+						"Name": "Key",
+						"Positions": {
+							"x": 427,
+							"y": 302
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"maxValue": 5,
+						"maxValueAlternate": 5
+					},
+					{
+						"Id": 901,
+						"Kind": "AlternateCountItem",
+						"Name": "Key",
+						"Positions": {
+							"x": 427,
+							"y": 385
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": "Alt",
+						"OpacityDisable": 0.5,
+						"maxValue": 5,
+						"maxValueAlternate": 7
+					}
+				]
+			},
+			{
+				"Id": 10,
+				"Kind": "SubMenuItem",
+				"Name": "LabelItems",
+				"Positions": {
+					"x": 1020,
+					"y": 356
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 2,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "labelitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 1000,
+						"Kind": "LabelItem",
+						"Name": "Fire Medallion",
+						"Positions": {
+							"x": 427,
+							"y": 302
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 2,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"OffsetLabel": 6,
+						"LabelList": [
+							"????",
+							"FREE",
+							"DEKU",
+							"DC",
+							"JABU",
+							"FOREST",
+							"FIRE",
+							"WATER",
+							"SHADOW",
+							"SPIRIT"
+						]
+					},
+					{
+						"Id": 1000,
+						"Kind": "LabelItem",
+						"Name": "Fire Medallion",
+						"Positions": {
+							"x": 547,
+							"y": 302
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 2,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"OffsetLabel": 16,
+						"LabelList": [
+							"????",
+							"FREE",
+							"DEKU",
+							"DC",
+							"JABU",
+							"FOREST",
+							"FIRE",
+							"WATER",
+							"SHADOW",
+							"SPIRIT"
+						]
+					},
+					{
+						"Id": 1000,
+						"Kind": "LabelItem",
+						"Name": "Fire Medallion",
+						"Positions": {
+							"x": 667,
+							"y": 302
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 2,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"OffsetLabel": 24,
+						"LabelList": [
+							"????",
+							"FREE",
+							"DEKU",
+							"DC",
+							"JABU",
+							"FOREST",
+							"FIRE",
+							"WATER",
+							"SHADOW",
+							"SPIRIT"
+						]
+					},
+					{
+						"Id": 1000,
+						"Kind": "LabelItem",
+						"Name": "Fire Medallion",
+						"Positions": {
+							"x": 787,
+							"y": 302
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 2,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"OffsetLabel": 32,
+						"LabelList": [
+							"????",
+							"FREE",
+							"DEKU",
+							"DC",
+							"JABU",
+							"FOREST",
+							"FIRE",
+							"WATER",
+							"SHADOW",
+							"SPIRIT"
+						]
+					},
+					{
+						"Id": 1001,
+						"Kind": "LabelItem",
+						"Name": "Fire Medallion",
+						"Positions": {
+							"x": 427,
+							"y": 419
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 2,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"OffsetLabel": 6,
+						"LabelList": [
+							"????",
+							"FREE",
+							"DEKU",
+							"DC",
+							"JABU",
+							"FOREST",
+							"FIRE",
+							"WATER",
+							"SHADOW",
+							"SPIRIT"
+						]
+					}
+				]
+			},
+			{
+				"Id": 11,
+				"Kind": "SubMenuItem",
+				"Name": "IncrementalItems",
+				"Positions": {
+					"x": 604,
+					"y": 460
+				},
+				"SheetInformation": {
+					"row": 3,
+					"column": 1,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "incrementalitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 1100,
+						"Kind": "IncrementalItem",
+						"Name": "Fairy Bow",
+						"Positions": {
+							"x": 427,
+							"y": 293
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 6,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"StartIncrementIndex": 0,
+						"Increment": [
+							"30",
+							"40",
+							"50"
+						]
+					},
+					{
+						"Id": 1101,
+						"Kind": "IncrementalItem",
+						"Name": "Fairy Bow",
+						"Positions": {
+							"x": 547,
+							"y": 293
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 6,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"StartIncrementIndex": 1,
+						"Increment": [
+							"30",
+							"40",
+							"50"
+						]
+					},
+					{
+						"Id": 1101,
+						"Kind": "IncrementalItem",
+						"Name": "Fairy Bow",
+						"Positions": {
+							"x": 667,
+							"y": 293
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 6,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"StartIncrementIndex": 2,
+						"Increment": [
+							"30",
+							"40",
+							"50"
+						]
+					},
+					{
+						"Id": 1100,
+						"Kind": "IncrementalItem",
+						"Name": "Fairy Bow",
+						"Positions": {
+							"x": 427,
+							"y": 410
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 6,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"StartIncrementIndex": 0,
+						"Increment": [
+							"30",
+							"40",
+							"50"
+						]
+					}
+				]
+			},
+			{
+				"Id": 12,
+				"Kind": "SubMenuItem",
+				"Name": "EvolutionItems",
+				"Positions": {
+					"x": 812,
+					"y": 460
+				},
+				"SheetInformation": {
+					"row": 3,
+					"column": 2,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "evolutionitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 1200,
+						"Kind": "EvolutionItem",
+						"Name": "Goron Bracelet",
+						"Positions": {
+							"x": 427,
+							"y": 278
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 3,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"Label": "L1",
+						"LabelCenter": false,
+						"NextItems": [
+							{
+								"Id": 1201,
+								"Name": "Silver Gauntlets",
+								"SheetInformation": {
+									"row": 1,
+									"column": 4,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L2"
+							},
+							{
+								"Id": 1202,
+								"Name": "Golden Gauntlets",
+								"SheetInformation": {
+									"row": 1,
+									"column": 5,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L3"
+							}
+						]
+					},
+					{
+						"Id": 1201,
+						"Kind": "EvolutionItem",
+						"Name": "Goron Bracelet",
+						"Positions": {
+							"x": 427,
+							"y": 361
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 3,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"Label": "L1",
+						"LabelCenter": false,
+						"NextItems": [
+							{
+								"Id": 1201,
+								"Name": "Silver Gauntlets",
+								"SheetInformation": {
+									"row": 1,
+									"column": 4,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L2"
+							},
+							{
+								"Id": 1202,
+								"Name": "Golden Gauntlets",
+								"SheetInformation": {
+									"row": 1,
+									"column": 5,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L3"
+							}
+						]
+					},
+					{
+						"Id": 1202,
+						"Kind": "EvolutionItem",
+						"Name": "Goron Bracelet",
+						"Positions": {
+							"x": 547,
+							"y": 361
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 3,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"Label": "L1",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 1201,
+								"Name": "Silver Gauntlets",
+								"SheetInformation": {
+									"row": 1,
+									"column": 4,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L2"
+							},
+							{
+								"Id": 1202,
+								"Name": "Golden Gauntlets",
+								"SheetInformation": {
+									"row": 1,
+									"column": 5,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L3"
+							}
+						]
+					}
+				]
+			},
+			{
+				"Id": 13,
+				"Kind": "SubMenuItem",
+				"Name": "AlternateEvolutionItems",
+				"Positions": {
+					"x": 1020,
+					"y": 460
+				},
+				"SheetInformation": {
+					"row": 4,
+					"column": 1,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "alternateevolutionitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 1300,
+						"Kind": "AlternateEvolutionItem",
+						"Name": "Kokiri Emerald",
+						"Positions": {
+							"x": 427,
+							"y": 220
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 3,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"Label": "L1",
+						"LabelCenter": false,
+						"GlobalLabel": null,
+						"NextItems": [
+							{
+								"Id": 1301,
+								"Name": "Goron Ruby",
+								"SheetInformation": {
+									"row": 2,
+									"column": 4,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L2"
+							},
+							{
+								"Id": 1302,
+								"Name": "Zora Sapphire",
+								"SheetInformation": {
+									"row": 2,
+									"column": 5,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L3"
+							}
+						]
+					},
+					{
+						"Id": 1301,
+						"Kind": "AlternateEvolutionItem",
+						"Name": "Kokiri Emerald",
+						"Positions": {
+							"x": 427,
+							"y": 303
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 3,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"Label": "L1",
+						"LabelCenter": true,
+						"GlobalLabel": null,
+						"NextItems": [
+							{
+								"Id": 1301,
+								"Name": "Goron Ruby",
+								"SheetInformation": {
+									"row": 2,
+									"column": 4,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L2"
+							},
+							{
+								"Id": 1302,
+								"Name": "Zora Sapphire",
+								"SheetInformation": {
+									"row": 2,
+									"column": 5,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L3"
+							}
+						]
+					},
+					{
+						"Id": 1301,
+						"Kind": "AlternateEvolutionItem",
+						"Name": "Kokiri Emerald",
+						"Positions": {
+							"x": 547,
+							"y": 303
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 3,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"Label": "L1",
+						"LabelCenter": false,
+						"GlobalLabel": null,
+						"NextItems": [
+							{
+								"Id": 1301,
+								"Name": "Goron Ruby",
+								"SheetInformation": {
+									"row": 2,
+									"column": 4,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L2"
+							},
+							{
+								"Id": 1302,
+								"Name": "Zora Sapphire",
+								"SheetInformation": {
+									"row": 2,
+									"column": 5,
+									"SpriteSheet": "Item"
+								},
+								"Label": "L3"
+							}
+						]
+					},
+					{
+						"Id": 1302,
+						"Kind": "AlternateEvolutionItem",
+						"Name": "Kokiri Emerald",
+						"Positions": {
+							"x": 427,
+							"y": 420
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 3,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"Label": null,
+						"LabelCenter": false,
+						"GlobalLabel": "Stones",
+						"NextItems": [
+							{
+								"Id": 1301,
+								"Name": "Goron Ruby",
+								"SheetInformation": {
+									"row": 2,
+									"column": 4,
+									"SpriteSheet": "Item"
+								},
+								"Label": null
+							},
+							{
+								"Id": 1302,
+								"Name": "Zora Sapphire",
+								"SheetInformation": {
+									"row": 2,
+									"column": 5,
+									"SpriteSheet": "Item"
+								},
+								"Label": null
+							}
+						]
+					}
+				]
+			},
+			{
+				"Id": 14,
+				"Kind": "SubMenuItem",
+				"Name": "CheckItems",
+				"Positions": {
+					"x": 604,
+					"y": 564
+				},
+				"SheetInformation": {
+					"row": 4,
+					"column": 2,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "checkitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 1400,
+						"Kind": "CheckItem",
+						"Name": "Keaton Mask",
+						"Positions": {
+							"x": 427,
+							"y": 369
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 2,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"CheckImageSheetInformation": {
+							"row": 2,
+							"column": 7,
+							"SpriteSheet": "Item"
+						}
+					}
+				]
+			},
+			{
+				"Id": 15,
+				"Kind": "SubMenuItem",
+				"Name": "GoModeItem",
+				"Positions": {
+					"x": 812,
+					"y": 564
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 1,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "gomodeitem.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 1500,
+						"Kind": "GoModeItem",
+						"Name": "Go Mode",
+						"Positions": {
+							"x": 427,
+							"y": 385
+						},
+						"SheetInformation": {
+							"row": 2,
+							"column": 8,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5,
+						"BackgroundGlow": "light.png"
+					}
+				]
+			},
+			{
+				"Id": 16,
+				"Kind": "SubMenuItem",
+				"Name": "SubMenuItems",
+				"Positions": {
+					"x": 1020,
+					"y": 564
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 2,
+					"SpriteSheet": "Chapter"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 1.0,
+				"Background": "submenuitems.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 1600,
+						"Kind": "Item",
+						"Name": "Boomerang",
+						"Positions": {
+							"x": 1000,
+							"y": 1000
+						},
+						"SheetInformation": {
+							"row": 1,
+							"column": 1,
+							"SpriteSheet": "Item"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.5
+					}
+				]
+			}
+        ]
+    }
+]

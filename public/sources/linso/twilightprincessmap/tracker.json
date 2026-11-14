@@ -1,0 +1,4732 @@
+[
+	{
+		"Informations": {
+			"Creator": "Korambu, LinSoraK & Luzagar",
+			"Name": "Twilight Princess - Map Template",
+			"Version": "1.2.0",
+			"Credits": "Nintendo",
+			"Comments": "Special thanks to RawZ06, Papy_Grant, Balthy, Zekann"
+		}
+	},
+	{
+		"Datas": {
+			"Dimensions": {
+				"width": 1222,
+				"height": 783
+			},
+			"Background": "background.png",
+			"BackgroundColor": {
+				"r": 0,
+				"g": 0,
+				"b": 0
+			},
+			"Items": {
+				"Normal": {
+					"ItemsSheet": "items.png",
+					"ItemsSheetDimensions": {
+						"width": 65,
+						"height": 65
+					}
+				},
+				"RulesButton": {
+					"ItemsSheet": "dungeon_access_button.png",
+					"ItemsSheetDimensions": {
+						"width": 168,
+						"height": 58
+					}
+				}
+			}
+		}
+	},
+	{
+		"Fonts": {
+			"incrementalItemFont": {
+				"Name": "Bohemian Soul.otf",
+				"Size": 18,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"Max": {
+						"r": 255,
+						"g": 200,
+						"b": 50
+					}
+				}
+			},
+			"evolutionItemFont": {
+				"Name": "Bohemian Soul.otf",
+				"Size": 18,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"Max": {
+						"r": 255,
+						"g": 200,
+						"b": 50
+					}
+				}
+			},
+			"countItemFont": {
+				"Name": "visitor1.ttf",
+				"Size": 18,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"Max": {
+						"r": 0,
+						"g": 255,
+						"b": 0
+					}
+				}
+			},
+			"labelItemFont": {
+				"Name": "Carena-Regular.otf",
+				"Size": 15,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"Max": {
+						"r": 0,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"hintFont": {
+				"Name": "lm.ttf",
+				"Size": 14,
+				"Colors": {
+					"Normal": {
+						"r": 220,
+						"g": 0,
+						"b": 220
+					},
+					"Max": {
+						"r": 200,
+						"g": 0,
+						"b": 200
+					}
+				}
+			},
+			"subMenuItemFont": {
+				"Name": "Carena-Regular.otf",
+				"Size": 18,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"Max": {
+						"r": 255,
+						"g": 200,
+						"b": 50
+					}
+				}
+			},
+			"mapFont": {
+				"Name": "Carena-Regular.otf",
+				"Size": 20,
+				"Colors": {
+					"Logic": {
+						"r": 0,
+						"g": 255,
+						"b": 0
+					},
+					"NotLogic": {
+						"r": 255,
+						"g": 0,
+						"b": 0
+					},
+					"Done": {
+						"r": 128,
+						"g": 128,
+						"b": 128
+					},
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					},
+					"Focused": {
+						"r": 0,
+						"g": 255,
+						"b": 255
+					},
+					"HaveLogic": {
+						"r": 255,
+						"g": 165,
+						"b": 0
+					}
+				}
+			},
+			"mapFontTitle": {
+				"Name": "Bohemian Soul.otf",
+				"Size": 28,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"mapFontSubTitle": {
+				"Name": "BaskervaldADFStd-BoldItalic.otf",
+				"Size": 22,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"mapFontChecksNumber": {
+				"Name": "Carena-Regular.otf",
+				"Size": 13,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"mapFontPagesIndicator": {
+				"Name": "Carena-Regular.otf",
+				"Size": 24,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"mapFontListMaps": {
+				"Name": "Carena-Regular.otf",
+				"Size": 24,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"mapFontCheckHint": {
+				"Name": "Carena-Regular.otf",
+				"Size": 16,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"mapFontCheckZoneHint": {
+				"Name": "BaskervaldADFStd-BoldItalic.otf",
+				"Size": 15,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			},
+			"rulesOptionsFontTitle": {
+				"Name": "Bohemian Soul.otf",
+				"Size": 28,
+				"Colors": {
+					"Normal": {
+						"r": 255,
+						"g": 255,
+						"b": 255
+					}
+				}
+			}
+		}
+	},
+	{
+		"Items": [
+			{
+				"Id": 0,
+				"Kind": "EvolutionItem",
+				"Name": "Fishing Rod",
+				"Positions": {
+					"x": 27,
+					"y": 29
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 1,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Coral Earring",
+						"SheetInformation": {
+							"row": 1,
+							"column": 2,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 1,
+				"Kind": "Item",
+				"Name": "Slingshot",
+				"Positions": {
+					"x": 97,
+					"y": 29
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 2,
+				"Kind": "Item",
+				"Name": "Lantern",
+				"Positions": {
+					"x": 168,
+					"y": 29
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 4,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 3,
+				"Kind": "Item",
+				"Name": "Gale Boomerang",
+				"Positions": {
+					"x": 240,
+					"y": 29
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 5,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 4,
+				"Kind": "AlternateCountItem",
+				"Name": "Bottle",
+				"Positions": {
+					"x": 311,
+					"y": 29
+				},
+				"SheetInformation": {
+					"row": 3,
+					"column": 2,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"maxValue": 4,
+				"maxValueAlternate": 4
+			},
+			{
+				"Id": 5,
+				"Kind": "Item",
+				"Name": "Bomb",
+				"Positions": {
+					"x": 27,
+					"y": 244
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 6,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 6,
+				"Kind": "Item",
+				"Name": "Iron Boots",
+				"Positions": {
+					"x": 27,
+					"y": 100
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 7,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 7,
+				"Kind": "IncrementalItem",
+				"Name": "Hero Bow",
+				"Positions": {
+					"x": 97,
+					"y": 100
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 8,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"StartIncrementIndex": 0,
+				"Increment": [
+					"30",
+					"60",
+					"100"
+				]
+			},
+			{
+				"Id": 8,
+				"Kind": "EvolutionItem",
+				"Name": "Clawshot",
+				"Positions": {
+					"x": 168,
+					"y": 100
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 9,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Double Clawshot",
+						"SheetInformation": {
+							"row": 1,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 9,
+				"Kind": "Item",
+				"Name": "Spinner",
+				"Positions": {
+					"x": 240,
+					"y": 100
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 1,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 10,
+				"Kind": "Item",
+				"Name": "Water Bomb",
+				"Positions": {
+					"x": 97,
+					"y": 244
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 2,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 11,
+				"Kind": "Item",
+				"Name": "Ball and Chain",
+				"Positions": {
+					"x": 27,
+					"y": 172
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 12,
+				"Kind": "EvolutionItem",
+				"Name": "Dominion Rod",
+				"Positions": {
+					"x": 97,
+					"y": 172
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 4,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Dominion Rod 2",
+						"SheetInformation": {
+							"row": 2,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 13,
+				"Kind": "Item",
+				"Name": "Hawkeye",
+				"Positions": {
+					"x": 168,
+					"y": 172
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 6,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 14,
+				"Kind": "EvolutionItem",
+				"Name": "Renado Letter",
+				"Positions": {
+					"x": 240,
+					"y": 172
+				},
+				"SheetInformation": {
+					"row": 2,
+					"column": 7,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Invoice",
+						"SheetInformation": {
+							"row": 2,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Wooden Statue",
+						"SheetInformation": {
+							"row": 2,
+							"column": 9,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 2,
+						"Name": "Ilia Charm",
+						"SheetInformation": {
+							"row": 2,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 15,
+				"Kind": "AlternateCountItem",
+				"Name": "Bomb Bag",
+				"Positions": {
+					"x": 168,
+					"y": 244
+				},
+				"SheetInformation": {
+					"row": 4,
+					"column": 5,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"maxValue": 3,
+				"maxValueAlternate": 3
+			},
+			{
+				"Id": 16,
+				"Kind": "Item",
+				"Name": "Giant Bomb Bag",
+				"Positions": {
+					"x": 240,
+					"y": 244
+				},
+				"SheetInformation": {
+					"row": 4,
+					"column": 6,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 17,
+				"Kind": "LabelItem",
+				"Name": "Poe Scent",
+				"Positions": {
+					"x": 27,
+					"y": 317
+				},
+				"SheetInformation": {
+					"row": 4,
+					"column": 9,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Poe"
+				]
+			},
+			{
+				"Id": 18,
+				"Kind": "LabelItem",
+				"Name": "Reekfish Scent",
+				"Positions": {
+					"x": 97,
+					"y": 317
+				},
+				"SheetInformation": {
+					"row": 4,
+					"column": 10,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Reekfish"
+				]
+			},
+			{
+				"Id": 19,
+				"Kind": "LabelItem",
+				"Name": "Medicine Scent",
+				"Positions": {
+					"x": 168,
+					"y": 317
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 1,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Medicine"
+				]
+			},
+			{
+				"Id": 20,
+				"Kind": "EvolutionItem",
+				"Name": "Vessel of Light",
+				"Positions": {
+					"x": 168,
+					"y": 463
+				},
+				"SheetInformation": {
+					"row": 7,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Vessel of Light II",
+						"SheetInformation": {
+							"row": 7,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Vessel of Light III",
+						"SheetInformation": {
+							"row": 7,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 21,
+				"Kind": "EvolutionItem",
+				"Name": "Wallet",
+				"Positions": {
+					"x": 311,
+					"y": 389
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 10,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": true,
+				"Hint": "IW",
+				"OpacityDisable": 0.4,
+				"Label": "300",
+				"AlternativeLabel": "1000",
+				"LabelCenter": true,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Big Wallet",
+						"SheetInformation": {
+							"row": 7,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						},
+						"Label": "600",
+						"AlternativeLabel": "5000"
+					},
+					{
+						"Id": 1,
+						"Name": "Giant Wallet",
+						"SheetInformation": {
+							"row": 7,
+							"column": 2,
+							"SpriteSheet": "Normal"
+						},
+						"Label": "1000",
+						"AlternativeLabel": "9999"
+					}
+				]
+			},
+			{
+				"Id": 22,
+				"Kind": "AlternateCountItem",
+				"Name": "Hidden Skills",
+				"Positions": {
+					"x": 240,
+					"y": 389
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 2,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"maxValue": 7,
+				"maxValueAlternate": 7
+			},
+			{
+				"Id": 23,
+				"Kind": "EvolutionItem",
+				"Name": "Ancient Sky Book",
+				"Positions": {
+						"x": 240,
+						"y": 463
+				},
+				"SheetInformation": {
+						"row": 5,
+						"column": 3,
+						"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+						{
+								"Id": 0,
+								"Name": "Ancient Sky Book I",
+								"SheetInformation": {
+										"row": 5,
+										"column": 3,
+										"SpriteSheet": "Normal"
+								},
+								"Label": "1"
+						},
+						{
+								"Id": 1,
+								"Name": "Ancient Sky Book II",
+								"SheetInformation": {
+										"row": 5,
+										"column": 3,
+										"SpriteSheet": "Normal"
+								},
+								"Label": "2"
+						},
+						{
+								"Id": 2,
+								"Name": "Ancient Sky Book III",
+								"SheetInformation": {
+										"row": 5,
+										"column": 3,
+										"SpriteSheet": "Normal"
+								},
+								"Label": "3"
+						},
+						{
+								"Id": 3,
+								"Name": "Ancient Sky Book IV",
+								"SheetInformation": {
+										"row": 5,
+										"column": 3,
+										"SpriteSheet": "Normal"
+								},
+								"Label": "4"
+						},
+						{
+								"Id": 4,
+								"Name": "Ancient Sky Book V",
+								"SheetInformation": {
+										"row": 5,
+										"column": 3,
+										"SpriteSheet": "Normal"
+								},
+								"Label": "5"
+						},                    
+						{
+								"Id": 5,
+								"Name": "Ancient Sky Book VI",
+								"SheetInformation": {
+										"row": 5,
+										"column": 3,
+										"SpriteSheet": "Normal"
+								},
+								"Label": "6"
+						}
+				]
+		},
+			{
+				"Id": 24,
+				"Kind": "AlternateCountItem",
+				"Name": "Poe Souls",
+				"Positions": {
+					"x": 311,
+					"y": 463
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 6,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"maxValue": 60,
+				"maxValueAlternate": 60
+			},
+			{
+				"Id": 25,
+				"Kind": "EvolutionItem",
+				"Name": "Ordon Shield",
+				"Positions": {
+					"x": 27,
+					"y": 534
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 1,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Wooden Shield",
+						"SheetInformation": {
+							"row": 6,
+							"column": 2,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 26,
+				"Kind": "Item",
+				"Name": "Hylian Shield",
+				"Positions": {
+					"x": 97,
+					"y": 534
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 27,
+				"Kind": "EvolutionItem",
+				"Name": "Wooden Sword",
+				"Positions": {
+					"x": 27,
+					"y": 463
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 7,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Ordon Sword",
+						"SheetInformation": {
+							"row": 5,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Master Sword",
+						"SheetInformation": {
+							"row": 5,
+							"column": 9,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 2,
+						"Name": "Light Sword",
+						"SheetInformation": {
+							"row": 5,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 28,
+				"Kind": "Item",
+				"Name": "Crystal",
+				"Positions": {
+					"x": 97,
+					"y": 463
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 9,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 29,
+				"Kind": "LabelItem",
+				"Name": "Auru Memo",
+				"Positions": {
+					"x": 27,
+					"y": 389
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 7,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Auru"
+				]
+			},
+			{
+				"Id": 30,
+				"Kind": "LabelItem",
+				"Name": "Ashei Sketch",
+				"Positions": {
+					"x": 97,
+					"y": 389
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 7,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Ashei"
+				]
+			},
+			{
+				"Id": 31,
+				"Kind": "SubMenuItem",
+				"Name": "Keys Box",
+				"Positions": {
+					"x": 311,
+					"y": 317
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 9,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Background": "keysanity_background.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 0,
+						"Kind": "AlternateCountItem",
+						"Name": "Forest Keys",
+						"Positions": {
+							"x": 91,
+							"y": 147
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 4,
+						"maxValueAlternate": 4
+					},
+					{
+						"Id": 1,
+						"Kind": "Item",
+						"Name": "Forest Big Key",
+						"Positions": {
+							"x": 161,
+							"y": 147
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 2,
+						"Kind": "AlternateCountItem",
+						"Name": "Mines Keys",
+						"Positions": {
+							"x": 245,
+							"y": 147
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 3,
+						"maxValueAlternate": 3
+					},
+					{
+						"Id": 3,
+						"Kind": "EvolutionItem",
+						"Name": "Mines Key Shard I",
+						"Positions": {
+							"x": 314,
+							"y": 147
+						},
+						"SheetInformation": {
+							"row": 11,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "1",
+						"LabelCenter": false,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Mines Key Shard II",
+								"SheetInformation": {
+									"row": 11,
+									"column": 2,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "2"
+							},
+							{
+								"Id": 2,
+								"Name": "Mines Big Key",
+								"SheetInformation": {
+									"row": 11,
+									"column": 4,
+									"SpriteSheet": "Normal"
+								},
+								"Label": null
+							}
+						]
+					},
+					{
+						"Id": 4,
+						"Kind": "AlternateCountItem",
+						"Name": "Lakebed Keys",
+						"Positions": {
+							"x": 91,
+							"y": 231
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 3,
+						"maxValueAlternate": 3
+					},
+					{
+						"Id": 5,
+						"Kind": "Item",
+						"Name": "Lakebed Big Key",
+						"Positions": {
+							"x": 161,
+							"y": 231
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 6,
+						"Kind": "AlternateCountItem",
+						"Name": "Grounds Keys",
+						"Positions": {
+							"x": 245,
+							"y": 231
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 5,
+						"maxValueAlternate": 5
+					},
+					{
+						"Id": 7,
+						"Kind": "Item",
+						"Name": "Grounds Big Key",
+						"Positions": {
+							"x": 314,
+							"y": 231
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 8,
+						"Kind": "AlternateCountItem",
+						"Name": "Ruins Keys",
+						"Positions": {
+							"x": 91,
+							"y": 313
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 4,
+						"maxValueAlternate": 4
+					},
+					{
+						"Id": 9,
+						"Kind": "Item",
+						"Name": "Ruins Bedroom Key",
+						"Positions": {
+							"x": 161,
+							"y": 313
+						},
+						"SheetInformation": {
+							"row": 11,
+							"column": 7,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 10,
+						"Kind": "Item",
+						"Name": "Ordon Pumpkin",
+						"Positions": {
+							"x": 91,
+							"y": 397
+						},
+						"SheetInformation": {
+							"row": 11,
+							"column": 6,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 11,
+						"Kind": "Item",
+						"Name": "Ordon Goat Cheese",
+						"Positions": {
+							"x": 161,
+							"y": 397
+						},
+						"SheetInformation": {
+							"row": 11,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 12,
+						"Kind": "AlternateCountItem",
+						"Name": "Time Keys",
+						"Positions": {
+							"x": 245,
+							"y": 313
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 3,
+						"maxValueAlternate": 3
+					},
+					{
+						"Id": 13,
+						"Kind": "Item",
+						"Name": "Time Big Key",
+						"Positions": {
+							"x": 314,
+							"y": 313
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 14,
+						"Kind": "AlternateCountItem",
+						"Name": "Sky Key",
+						"Positions": {
+							"x": 245,
+							"y": 397
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 1,
+						"maxValueAlternate": 1
+					},
+					{
+						"Id": 15,
+						"Kind": "Item",
+						"Name": "Sky Big Key",
+						"Positions": {
+							"x": 314,
+							"y": 397
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 16,
+						"Kind": "AlternateCountItem",
+						"Name": "Twilight Keys",
+						"Positions": {
+							"x": 91,
+							"y": 480
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 7,
+						"maxValueAlternate": 7
+					},
+					{
+						"Id": 17,
+						"Kind": "Item",
+						"Name": "Twilight Big Key",
+						"Positions": {
+							"x": 161,
+							"y": 480
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					},
+					{
+						"Id": 18,
+						"Kind": "AlternateCountItem",
+						"Name": "Hyrule Castle Keys",
+						"Positions": {
+							"x": 245,
+							"y": 480
+						},
+						"SheetInformation": {
+							"row": 6,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"maxValue": 3,
+						"maxValueAlternate": 3
+					},
+					{
+						"Id": 19,
+						"Kind": "Item",
+						"Name": "Hyrule Castle Big Key",
+						"Positions": {
+							"x": 314,
+							"y": 480
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4
+					}
+				]
+			},
+			{
+				"Id": 32,
+				"Kind": "LabelItem",
+				"Name": "Desert Key",
+				"Positions": {
+					"x": 311,
+					"y": 244
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 7,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Desert"
+				]
+			},
+			{
+				"Id": 33,
+				"Kind": "LabelItem",
+				"Name": "Coro Key",
+				"Positions": {
+					"x": 311,
+					"y": 100
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 8,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Coro"
+				]
+			},
+			{
+				"Id": 34,
+				"Kind": "LabelItem",
+				"Name": "Gate Key",
+				"Positions": {
+					"x": 311,
+					"y": 172
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 6,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"OffsetLabel": 15,
+				"LabelList": [
+					"Gate"
+				]
+			},
+			{
+				"Id": 35,
+				"Kind": "Item",
+				"Name": "Hero Clothes",
+				"Positions": {
+					"x": 168,
+					"y": 534
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 4,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 36,
+				"Kind": "Item",
+				"Name": "Zora Armor",
+				"Positions": {
+					"x": 240,
+					"y": 534
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 5,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 37,
+				"Kind": "Item",
+				"Name": "Magic Armor",
+				"Positions": {
+					"x": 311,
+					"y": 534
+				},
+				"SheetInformation": {
+					"row": 6,
+					"column": 6,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4
+			},
+			{
+				"Id": 38,
+				"Kind": "SubMenuItem",
+				"Name": "Bugs Box",
+				"Positions": {
+					"x": 240,
+					"y": 317
+				},
+				"SheetInformation": {
+					"row": 7,
+					"column": 7,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Background": "bugs-submenu.png",
+				"ShowNumbersOfItemsActive": true,
+				"ShowNumberOfCheckedItems": true,
+				"ItemsList": [
+					{
+						"Id": 0,
+						"Kind": "CheckItem",
+						"Name": "Ant Male",
+						"Positions": {
+							"x": 103,
+							"y": 125
+						},
+						"SheetInformation": {
+							"row": 7,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 1,
+						"Kind": "CheckItem",
+						"Name": "Ant Female",
+						"Positions": {
+							"x": 173,
+							"y": 125
+						},
+						"SheetInformation": {
+							"row": 7,
+							"column": 9,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 2,
+						"Kind": "CheckItem",
+						"Name": "Mantis Male",
+						"Positions": {
+							"x": 103,
+							"y": 198
+						},
+						"SheetInformation": {
+							"row": 7,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 3,
+						"Kind": "CheckItem",
+						"Name": "Mantis Female",
+						"Positions": {
+							"x": 179,
+							"y": 198
+						},
+						"SheetInformation": {
+							"row": 10,
+							"column": 2,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 4,
+						"Kind": "CheckItem",
+						"Name": "Butterfly Male",
+						"Positions": {
+							"x": 103,
+							"y": 271
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 5,
+						"Kind": "CheckItem",
+						"Name": "Butterfly Female",
+						"Positions": {
+							"x": 173,
+							"y": 271
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 2,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 6,
+						"Kind": "CheckItem",
+						"Name": "Phasmid Male",
+						"Positions": {
+							"x": 103,
+							"y": 344
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 3,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 7,
+						"Kind": "CheckItem",
+						"Name": "Phasmid Female",
+						"Positions": {
+							"x": 173,
+							"y": 344
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 8,
+						"Kind": "CheckItem",
+						"Name": "Dayfly Male",
+						"Positions": {
+							"x": 103,
+							"y": 417
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 9,
+						"Kind": "CheckItem",
+						"Name": "Dayfly Female",
+						"Positions": {
+							"x": 173,
+							"y": 417
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 6,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 10,
+						"Kind": "CheckItem",
+						"Name": "Stag Beetle Male",
+						"Positions": {
+							"x": 103,
+							"y": 490
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 7,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 11,
+						"Kind": "CheckItem",
+						"Name": "Stag Beetle Female",
+						"Positions": {
+							"x": 173,
+							"y": 490
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 12,
+						"Kind": "CheckItem",
+						"Name": "Ladybug Male",
+						"Positions": {
+							"x": 243,
+							"y": 125
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 9,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 13,
+						"Kind": "CheckItem",
+						"Name": "Ladybug Female",
+						"Positions": {
+							"x": 312,
+							"y": 125
+						},
+						"SheetInformation": {
+							"row": 8,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 14,
+						"Kind": "CheckItem",
+						"Name": "Grasshopper Male",
+						"Positions": {
+							"x": 243,
+							"y": 198
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 15,
+						"Kind": "CheckItem",
+						"Name": "Grasshopper Female",
+						"Positions": {
+							"x": 312,
+							"y": 198
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 2,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 16,
+						"Kind": "CheckItem",
+						"Name": "Beetle Male",
+						"Positions": {
+							"x": 243,
+							"y": 271
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 3,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 17,
+						"Kind": "CheckItem",
+						"Name": "Beetle Female",
+						"Positions": {
+							"x": 312,
+							"y": 271
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 18,
+						"Kind": "CheckItem",
+						"Name": "Pill Bug Male",
+						"Positions": {
+							"x": 243,
+							"y": 344
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 19,
+						"Kind": "CheckItem",
+						"Name": "Pill Bug Female",
+						"Positions": {
+							"x": 312,
+							"y": 344
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 6,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 20,
+						"Kind": "CheckItem",
+						"Name": "Snail Male",
+						"Positions": {
+							"x": 243,
+							"y": 417
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 7,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 21,
+						"Kind": "CheckItem",
+						"Name": "Snail Female",
+						"Positions": {
+							"x": 312,
+							"y": 417
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 22,
+						"Kind": "CheckItem",
+						"Name": "Dragonfly Male",
+						"Positions": {
+							"x": 243,
+							"y": 490
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 9,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					},
+					{
+						"Id": 23,
+						"Kind": "CheckItem",
+						"Name": "Dragonfly Female",
+						"Positions": {
+							"x": 312,
+							"y": 490
+						},
+						"SheetInformation": {
+							"row": 9,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"CheckImageSheetInformation": {
+							"row": 10,
+							"column": 1,
+							"SpriteSheet": "Normal"
+						}
+					}
+				]
+			},
+			{
+				"Id": 39,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Forest",
+				"Positions": {
+					"x": 381,
+					"y": 29
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Forest",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask Forest",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror Forest",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 40,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Mines",
+				"Positions": {
+					"x": 381,
+					"y": 100
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Mines",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 41,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Lakebed",
+				"Positions": {
+					"x": 381,
+					"y": 172
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Lakebed",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 42,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Grounds",
+				"Positions": {
+					"x": 381,
+					"y": 244
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Grounds",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 43,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Ruins",
+				"Positions": {
+					"x": 381,
+					"y": 317
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Ruins",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 44,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Time",
+				"Positions": {
+					"x": 381,
+					"y": 389
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Time",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 45,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Sky",
+				"Positions": {
+					"x": 381,
+					"y": 463
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Sky",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 46,
+				"Kind": "AlternateEvolutionItem",
+				"Name": "Twilight",
+				"Positions": {
+					"x": 381,
+					"y": 534
+				},
+				"SheetInformation": {
+					"row": 10,
+					"column": 3,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Label": null,
+				"LabelCenter": false,
+				"GlobalLabel": "Twilight",
+				"NextItems": [
+					{
+						"Id": 0,
+						"Name": "Mask",
+						"SheetInformation": {
+							"row": 10,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					},
+					{
+						"Id": 1,
+						"Name": "Mirror",
+						"SheetInformation": {
+							"row": 10,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"Label": null
+					}
+				]
+			},
+			{
+				"Id": 47,
+				"Kind": "GoModeItem",
+				"Name": "Go Mode",
+				"Positions": {
+					"x": 168,
+					"y": 389
+				},
+				"SheetInformation": {
+					"row": 5,
+					"column": 4,
+					"SpriteSheet": "Normal"
+				},
+				"isActive": false,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"BackgroundGlow": "light.png"
+			},
+			{
+				"Id": 70,
+				"Kind": "SubMenuItem",
+				"Name": "Dungeons Access",
+				"Positions": {
+					"x": 81,
+					"y": 668
+				},
+				"SheetInformation": {
+					"row": 1,
+					"column": 1,
+					"SpriteSheet": "RulesButton"
+				},
+				"isActive": true,
+				"Hint": null,
+				"OpacityDisable": 0.4,
+				"Background": "dungeonsaccess-submenu.png",
+				"ShowNumbersOfItemsActive": false,
+				"ShowNumberOfCheckedItems": false,
+				"ItemsList": [
+					{
+						"Id": 0,
+						"Kind": "EvolutionItem",
+						"Name": "Close Mines",
+						"Positions": {
+							"x": 126,
+							"y": 147
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 4,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "No",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Open Mines",
+								"SheetInformation": {
+									"row": 1,
+									"column": 7,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Yes"
+							}
+						]
+					},
+					{
+						"Id": 1,
+						"Kind": "EvolutionItem",
+						"Name": "Close Lakebed",
+						"Positions": {
+							"x": 280,
+							"y": 147
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 5,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "No",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Open Lakebed",
+								"SheetInformation": {
+									"row": 2,
+									"column": 2,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Yes"
+							}
+						]
+					},
+					{
+						"Id": 2,
+						"Kind": "EvolutionItem",
+						"Name": "Close Grounds",
+						"Positions": {
+							"x": 126,
+							"y": 239
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 6,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "No",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Open Grounds",
+								"SheetInformation": {
+									"row": 11,
+									"column": 10,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Yes"
+							}
+						]
+					},
+					{
+						"Id": 3,
+						"Kind": "EvolutionItem",
+						"Name": "Close Snowpeak",
+						"Positions": {
+							"x": 280,
+							"y": 239
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 7,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "No",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Open Snowpeak",
+								"SheetInformation": {
+									"row": 11,
+									"column": 9,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Yes"
+							}
+						]
+					},
+					{
+						"Id": 4,
+						"Kind": "EvolutionItem",
+						"Name": "ToT 0 Sword",
+						"Positions": {
+							"x": 126,
+							"y": 331
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 3,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": true,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "0",
+						"LabelCenter": false,
+						"NextItems": [
+							{
+								"Id": 1,
+								"Name": "ToT 1 Sword",
+								"SheetInformation": {
+									"row": 5,
+									"column": 7,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "1"
+							},
+							{
+								"Id": 2,
+								"Name": "ToT 2 Swords",
+								"SheetInformation": {
+									"row": 5,
+									"column": 8,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "2"
+							},
+							{
+								"Id": 3,
+								"Name": "ToT 3 Swords",
+								"SheetInformation": {
+									"row": 5,
+									"column": 9,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "3"
+							},
+							{
+								"Id": 4,
+								"Name": "ToT 4 Swords",
+								"SheetInformation": {
+									"row": 5,
+									"column": 10,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "4"
+							}
+						]
+					},
+					{
+						"Id": 5,
+						"Kind": "EvolutionItem",
+						"Name": "Close Sky",
+						"Positions": {
+							"x": 280,
+							"y": 331
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 8,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": false,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "No",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Open Sky",
+								"SheetInformation": {
+									"row": 5,
+									"column": 3,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Yes"
+							}
+						]
+					},
+					{
+						"Id": 6,
+						"Kind": "EvolutionItem",
+						"Name": "Palace Open",
+						"Positions": {
+							"x": 126,
+							"y": 423
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": true,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "Open",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Palace Fused",
+								"SheetInformation": {
+									"row": 10,
+									"column": 4,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Fused"
+							},
+							{
+								"Id": 1,
+								"Name": "Palace Shards",
+								"SheetInformation": {
+									"row": 10,
+									"column": 5,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Shards"
+							},
+							{
+								"Id": 1,
+								"Name": "Palace Sky",
+								"SheetInformation": {
+									"row": 11,
+									"column": 8,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Sky"
+							}
+						]
+					},
+					{
+						"Id": 7,
+						"Kind": "EvolutionItem",
+						"Name": "Castle Open",
+						"Positions": {
+							"x": 280,
+							"y": 423
+						},
+						"SheetInformation": {
+							"row": 12,
+							"column": 10,
+							"SpriteSheet": "Normal"
+						},
+						"isActive": true,
+						"AlwaysEnable": true,
+						"Hint": null,
+						"OpacityDisable": 0.4,
+						"Label": "Open",
+						"LabelCenter": true,
+						"NextItems": [
+							{
+								"Id": 0,
+								"Name": "Castle Fused",
+								"SheetInformation": {
+									"row": 10,
+									"column": 4,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Fused"
+							},
+							{
+								"Id": 1,
+								"Name": "Castle Shards",
+								"SheetInformation": {
+									"row": 10,
+									"column": 5,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "Shards"
+							},
+							{
+								"Id": 2,
+								"Name": "Castle Palace",
+								"SheetInformation": {
+									"row": 12,
+									"column": 2,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "PoT"
+							},
+							{
+								"Id": 3,
+								"Name": "Castle AD",
+								"SheetInformation": {
+									"row": 12,
+									"column": 1,
+									"SpriteSheet": "Normal"
+								},
+								"Label": "AD"
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"Maps": [
+			{
+				"Id": 0,
+				"Datas": "main_map.json"
+			}
+		],
+		"RulesOptionsLists" : [
+			{
+				"Name": "Main Rules",
+				"ButtonRect": {
+					"x": 100,
+					"y": 645,
+					"w": 271,
+					"h": 25
+				},
+				"ListBox": {
+					"SubMenuBackground": "map_list.png",
+					"DrawBoxRect": {
+						"x": 195,
+						"y": 150,
+						"w": 363,
+						"h": 455
+					},
+					"LabelY": 100,
+					"LeftArrow": {
+						"Image": "left-arrow.png",
+						"Positions": {
+							"x": 311,
+							"y": 612
+						}
+					},
+					"RightArrow": {
+						"Image": "right-arrow.png",
+						"Positions": {
+							"x": 415,
+							"y": 612
+						}
+					}
+				}
+			},
+			{
+				"Name": "Random Spawn",
+				"ButtonRect": {
+					"x": 241,
+					"y": 685,
+					"w": 129,
+					"h": 25
+				},
+				"ListBox": {
+					"SubMenuBackground": "map_list.png",
+					"DrawBoxRect": {
+						"x": 195,
+						"y": 150,
+						"w": 363,
+						"h": 455
+					},
+					"LabelY": 100,
+					"LeftArrow": {
+						"Image": "left-arrow.png",
+						"Positions": {
+							"x": 311,
+							"y": 612
+						}
+					},
+					"RightArrow": {
+						"Image": "right-arrow.png",
+						"Positions": {
+							"x": 415,
+							"y": 612
+						}
+					}
+				}
+			}				
+		],
+		"SizeGroupChecks": {
+			"w": 16,
+			"h": 16
+		},
+		"SizeSimpleCheck": {
+			"w": 5,
+			"h": 5
+		},
+		"CptChecksPosition": {
+			"x": 57,
+			"y": 734
+		},
+		"ActionsConditions": {
+			"HaveSword": "have('Wooden Sword') or have('Ordon Sword') or have('Master Sword') or have('Light Sword')",
+			"HaveShield": "have('Hylian Shield') or do('CanBuyShield')",
+			"HaveMoney": "have('Wallet') or have('Big Wallet') or have('Giant Wallet')",
+			"HaveGateToHyruleFieldOpen": "(have('Coro Key') and rules('Use Added Drehen S2 Logic')) or not(rules('Use Added Drehen S2 Logic'))",
+			"HaveClawShot": "have('Clawshot') or have('Double Clawshot')",
+			"HaveRod": "have('Dominion Rod') or have('Dominion Rod 2')",
+			"HaveSkyBook": "have('Ancient Sky Book') or have('Ancient Sky Book I') or have('Ancient Sky Book II') or have('Ancient Sky Book III') or have('Ancient Sky Book IV') or have('Ancient Sky Book V') or have('Ancient Sky Book VI')",
+			"CanFish": "have('Fishing Rod') or have('Coral Earring')",
+			"HaveExplosive": "have('Bomb Bag') or have('Bomb') or have('Water Bomb')",
+			"CanUseExplosive": "do('HaveExplosive') and do('CanBuyBombs')",
+			"CanUseWaterBombs": "do('CanUseExplosive') and do('CanAccessSouthHyruleField') and do('HaveClearedET')",
+			"CanUseLantern": "have('Lantern') and do('CanRefillOil')",
+			"CanSmash": "do('CanUseExplosive') or have('Ball and Chain')",
+			"CanLaunchBombs": "do('CanUseExplosive') and (have('Hero Bow') or have('Gale Boomerang'))",
+			"HaveDamagingItem": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or have('Iron Boots') or have('Crystal') or have('Spinner') or do('CanUseExplosive')",
+			"HaveRangedItem": "have('Hero Bow') or have('Ball and Chain') or do('HaveClawShot') or have('Gale Boomerang') or have('Slingshot')",
+			"CanBurnWebs": "have('Lantern') or do('CanUseExplosive') or have('Ball and Chain')",
+			"CanBreakWoodenDoor": "have('Crystal') or do('HaveSword') or do('CanSmash')",
+			"CanCutHangingWeb": "do('HaveClawShot') or (have('Hero Bow') and do('CanGetArrows')) or have('Gale Boomerang') or have('Ball and Chain')",
+			"CanBuyShield": "(not(rules('Shop Items')) and (do('HaveClearedET') or do('HaveClearedLT'))) or (do('HaveClearedET') and have('Iron Boots') and do('CanDefeatGoron'))",
+			"CanBuyBombs": "do('HaveClearedET') or do('CanAccessSky')",
+			"CanGetArrows": "do('CanAccessSouthHyruleField') or (do('CanAccessNorthFaronWoods') and have('Crystal'))",
+			"CanRefillOil": "(rules('Faron Field / Eldin') and (have('Crystal') or have('Iron Boots') or do('HaveGateToHyruleFieldOpen'))) or rules('Lanayru / Snowpeak') or do('VanillaSpawn')",
+			"CanTeleportAnywhere": "have('Crystal') and rules('Unlock Map Regions')",
+			"CanDoDifficultCombat" : "False",
+			"CanDoNicheStuff" : "False",
+			"CanAttendHiddenSkillTraining": "True",
+			"CanStrikeDownPedestal": "do('CanStrikeDownPedestalWithWooden') or do('CanStrikeDownPedestalWithOrdon') or do('CanStrikeDownPedestalWithMaster') or do('CanStrikeDownPedestalWithLight')",
+			"CanStrikeDownPedestalWithWooden": "do('HaveSword') and have('ToT 1 Sword')",
+			"CanStrikeDownPedestalWithOrdon": "(have('Ordon Sword') or have('Master Sword') or have('Light Sword')) and have('ToT 2 Swords')",
+			"CanStrikeDownPedestalWithMaster": "(have('Master Sword') or have('Light Sword')) and have('ToT 3 Swords')",
+			"CanStrikeDownPedestalWithLight": "have('Light Sword') and have('ToT 4 Swords')",
+			"VanillaSpawn": "not(rules('Ordona / Forest') or rules('Faron Field / Eldin') or rules('Lanayru / Snowpeak'))",
+			"HaveVessels": "have('Vessel of Light') or have('Vessel of Light II') or have('Vessel of Light III')",
+			"HaveClearedFT": "do('HaveVessels') or rules('Faron Twilight Skip')",
+			"HaveClearedET": "((have('Vessel of Light II') or have('Vessel of Light III')) or rules('Eldin Twilight Skip')) and do('CanAccessSouthHyruleField')",
+			"HaveClearedLT": "(have('Vessel of Light III') or rules('Lanayru Twilight Skip')) and do('CanAccessLanayru')",
+			"CanDefeatGanondorf": "(have('Master Sword') or have('Light Sword')) and have('Crystal') and have('Hidden Skills', '>=1')",
+			"CanCompletePrologue": "(do('HaveSword') and have('Slingshot')) or rules('Skip Prologue')",
+			"CanAccessOrdonVillage": "do('VanillaSpawn') or rules('Ordona / Forest') or do('CanAccessSouthFaronWoods')",
+			"CanAccessSouthFaronWoods": "(do('CanCompletePrologue') and do('VanillaSpawn')) or rules('Ordona / Forest') or (do('CanAccessSouthHyruleField') and do('HaveGateToHyruleFieldOpen'))",
+			"CanAccessFaronCave": "do('CanAccessSouthFaronWoods') and (have('Crystal') or have('Coro Key'))",
+			"CanAccessNorthFaronWoods": "do('CanAccessSouthFaronWoods') and ((have('Lantern') and have('Coro Key')) or have('Crystal'))",
+			"CanAccessSouthHyruleFieldFromFaron": "do('CanCompletePrologue') and (have('Forest') or rules('Open Faron Woods')) and do('HaveGateToHyruleFieldOpen') and (do('VanillaSpawn') or rules('Ordona / Forest'))",
+			"CanAccessSouthHyruleFieldFromLanayru": "rules('Lanayru / Snowpeak') and (have('Vessel of Light III') or rules('Lanayru Twilight Skip')) and (have('Ball and Chain') or (do('HaveExplosive') and do('CanAccessSky')) or have('Gate Key'))",
+			"CanAccessSouthHyruleField": "rules('Faron Field / Eldin') or (do('CanTeleportAnywhere') and (rules('Ordona / Forest') or rules('Lanayru / Snowpeak'))) or do('CanAccessSouthHyruleFieldFromFaron') or do('CanAccessSouthHyruleFieldFromLanayru')",
+			"CanAccessNorthernEldin": "(not(rules('Use Added Drehen S2 Logic')) and do('HaveClearedLT')) or (rules('Use Added Drehen S2 Logic') and (do('CanAccessSouthHyruleFieldFromLanayru') or (do('CanAccessSouthHyruleField') and (do('CanSmash') or have('Gate Key')))))",
+			"CanAccessLanayru": "rules('Lanayru / Snowpeak') or (do('CanAccessSouthHyruleField') and ((do('HaveClearedET') and do('CanSmash')) or have('Gate Key'))) or (rules('Lanayru Twilight Skip') and do('CanTeleportAnywhere'))",
+			"CanAccessDuringorAfterET": "(do('HaveClearedET') or (have('Crystal') and do('HaveClearedFT'))) or (rules('Eldin Twilight Skip') and do('CanTeleportAnywhere'))",
+			"CanAccessDuringorAfterLT": "(do('HaveClearedLT') or (have('Crystal') and do('HaveClearedET'))) or (rules('Lanayru Twilight Skip') and do('CanTeleportAnywhere'))",
+			"CanAccessDomain": "do('HaveClearedLT') and (have('Crystal') or do('CanSmash'))",
+			"CanAccessDesert": "do('HaveClearedLT') and have('Auru Memo')",
+			"CanAccessOrdealsFloor12": "do('CanAccessDesert') and do('HaveClawShot') and do('CanDefeatTorchSlug') and do('CanDefeatKeese')",
+			"CanAccessOrdealsFloor22": "do('CanAccessOrdealsFloor12') and have('Spinner') and do('CanDefeatChuWorm') and have('Crystal') and do('CanDefeatLeever')",
+			"CanAccessOrdealsFloor32": "do('CanAccessOrdealsFloor22') and have('Ball and Chain')",
+			"CanAccessOrdealsFloor42": "do('CanAccessOrdealsFloor32') and have('Dominion Rod 2') and do('CanDefeatDarknut')",
+			"CanAccessSnowCave": "do('CanAccessDomain') and do('HaveClearedLT') and ((have('Coral Earring') and not(rules('Use Scents for Logic'))) or have('Reekfish Scent') or have('Open Snowpeak')) and have('Crystal')",
+			"CanAccessHiddenVillage": "have('Time') and (have('Wooden Statue') or have('Ilia Charm'))",
+			"CanDefeatDiababa": "do('CanLaunchBombs') or (have('Gale Boomerang') and (do('HaveSword') or have('Ball and Chain') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or do('CanUseExplosive')))",
+			"CanDefeatFyrus": "have('Hero Bow') and have('Iron Boots') and do('HaveSword')",
+			"CanDefeatMorpheel": "have('Zora Armor') and have('Iron Boots') and do('HaveSword') and do('HaveClawShot')",
+			"CanDefeatStallord": "do('HaveSword') and have('Spinner')",
+			"CanDefeatBlizzeta": "have('Ball and Chain')",
+			"CanDefeatArmogohma": "have('Hero Bow') and do('HaveRod')",
+			"CanDefeatArgorok": "(have('Double Clawshot') and have('Iron Boots') and (have('Ordon Sword') or have('Master Sword') or have('Light Sword')))",
+			"CanDefeatZant": "(have('Master Sword') or have('Light Sword')) and (rules('Partial Zant Fight Skip') or (have('Gale Boomerang') and do('HaveClawShot') and have('Iron Boots') and have('Zora Armor') and have('Ball and Chain')))",
+			"CanCompleteMDH": "have('Lakebed') or rules('Skip MDH')",
+			"CanBreakMonkeyCage": "do('HaveSword') or have('Iron Boots') or have('Spinner') or have('Ball and Chain') or have('Crystal') or do('CanUseExplosive') or (have('Hero Bow') and do('CanGetArrows')) or do('HaveClawShot')",
+			"CanFreeAllMonkeys": "do('CanBreakMonkeyCage') and (have('Lantern') or (rules('Small Key Keysey') and (do('CanUseExplosive') or have('Iron Boots')))) and do('CanBurnWebs') and have('Gale Boomerang') and do('CanDefeatBokoblin') and (have('Forest Keys', '==4') or rules('Small Key Keysey'))",
+			"CanPressMinesSwitch": "have('Iron Boots') or (do('CanDoNicheStuff') and have('Ball and Chain'))",
+			"CanKnockDownHangingBaba": "have('Hero Bow') or do('HaveClawShot') or have('Gale Boomerang') or have('Slingshot')",
+			"CanDefeatAeralfos": "do('HaveClawShot') and (do('HaveSword') or have('Ball and Chain') or have('Crystal') or (have('Iron Boots') and do('CanDoNicheStuff')))",
+			"CanDefeatArmos": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or do('HaveClawShot') or do('CanUseExplosive') or have('Spinner')",
+			"CanDefeatBabaSerpent": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatBabyGohma": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Slingshot') or do('HaveClawShot') or do('CanUseExplosive')",
+			"CanDefeatBari": "do('CanUseExplosive') or do('HaveClawShot')",
+			"CanDefeatBeamos": "have('Ball and Chain') or have('Hero Bow') or do('CanUseExplosive')",
+			"CanDefeatBigBaba": "do('HaveSword') or have('Ball and Chain') or (have('Hero Bow') and do('CanGetArrows')) or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or have('Spinner') or do('CanUseExplosive')",
+			"CanDefeatBokoblin": "do('HaveSword') or have('Ball and Chain') or (have('Hero Bow') and do('CanGetArrows')) or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Slingshot') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatBokoblinRed": "do('HaveSword') or have('Ball and Chain') or (have('Hero Bow', '==2') and do('CanGetArrows')) or (do('CanDoDifficultCombat') and (have('Iron Boots') or have('Spinner'))) or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatBombfish": "have('Iron Boots') and (do('HaveSword') or (do('HaveShield') and have('Hidden Skills', '>=2')) or do('HaveClawShot'))",
+			"CanDefeatBombling": "do('HaveSword') or have('Ball and Chain') or (have('Hero Bow') and do('CanGetArrows')) or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or  have('Crystal') or do('HaveClawShot')",
+			"CanDefeatBomskit": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatBubble": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or(have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatBulblin": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatChilfos": "do('HaveSword') or have('Ball and Chain') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatChu": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('HaveClawShot') or do('CanUseExplosive')",
+			"CanDefeatChuWorm": "(do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal')) and (do('CanUseExplosive') or do('HaveClawShot'))",
+			"CanDefeatDarknut": "do('HaveSword')",
+			"CanDefeatDekuBaba": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or (have('Hidden Skills', '>=2') and do('HaveShield')) or have('Slingshot') or have('Crystal') or do('HaveClawShot') or do('CanUseExplosive')",
+			"CanDefeatDekuLike": "do('CanUseExplosive')",
+			"CanDefeatDodongo": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatDynalfos": "do('HaveSword') or have('Ball and Chain') or have('Crystal')",
+			"CanDefeatFireBubble": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal')",
+			"CanDefeatFireKeese": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Slingshot') or have('Crystal')",
+			"CanDefeatFireToadpoli": "do('HaveSword') or (do('HaveShield') and have('Hidden Skills', '>=2')) or have('Ball and Chain') or have('Hero Bow') or (have('Crystal') and do('CanDoNicheStuff'))",
+			"CanDefeatFreezard": "have('Ball and Chain)",
+			"CanDefeatGoron": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or (not(rules('Shop Items')) and have('Hidden Skills', '>=2')) or have('Slingshot') or do('HaveClawShot') or do('CanUseExplosive')",
+			"CanDefeatGhoulRat": "have('Crystal')",
+			"CanDefeatGuay": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or (have('Spinner') and do('CanDoDifficultCombat')) or have('Crystal') or have('Slingshot')",
+			"CanDefeatHelmasaur": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatHelmasaurus": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or(have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatIceBubble": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal')",
+			"CanDefeatIceKeese": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Slingshot') or have('Crystal')",
+			"CanDefeatKargarok": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal')",
+			"CanDefeatKeese": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Slingshot') or have('Crystal')",
+			"CanDefeatLeever": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal')",
+			"CanDefeatLizalfos": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatMiniFreezard": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatMoldorm": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatPoe": "have('Crystal')",
+			"CanDefeatPoisonMite": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or have('Lantern') or have('Spinner') or have('Crystal')",
+			"CanDefeatPuppet": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatRat": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Slingshot') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatRedeadKnight": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatShadowBeast": "(do('HaveSword') or (have('Crystal')) and rules('Skip MDH'))",
+			"CanDefeatShadowBulblin": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatShadowDekuBaba": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or (have('Hidden Skills', '>=2') and do('HaveShield')) or have('Slingshot') or have('Clawshot') or do('CanUseExplosive')",
+			"CanDefeatShadowInsect": "have('Crystal')",
+			"CanDefeatShadowKargarok": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatShadowKeese": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Slingshot') or have('Crystal')",
+			"CanDefeatShadowVermin": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatShellBlade": "do('CanUseWaterBombs') or (do('HaveSword') and have('Iron Boots'))",
+			"CanDefeatSkullfish": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal')",
+			"CanDefeatSkulltula": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatStalchild": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatStalfos": "do('CanSmash')",
+			"CanDefeatStalhound": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatTektite": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatTileWorm": "(do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or have('Crystal') or have('Spinner') or (have('Iron Boots') and do('CanDoNicheStuff')) or do('CanUseExplosive')) and have('Gale Boomerang')",
+			"CanDefeatToado": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or have('Spinner')  or have('Crystal')",
+			"CanDefeatTorchSlug": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatWaterToadpoli": "(do('HaveShield') and have('Hidden Skills', '>=2')) or do('HaveSword') or have('Ball and Chain') or have('Hero Bow')",
+			"CanDefeatWalltula": "have('Ball and Chain') or have('Gale Boomerang') or have('Slingshot') or (rules('Open Faron Woods') and have('Hero Bow') and do('CanCompletePrologue')) or do('HaveClawShot')",
+			"CanDefeatWhiteWolfos": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatYoungGohma": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Spinner') or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatZantHead": "have('Crystal') or do('HaveSword')",
+			"CanDefeatOok": "do('HaveSword') or have('Ball and Chain') or (have('Hero Bow') and do('CanGetArrows')) or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatDangoro": "(do('HaveSword') or have('Crystal') or (have('Hero Bow') and do('CanGetArrows'))) and have('Iron Boots')",
+			"CanDefeatCarrierKargarok": "have('Crystal')",
+			"CanDefeatTwilitBloat": "have('Crystal')",
+			"CanDefeatDekuToad": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatSkullKid": "have('Hero Bow')",
+			"CanDefeatKingBulblinBridge": "have('Hero Bow')",
+			"CanDefeatKingBulblinCastle": "do('HaveSword') or have('Ball and Chain') or have('Crystal') or have('Hero Bow', '>=1')",
+			"CanDefeatDeathSword": "do('HaveSword') and (have('Gale Boomerang') or have('Hero Bow') or do('HaveClawShot')) and have('Crystal')",
+			"CanDefeatDarkhammer": "do('HaveSword') or have('Ball and Chain') or have('Hero Bow') or (have('Iron Boots') and do('CanDoNicheStuff')) or have('Crystal') or do('CanUseExplosive')",
+			"CanDefeatPhantomZant": "have('Crystal') or do('HaveSword')",
+			"CanAccessForestTempleLobby": "do('CanCompletePrologue') and do('CanAccessNorthFaronWoods') and do('CanDefeatWalltula') and do('CanDefeatBokoblin') and do('CanBreakMonkeyCage')",
+			"CanAccessForestWestWing": "do('CanAccessForestTempleLobby') and do('CanBurnWebs') and (((have('Forest Keys', '>=2') or rules('Small Key Keysey')) and do('CanDefeatBokoblin')) or do('HaveClawShot'))",
+			"CanAccessForestNorthWing": "do('CanAccessForestTempleLobby') and have('Gale Boomerang')",
+			"CanAccessOok": "do('CanAccessForestTempleLobby') and (have('Lantern') and (have('Forest Keys', '==4') or rules('Small Key Keysey'))) or (do('CanAccessForestWestWing') and have('Gale Boomerang'))",
+			"CanAccessGoronMines": "do('HaveClearedET') and have('Iron Boots') and (do('CanDefeatGoron') or (have('Open Mines') and not(have('Close Mines'))))",
+			"CanAccessMinesMagnetRoom": "do('CanAccessGoronMines') and have('Iron Boots') and do('CanBreakWoodenDoor')",
+			"CanAccessMinesLowerWestWing": "do('CanAccessMinesMagnetRoom') and (have('Mines Keys', '>=1') or rules('Small Key Keysey'))",
+			"CanAccessMinesNorthWing": "do('CanAccessMinesLowerWestWing') and ((have('Iron Boots') and do('HaveSword')) or have('Hero Bow')) and (have('Mines Keys', '>=2') or rules('Small Key Keysey'))",
+			"CanAccessMinesUpperEastWing": "do('CanAccessMinesNorthWing') and (have('Mines Keys', '==3') or rules('Small Key Keysey'))",
+			"CanAccessLakebedTemple": "do('CanAccessLanayru') and have('Zora Armor') and ((have('Iron Boots') and do('CanUseWaterBombs')) or have('Open Lakebed'))",
+			"CanAccessLakebedCentralRoom": "do('CanAccessLakebedTemple') and (do('CanLaunchBombs') or (have('Open Lakebed') and rules('Use Added Drehen S2 Logic')))",
+			"CanAccessLakebedEast2F": "do('CanAccessLakebedCentralRoom') and (have('Lakebed Keys', '>=1') or rules('Small Key Keysey'))",
+			"CanOpenEastWaterSupply": "do('CanAccessLakebedEast2F') and (have('Lakebed Keys', '==3') or rules('Small Key Keysey')) and ((do('HaveClawShot') and do('CanSmash')) or do('CanLaunchBombs'))",
+			"CanAccessLakebedWestWing": "do('CanOpenEastWaterSupply') and do('HaveClawShot')",
+			"CanOpenWestWaterSupply": "do('CanAccessLakebedWestWing') and do('HaveClawShot') and have('Iron Boots') and do('CanLaunchBombs')",
+			"CanAccesGroundsLobby": "do('CanAccessDesert') and ((do('CanDefeatKingBulblinCastle') and have('Desert Key')) or have('Open Grounds')) and (have('Grounds Keys', '>=1') or rules('Small Key Keysey')) and have('Lantern')",
+			"CanAccessGroundsEastWing": "do('CanAccesGroundsLobby') and (have('Grounds Keys', '>=2') or rules('Small Key Keysey'))",
+			"CanPushGroundsBlock": "do('CanAccessGroundsEastWing') and (have('Grounds Keys', '>=4') or rules('Small Key Keysey')) and have('Crystal')",
+			"CanPassPoeDoor": "(have('Poe Scent') or not rules('Use Scents for Logic')) and do('CanPushGroundsBlock') and do('CanDefeatPoe') and have('Crystal') and do('HaveClawShot') and do('CanDefeatRedeadKnight') and do('CanDefeatStalchild') and do('CanDefeatBubble') and do('CanDefeatGhoulRat') and do('CanDefeatStalfos')",
+			"CanAccessSpinnerRoom": "do('CanPassPoeDoor') and do('HaveClawShot') and have('Spinner') and do('CanDefeatBubble') and do('CanDefeatStalfos') and (have('Grounds Keys', '==5') or rules('Small Key Keysey'))",
+			"CanAccessSnowpeakRuins": "do('CanAccessSnowCave') and do('CanDefeatShadowBeast')",
+			"CanAccessRuinsEastCourtyard": "do('CanAccessSnowpeakRuins') and (have('Crystal') or have('Ball and Chain'))",
+			"CanAccessRuinsWestCourtyard": "do('CanAccessSnowpeakRuins') and (have('Ordon Pumpkin') or rules('Small Key Keysey')) or (do('CanAccessRuinsEastCourtyard') and have('Ball and Chain')) or (do('CanAccessSnowpeakRuins') and have('Ordon Goat Cheese') and have('Ruins Keys', '>=2'))",
+			"CanUseRuinsCourtyardCannon": "do('CanAccessRuinsWestCourtyard') and do('CanUseExplosive') and (have('Ruins Keys', '>=2') or rules('Small Key Keysey') or have('Ordon Goat Cheese'))",
+			"CanAccessRuinsCagedFreezard": "do('CanAccessSnowpeakRuins') and (have('Ordon Goat Cheese') or rules('Small Key Keysey'))",
+			"CanAccessRuinsUpperCourtyard": "do('CanAccessRuinsCagedFreezard') and (have('Ruins Keys', '==4') or rules('Small Key Keysey')) and have('Ball and Chain') and do('CanUseExplosive')",
+			"CanAccessSacredGrove": "do('CanCompletePrologue') and do('CanAccessNorthFaronWoods') and  have('Crystal') and (do('CanDefeatSkullKid') or (rules('Open Temple of Time') or rules('Open Grove') or rules('Skull Kid Fight Skip')))",
+			"CanAccessPast": "do('CanAccessSacredGrove') and (do('CanStrikeDownPedestal') or have('ToT 0 Sword') or rules('Open Temple of Time') or rules('Open Grove'))",
+			"CanAccessTotCorridors": "do('CanAccessPast') and (do('CanStrikeDownPedestal') or have('ToT 0 Sword') or rules('Open Temple of Time')) and (have('Time Keys', '>=1') or rules('Small Key Keysey'))",
+			"CanAccessTotArmosAntechamber": "do('CanAccessTotCorridors') and do('HaveRangedItem') and do('CanDefeatYoungGohma') and do('CanDefeatLizalfos') and have('Spinner')",
+			"CanAccessTotMovingWallHallways": " do('CanAccessTotCorridors') and do('HaveRangedItem') and do('CanDefeatYoungGohma') and do('CanDefeatLizalfos') and have('Spinner') and (have('Time Keys', '>=2') or rules('Small Key Keysey'))",
+			"CanAccessTotScalesofTime": " do('CanAccessTotMovingWallHallways') and have('Hero Bow') and do('CanDefeatLizalfos') and do('CanDefeatDynalfos')",
+			"CanAccessTotPuzzleRoom": "do('CanAccessTotScalesofTime') and do('HaveClawShot') and have('Spinner')",
+			"CanAccessTotDarknutRoom": "do('CanAccessTotScalesofTime') and  do('CanDefeatLizalfos') and do('CanDefeatBabyGohma') and do('CanDefeatYoungGohma') and do('CanDefeatArmos') and (have('Time Keys', '==3') or rules('Small Key Keysey'))",
+			"CanAccessSky": "do('CanAccessLanayru') and do('HaveClawShot') and (have('Ancient Sky Book VI') or have('Open Sky'))",
+			"CanAccessSkyWestWing": "do('CanAccessSky') and (have('Double Clawshot') or (rules('Use 1.3 Logic') and have('Spinner')))",
+			"CanAccessSkyEastWing": "do('CanAccessSky') and have('Spinner') and (have('Sky Key', '==1') or rules('Small Key Keysey'))",
+			"CanAccessSkyNorthWing": "do('CanAccessSky') and have('Double Clawshot') and do('CanDefeatBabaSerpent') and do('CanDefeatKargarok') and have('Crystal') and have('Iron Boots')",
+			"CanAccessMirrorChamber": "(do('CanPassPoeDoor') and have('Spinner') and (have('Grounds Big Key') or rules('Big Key Keysey')) and do('CanDefeatStallord')) or (rules('Start with Mirror Chamber Portal') and (do('CanAccessDesert') or do('CanTeleportAnywhere')))",
+			"CanAccessPalaceOfTwilight": "do('CanAccessMirrorChamber') and do('CanDefeatShadowBeast') and (have('Palace Open') or (have('Palace Fused') and do('HaveAllFused')) or (have('Palace Shards') and do('HaveAllShards')) or (have('Palace Sky') and have('Sky')))",
+			"CanAccessPalaceEastWing": "do('CanAccessPalaceOfTwilight') and do('CanDefeatZantHead') and do('CanDefeatPhantomZant') and (have('Twilight Keys', '>=2') or rules('Small Key Keysey'))",
+			"CanAccessPalaceTower": "do('CanAccessPalaceOfTwilight') and have('Light Sword')",
+			"CanAccessHyruleCastle": "do('CanAccessLanayru') and (have('Castle Open') or (have('Castle Fused') and do('HaveAllFused')) or (have('Castle Shards') and do('HaveAllShards')) or (have('Castle AD') and do('AllDungeonsBeaten')) or (have('Castle Palace') and have('Twilight')))",
+			"CanUseMainHallChandeliers": "do('CanAccessHyruleCastle') and (have('Hyrule Castle Keys', '>=1') or rules('Small Key Keysey')) and do('CanDefeatBokoblin') and do('CanDefeatLizalfos') and have('Double Clawshot')",
+			"CanPassCastleLanternStair": "do('CanUseMainHallChandeliers') and do('CanDefeatDarknut') and have('Gale Boomerang')",
+			"CanUseLoweredChandelier": "do('CanUseMainHallChandeliers') and rules('Lower Hyrule Castle Chandelier')",
+			"CanKnockDownHCPainting": "have('Hero Bow')",
+			"CanAccessCastleBalcony": "(do('CanPassCastleLanternStair') and ((do('CanKnockDownHCPainting') and do('CanDefeatLizalfos') and do('CanDefeatDarknut')) or (have('Lantern') and do('CanDefeatDynalfos')))) or do('CanUseLoweredChandelier')",
+			"CanAccessTreasureRoom": "do('CanAccessCastleBalcony') and (have('Hyrule Castle Keys', '==3') or rules('Small Key Keysey')) and do('CanDefeatLizalfos') and have('Spinner') and have('Double Clawshot') and do('CanDefeatDarknut')",
+			"HaveAllFused": "(have('Forest', '==1') and have('Mines', '==1') and have('Lakebed', '==1')) or (have('Forest', '==1') and have('Mines', '==1') and have('Grounds', '==1')) or (have('Forest', '==1') and have('Mines', '==1') and have('Ruins', '==1')) or (have('Forest', '==1') and have('Mines', '==1') and have('Time', '==1')) or (have('Forest', '==1') and have('Mines', '==1') and have('Sky', '==1')) or (have('Forest', '==1') and have('Mines', '==1') and have('Twilight', '==1')) or (have('Forest', '==1') and have('Lakebed', '==1') and have('Grounds', '==1')) or (have('Forest', '==1') and have('Lakebed', '==1') and have('Ruins', '==1')) or (have('Forest', '==1') and have('Lakebed', '==1') and have('Time', '==1')) or (have('Forest', '==1') and have('Lakebed', '==1') and have('Sky', '==1')) or (have('Forest', '==1') and have('Lakebed', '==1') and have('Twilight', '==1')) or (have('Forest', '==1') and have('Grounds', '==1') and have('Ruins', '==1')) or (have('Forest', '==1') and have('Grounds', '==1') and have('Time', '==1')) or (have('Forest', '==1') and have('Grounds', '==1') and have('Sky', '==1')) or (have('Forest', '==1') and have('Grounds', '==1') and have('Twilight', '==1')) or (have('Forest', '==1') and have('Ruins', '==1') and have('Time', '==1')) or (have('Forest', '==1') and have('Ruins', '==1') and have('Sky', '==1')) or (have('Forest', '==1') and have('Ruins', '==1') and have('Twilight', '==1')) or (have('Forest', '==1') and have('Time', '==1') and have('Sky', '==1')) or (have('Forest', '==1') and have('Time', '==1') and have('Twilight', '==1')) or (have('Forest', '==1') and have('Sky', '==1') and have('Twilight', '==1')) or (have('Mines', '==1') and have('Lakebed', '==1') and have('Grounds', '==1')) or (have('Mines', '==1') and have('Lakebed', '==1') and have('Ruins', '==1')) or (have('Mines', '==1') and have('Lakebed', '==1') and have('Time', '==1')) or (have('Mines', '==1') and have('Lakebed', '==1') and have('Sky', '==1')) or (have('Mines', '==1') and have('Lakebed', '==1') and have('Twilight', '==1')) or (have('Mines', '==1') and have('Grounds', '==1') and have('Ruins', '==1')) or (have('Mines', '==1') and have('Grounds', '==1') and have('Time', '==1')) or (have('Mines', '==1') and have('Grounds', '==1') and have('Sky', '==1')) or (have('Mines', '==1') and have('Grounds', '==1') and have('Twilight', '==1')) or (have('Mines', '==1') and have('Ruins', '==1') and have('Time', '==1')) or (have('Mines', '==1') and have('Ruins', '==1') and have('Sky', '==1')) or (have('Mines', '==1') and have('Ruins', '==1') and have('Twilight', '==1')) or (have('Mines', '==1') and have('Time', '==1') and have('Sky', '==1')) or (have('Mines', '==1') and have('Time', '==1') and have('Twilight', '==1')) or (have('Mines', '==1') and have('Sky', '==1') and have('Twilight', '==1')) or (have('Lakebed', '==1') and have('Grounds', '==1') and have('Ruins', '==1')) or (have('Lakebed', '==1') and have('Grounds', '==1') and have('Time', '==1')) or (have('Lakebed', '==1') and have('Grounds', '==1') and have('Sky', '==1')) or (have('Lakebed', '==1') and have('Grounds', '==1') and have('Twilight', '==1')) or (have('Lakebed', '==1') and have('Ruins', '==1') and have('Time', '==1')) or (have('Lakebed', '==1') and have('Ruins', '==1') and have('Sky', '==1')) or (have('Lakebed', '==1') and have('Ruins', '==1') and have('Twilight', '==1')) or (have('Lakebed', '==1') and have('Time', '==1') and have('Sky', '==1')) or (have('Lakebed', '==1') and have('Time', '==1') and have('Twilight', '==1')) or (have('Lakebed', '==1') and have('Sky', '==1') and have('Twilight', '==1')) or (have('Grounds', '==1') and have('Ruins', '==1') and have('Time', '==1')) or (have('Grounds', '==1') and have('Ruins', '==1') and have('Sky', '==1')) or (have('Grounds', '==1') and have('Ruins', '==1') and have('Twilight', '==1')) or (have('Grounds', '==1') and have('Time', '==1') and have('Sky', '==1')) or (have('Grounds', '==1') and have('Time', '==1') and have('Twilight', '==1')) or (have('Grounds', '==1') and have('Sky', '==1') and have('Twilight', '==1')) or (have('Ruins', '==1') and have('Time', '==1') and have('Sky', '==1')) or (have('Ruins', '==1') and have('Time', '==1') and have('Twilight', '==1')) or (have('Time', '==1') and have('Sky', '==1') and have('Twilight', '==1'))",
+			"HaveAllShards": "(have('Forest', '==2') and have('Mines', '==2') and have('Lakebed', '==2') and have('Grounds', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Lakebed', '==2') and have('Ruins', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Lakebed', '==2') and have('Time', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Lakebed', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Lakebed', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Grounds', '==2') and have('Ruins', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Grounds', '==2') and have('Time', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Grounds', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Grounds', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Ruins', '==2') and have('Time', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Ruins', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Ruins', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Mines', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Ruins', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Time', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Ruins', '==2') and have('Time', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Ruins', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Ruins', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Lakebed', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Time', '==2')) or (have('Forest', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Grounds', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Grounds', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Grounds', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Forest', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Ruins', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Forest', '==2') and have('Time', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Ruins', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Time', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Sky', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Grounds', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Ruins', '==2') and have('Time', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Ruins', '==2') and have('Sky', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Ruins', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Lakebed', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Time', '==2')) or (have('Mines', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Sky', '==2')) or (have('Mines', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Grounds', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Mines', '==2') and have('Grounds', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Grounds', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Mines', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Ruins', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Mines', '==2') and have('Time', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Lakebed', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Time', '==2')) or (have('Lakebed', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Sky', '==2')) or (have('Lakebed', '==2') and have('Grounds', '==2') and have('Ruins', '==2') and have('Twilight', '==2')) or (have('Lakebed', '==2') and have('Grounds', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Lakebed', '==2') and have('Grounds', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Lakebed', '==2') and have('Grounds', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Lakebed', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Lakebed', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Lakebed', '==2') and have('Ruins', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Lakebed', '==2') and have('Time', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Grounds', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Sky', '==2')) or (have('Grounds', '==2') and have('Ruins', '==2') and have('Time', '==2') and have('Twilight', '==2')) or (have('Grounds', '==2') and have('Ruins', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Grounds', '==2') and have('Time', '==2') and have('Sky', '==2') and have('Twilight', '==2')) or (have('Ruins', '==2') and have('Time', '==2') and have('Sky', '==2') and have('Twilight', '==2'))",
+			"AllDungeonsBeaten": "have('Forest') and have('Mines') and have('Lakebed') and have('Grounds') and have('Ruins') and have('Time') and have('Sky') and have('Twilight')"
+		},
+		"RulesOptions": [
+			{
+				"Name": "Skip Prologue",
+				"HideChecks": null,
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Open Faron Woods",
+				"HideChecks": null,
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Faron Twilight Skip",
+				"HideChecks": null,
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Eldin Twilight Skip",
+				"HideChecks": null,
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Lanayru Twilight Skip",
+				"HideChecks": null,
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Skip MDH",
+				"HideChecks": null,
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Open Grove",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Open Door of Time",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Unlock Map Regions",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Vanilla Small Key",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Small Key Keysey",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Big Key Keysey",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Shop Items",
+				"HideChecks": [
+					{
+						"Kind": "Block",
+						"Name": "Ordon Village",
+						"Checks": [
+							"Sera Shop Slingshot"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Village",
+						"Checks": [
+							"Malo Mart Left Item",
+							"Malo Mart Central Item",
+							"Malo Mart Right Item",
+							"Malo Mart Second Right Item",
+							"Barnes Bomb Bag"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle Town",
+						"Checks": [
+							"Goron Shop Arrow Refill (Dev 1.3)",
+							"Goron Shop Hylian Shield (Dev 1.3)",
+							"Goron Shop Lantern Oil (Dev 1.3)",
+							"Goron Shop Red Potion (Dev 1.3)",
+							"Malo Mart Magic Armor"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "BugSanity",
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Female Mantis",
+							"Female Butterfly",
+							"Male Phasmid",
+							"Female Phasmid",
+							"Male Dayfly",
+							"Female Dayfly",
+							"Male Stag Beetle",
+							"Female Stag Beetle",
+							"Female Ladybug",
+							"Male Grasshopper",
+							"Female Grasshopper",
+							"Male Beetle",
+							"Female Beetle",
+							"Female Pill Bug",
+							"Female Dragonfly"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Deep Grove",
+						"Checks": [
+							"Male Snail",
+							"Past - Female Snail"
+						]
+					},   
+					{
+						"Kind": "Block",
+						"Name": "Lower Domain",
+						"Checks": [
+							"Male Dragonfly"
+						]
+					},  
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Village",
+						"Checks": [
+							"Female Ant"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Gorge",
+						"Checks": [
+							"Male Pill Bug"
+					
+						]
+					}, 
+					{
+						"Kind": "Block",
+						"Name": "Bridge Vines",
+						"Checks": [
+							"Male Mantis"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Fountain",
+						"Checks": [
+							"Male Ladybug"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Castle Ruins",
+						"Checks": [
+							"Male Butterfly"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Graveyard",
+						"Checks": [
+							"Male Ant"
+						]
+					}
+				],
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "PoeSanity",
+				"HideChecks": [
+                    {
+                        "Kind": "Block",
+                        "Name": "Purple Mist",
+                        "Checks": [
+                            "Faron Mist Poe"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Deep Grove",
+                        "Checks": [
+                            "Past - Owl Statue Poe",
+                            "Poe under Rock"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Master Sword Pedestal",
+                        "Checks": [
+                            "Master Sword Poe"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Temple of Time",
+                        "Checks": [
+                            "Poe behind Gate",
+                            "Poe above Scales"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Eldin Lantern Cave",
+                        "Checks": [
+                            "Eldin Lantern Cave Poe"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Hidden Village",
+                        "Checks": [
+                            "Hidden Village Poe"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "Lower Domain",
+                        "Checks": [
+                            "Poe by Mother and Child"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "Snowpeak Ruins",
+                        "Checks": [
+                            "Lobby Armor Poe",
+                            "Lobby Poe",
+                            "East Ice Room Poe"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "Castle Ruins",
+                        "Checks": [
+                            "Castle Ruins Poe"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "Fountain",
+                        "Checks": [
+                            "South Castle Town Poe"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "Bubble Grotto",
+                        "Checks": [
+                            "Bridge Cliff Poe"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "Lake Lantern Cave",
+                        "Checks": [
+                            "Third Room Poe",
+                            "Eighth Room Poe",
+                            "Eleventh Room Poe"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "City in the Sky",
+                        "Checks": [
+                            "West Garden Lone Island Poe",
+                            "Poe above Central Fan"
+                        ]
+                    },     
+                    {
+                        "Kind": "Block",
+                        "Name": "Bulblin Camp",
+                        "Checks": [
+                            "Bulblin Camp Poe",
+							"Outside Arbiter's Grounds Poe"
+                        ]
+                    },      
+                    {
+                        "Kind": "Block",
+                        "Name": "Arbiter's Grounds",
+                        "Checks": [
+                            "Lobby Poe",
+                            "East Turning Room Poe",
+                            "Hidden Wall Poe",
+							"West Poe"
+                        ]
+                    },  
+                    {
+                        "Kind": "Block",
+                        "Name": "Kakariko Gorge",
+                        "Checks": [
+                            "Kakariko Gorge Poe"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Kakariko Graveyard",
+                        "Checks": [
+                            "Graveyard Open Poe",
+							"Graveyard Under Grave Poe"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Hyrule Castle Town",
+                        "Checks": [
+                            "Jovani House Poe"
+                        ]
+                    },
+                    {
+                        "Kind": "Block",
+                        "Name": "Cave of Ordeals",
+                        "Checks": [
+                            "Poe Floor 17",
+                            "Poe Floor 33",
+                            "Poe Floor 44"
+                        ]
+                    },
+					{
+                        "Kind": "SimpleCheck",
+                        "Checks": [
+                            "Poe above Grotto",
+                            "Poe in Grotto 1",
+                            "Poe in Grotto 2",
+                            "Poe near Bulblin Camp",
+                            "Poe above CoO",
+							"Grotto - Outside Poe",
+                            "Poe above Shell Blade Grotto",
+                            "Poe near Tower",
+                            "Flight-by-Fowl Poe",
+                            "Alcove Poe",
+                            "Icy Summit Poe",
+                            "Poe by the Dock",
+                            "East Castle Town Bridge Poe",
+                            "Grotto Poe 1",
+                            "Grotto Poe 2",
+                            "Bridge Poe",
+                            "Poe behind Waterfall",
+                            "Upper Zora River Poe",
+                            "Snowpeak Cave Ice Poe",
+                            "Poe among Trees",
+                            "Poe above Freezard Grotto",
+                            "Poe in Blizzard",
+                            "Death Mountain Poe",
+                            "Watchtower Poe",
+                            "Bomb Shop Poe",
+                            "Faron Fields Poe",
+                            "Lost Woods Waterfall Poe"
+                        ]
+                    }
+                ],
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Golden Wolves",
+				"HideChecks": [
+                    {
+                        "Kind": "SimpleCheck",
+                        "Checks": [
+                            "Faron Woods Golden Wolf",
+                            "Golden Wolf from Mountain Stone",
+                            "Golden Wolf from River Stone",
+                            "Golden Wolf from Lost Woods Stone",
+                            "Golden Wolf from Lake Stone",
+							"Golden Wolf from Snowpeak Stone",
+                            "Golden Wolf from Hidden Village Stone"
+                        ]
+                    }
+				],
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Ilia's Quest & Hidden Village",
+				"HideChecks": null,
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Wooden Statue"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Village",
+						"Checks": [
+							"Renado's Letter",
+							"Horse Call"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle Town",
+						"Checks": [
+							"Telma Invoice",
+							"Medicine Scent",
+							"East Balcony Small Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hidden Village",
+						"Checks": [
+							"Impaz Skybook",
+							"Impaz Ilia Charm",
+							"Cats Hide and Seek",
+							"Hint Sign near Cucco",
+							"Hidden Village Poe"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Checks Excluded in Drehen Rules (soon)",
+				"Active": true,
+				"CanBeClickable": false,
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Iza Raging Rapids Minigame"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Cave of Ordeals",
+						"Checks": [
+							"Entrance Hint Sign",
+							"Great Fairy Reward"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle Town",
+						"Checks": [
+							"Jovani 60 Poe Souls Reward"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Agitha's Castle",
+						"Checks": [
+							"Agitha Male Beetle Reward",
+							"Agitha Female Beetle Reward",
+							"Agitha Male Pill Bug Reward",
+							"Agitha Female Pill Bug Reward",
+							"Agitha Male Ant Reward",
+							"Agitha Female Ant Reward",
+							"Agitha Male Grasshopper Reward",
+							"Agitha Female Grasshopper Reward",
+							"Agitha Male Phasmid Reward",
+							"Agitha Female Phasmid Reward",
+							"Agitha Male Mantis Reward",
+							"Agitha Female Mantis Reward",
+							"Agitha Male Dragonfly Reward",
+							"Agitha Female Dragonfly Reward",
+							"Agitha Male Butterfly Reward",
+							"Agitha Female Butterfly Reward",
+							"Agitha Male Stag Beetle Reward",
+							"Agitha Female Stag Beetle Reward",
+							"Agitha Male Ladybug Reward",
+							"Agitha Female Ladybug Reward",
+							"Agitha Male Dayfly Reward",
+							"Agitha Female Dayfly Reward",
+							"Agitha Male Snail Reward",
+							"Agitha Female Snail Reward"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Palace of Twilight",
+						"Checks": [
+							"Hint Sign at Entrance",
+							"West First Room Central Chest",
+							"West First Room Behind Wall of Darkness",
+							"West Second Room Central Chest",
+							"West Second Room Lower South Chest",
+							"West Second Room Southeast Chest",
+							"East First Room North Small Chest",
+							"East First Room Zant Head Chest",
+							"East Second Room Northwest Chest",
+							"East Second Room Northeast Chest",
+							"East Second Room Southwest Chest",
+							"East Second Room Southeast Chest",
+							"East First Room West Alcove Chest",
+							"East First Room East Alcove Chest",
+							"Collect Both Sols",
+							"Central First Room Chest",
+							"Big Key Chest",
+							"Central Outdoor Chest",
+							"Central Tower Chest",
+							"Zant"
+						]
+					}, 
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle",
+						"Checks": [
+							"Hint Sign at Entrance",
+							"West Courtyard Northern Small Chest",
+							"West Courtyard Central Small Chest",
+							"King Bulblin Key",
+							"East Wing Boomerang Puzzle Chest",
+							"East Wing Balcony Chest",
+							"Grvyrd Grave Switch Room Right Chest",
+							"Grvyrd Grave Switch Room Front Left",
+							"Grvyrd Grave Switch Room Back Left",
+							"Graveyard Owl Statue",
+							"Main Hall Northeast Chest",
+							"Lantern Staircase Chest",
+							"Main Hall Southwest Chest",
+							"Main Hall Northwest Chest",
+							"Southeast Balcony Tower Chest",
+							"Big Key Chest",
+							"Treasure Room 1st Chest",
+							"Treasure Room 2nd Chest",
+							"Treasure Room 3rd Chest",
+							"Treasure Room 4th Chest",
+							"Treasure Room 5th Chest",
+							"Treasure Room 1st Small Chest",
+							"Treasure Room 2nd Small Chest",
+							"Treasure Room 3rd Small Chest",
+							"Treasure Room 4th Small Chest",
+							"Treasure Room 5th Small Chest",
+							"Treasure Room 6th Small Chest",
+							"Treasure Room 7th Small Chest",
+							"Treasure Room 8th Small Chest"
+						]
+					}
+				],
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Checks Excluded in Season 1 Rules",
+				"Active": true,
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Death Mountain Alcove Chest",
+							"Death Mountain Hint Sign",
+							"Iza Raging Rapids Minigame",
+							"Snowboard Racing"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Village",
+						"Checks": [
+							"Talo Sharpshooting"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle Town",
+						"Checks": [
+							"Jovani 60 Poe Souls Reward"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Agitha's Castle",
+						"Checks": [
+							"Agitha Male Beetle Reward",
+							"Agitha Female Beetle Reward",
+							"Agitha Male Pill Bug Reward",
+							"Agitha Female Pill Bug Reward",
+							"Agitha Female Ant Reward",
+							"Agitha Male Grasshopper Reward",
+							"Agitha Male Phasmid Reward",
+							"Agitha Female Phasmid Reward",
+							"Agitha Female Mantis Reward",
+							"Agitha Male Dragonfly Reward",
+							"Agitha Male Butterfly Reward",
+							"Agitha Male Stag Beetle Reward",
+							"Agitha Female Stag Beetle Reward",
+							"Agitha Male Ladybug Reward",
+							"Agitha Female Ladybug Reward",
+							"Agitha Male Dayfly Reward",
+							"Agitha Female Dayfly Reward",
+							"Agitha Female Snail Reward"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lake Lantern Cave",
+						"Checks": [
+							"First Room West Chest",
+							"First Room North Chest",
+							"Second Room West Chest",
+							"Third Room East Chest",
+							"Fourth Room North Chest",
+							"Fifth Room Lantern Chest",
+							"Fifth Room North Chest",
+							"Sixth Room North Chest",
+							"Lake Lantern Cave Hint Sign",
+							"Seventh Room South Chest",
+							"Seventh Room West Chest",
+							"Eighth Room North Chest",
+							"Eighth Room East Chest",
+							"Ninth Room North Chest",
+							"Tenth Room East Chest",
+							"Eleventh Room Lantern Chest"
+
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Bulblin Camp",
+						"Checks": [
+							"Watchtower at Entrance Chest",
+							"East Camp Tent Small Chest",
+							"East Camp Freestanding",
+							"East Camp Roasted Boar",
+							"West Camp Hint Sign",
+							"Outside Arbiter's Grounds Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Cave of Ordeals",
+						"Checks": [
+							"Entrance Hint Sign",
+							"Great Fairy Reward"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Palace of Twilight",
+						"Checks": [
+							"Hint Sign at Entrance",
+							"West First Room Central Chest",
+							"West First Room Behind Wall of Darkness",
+							"West Second Room Central Chest",
+							"West Second Room Lower South Chest",
+							"West Second Room Southeast Chest",
+							"East First Room North Small Chest",
+							"East First Room Zant Head Chest",
+							"East Second Room Northwest Chest",
+							"East Second Room Northeast Chest",
+							"East Second Room Southwest Chest",
+							"East Second Room Southeast Chest",
+							"East First Room West Alcove Chest",
+							"East First Room East Alcove Chest",
+							"Collect Both Sols",
+							"Central First Room Chest",
+							"Big Key Chest",
+							"Central Outdoor Chest",
+							"Central Tower Chest",
+							"Zant"
+						]
+					}, 
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle",
+						"Checks": [
+							"Hint Sign at Entrance",
+							"West Courtyard Northern Small Chest",
+							"West Courtyard Central Small Chest",
+							"King Bulblin Key",
+							"East Wing Boomerang Puzzle Chest",
+							"East Wing Balcony Chest",
+							"Grvyrd Grave Switch Room Right Chest",
+							"Grvyrd Grave Switch Room Front Left",
+							"Grvyrd Grave Switch Room Back Left",
+							"Graveyard Owl Statue",
+							"Main Hall Northeast Chest",
+							"Lantern Staircase Chest",
+							"Main Hall Southwest Chest",
+							"Main Hall Northwest Chest",
+							"Southeast Balcony Tower Chest",
+							"Big Key Chest",
+							"Treasure Room 1st Chest",
+							"Treasure Room 2nd Chest",
+							"Treasure Room 3rd Chest",
+							"Treasure Room 4th Chest",
+							"Treasure Room 5th Chest",
+							"Treasure Room 1st Small Chest",
+							"Treasure Room 2nd Small Chest",
+							"Treasure Room 3rd Small Chest",
+							"Treasure Room 4th Small Chest",
+							"Treasure Room 5th Small Chest",
+							"Treasure Room 6th Small Chest",
+							"Treasure Room 7th Small Chest",
+							"Treasure Room 8th Small Chest"
+						]
+					}
+				],
+				"ParentListName": "Main Rules"				
+			},
+			{
+				"Name": "Use Scents for Logic",
+				"HideChecks": [
+					{
+						"Kind": "Block",
+						"Name": "Arbiter's Grounds",
+						"Checks": [
+							"Poe Scent"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lower Domain",
+						"Checks": [
+							"Reekfish Scent"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle Town",
+						"Checks": [
+							"Medicine Scent"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Ooccoo",
+				"HideChecks": [
+					{
+						"Kind": "Block",
+						"Name": "Forest Temple",
+						"Checks": [
+							"Ooccoo"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Goron Mines",
+						"Checks": [
+							"Ooccoo"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lakebed Temple",
+						"Checks": [
+							"Ooccoo"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Arbiter's Grounds",
+						"Checks": [
+							"Ooccoo"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Snowpeak Ruins",
+						"Checks": [
+							"Ooccoo"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Temple of Time",
+						"Checks": [
+							"Ooccoo"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "City in the Sky",
+						"Checks": [
+							"Ooccoo"
+						]
+					}
+				],
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Hints",
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Coro Hint Sign",
+							"Gorge Hint Sign",
+							"Death Mountain Hint Sign",
+							"Eldin Field Hint Sign",
+							"North Eldin Field Hint Sign",
+							"Lanayru Fields Hint Sign",
+							"Beside Castle Town Hint Sign",
+							"Cucco Mini Game Hint Sign",
+							"Above Owl Statue Hint Sign",
+							"Zora Domain Hint Sign",
+							"Fishing Hole Hint Sign",
+							"Gerudo Desert Hint Sign",
+							"Snowpeak Province Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Ordon Village",
+						"Checks": [
+							"Ordon Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Coro",
+						"Checks": [
+							"Coro Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Faron Bridge",
+						"Checks": [
+							"Under Bridge Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Village",
+						"Checks": [
+							"Top Kakariko Hot Spring Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Graveyard",
+						"Checks": [
+							"Hint Sign behind Zora Grave"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle Town",
+						"Checks": [
+							"Central Fountain Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Fountain",
+						"Checks": [
+							"Fountain Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lake Lantern Cave",
+						"Checks": [
+							"Lake Lantern Cave Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lanayru Spring",
+						"Checks": [
+							"Underwater Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Deep Grove",
+						"Checks": [
+							"Hint Sign near Past Entrance"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Bulblin Camp",
+						"Checks": [
+							"West Camp Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hidden Village",
+						"Checks": [
+							"Hint Sign near Cucco"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Forest Temple",
+						"Checks": [
+							"Before West Wing Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Goron Mines",
+						"Checks": [
+							"Gor Ebizo Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lakebed Temple",
+						"Checks": [
+							"Before West Wing Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Arbiter's Grounds",
+						"Checks": [
+							"Before Poe Door Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Snowpeak Ruins",
+						"Checks": [
+							"Living Room Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Temple of Time",
+						"Checks": [
+							"Hint Sign beside Ooccoo",
+							"Moving Wall Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "City in the Sky",
+						"Checks": [
+							"Before East Wing Hint Sign"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Palace of Twilight",
+						"Checks": [
+							"Hint Sign at Entrance"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Hyrule Castle",
+						"Checks": [
+							"Hint Sign at Entrance"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Cave of Ordeals",
+						"Checks": [
+							"Entrance Hint Sign"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "-----------------------------------------------------",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "-----------------------------------------------------",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Barren Categories",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "-----------------------------------------------------",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Wolf Grottos",
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Wolf Grotto - Rat Chuchu Lantern Chest",
+							"Wolf Grotto - Bomskit Left Chest",
+							"Wolf Grotto - Bomskit Lantern Chest",
+							"Wolf Grotto - Water Bomb Fish Chest",
+							"Wolf Grotto - Skulltula Lantern Chest",
+							"Wolf Grotto - Helmasaur Chest",
+							"Wolf Grotto - Tektite Chest",
+							"Wolf Grotto - Water Toadpoli Chest",
+							"Wolf Grotto - Shell Blade Chest",
+							"Wolf Grotto - Skulltula Chest",
+							"Wolf Grotto - Rock Lantern Chest",
+							"Wolf Grotto - Freezard Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Wolf Grotto - Chu Baba & Keese",
+						"Checks": [
+							"Rear Chest",
+							"Left Chest",
+							"Right Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Wolf Grotto - Stalfos",
+						"Checks": [
+							"Left Small Chest",
+							"Right Small Chest",
+							"Stalfos Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Bubble Grotto",
+						"Checks": [
+							"Wolf Grotto - Bubble Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Deep Grove",
+						"Checks": [
+							"Wolf Grotto - Baba Serpent Chest"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Underwater Checks",
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Behind Gate Underwater Chest",
+							"Underwater Chest",
+							"Extinguish All Torches Chest",
+							"Light All Torches Chest",
+							"Underwater Goron"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Village",
+						"Checks": [
+							"Eldin Spring Underwater Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lanayru Spring",
+						"Checks": [
+							"Underwater Left Small Chest",
+							"Underwater Right Small Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Goron Mines",
+						"Checks": [
+							"Switch Room Underwater Chest",
+							"Outside Underwater Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lakebed Temple",
+						"Checks": [
+							"Central Room Center Spire Chest",
+							"Before Deku Toad Underwatr Left Chest",
+							"Before Deku Toad Underwatr Right Chest",
+							"West Second Floor Southwest Underwater Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "City in the Sky",
+						"Checks": [
+							"Underwater Southwest Chest",
+							"Underwater Southeast Chest"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Owl Statue Chests",
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Faron Woods Sky Character",
+							"Faron Woods Owl Statue Chest",
+							"Gorge Sky Character",
+							"Gorge Owl Statue Chest",
+							"Eldin Bridge Sky Character",
+							"Eldin Bridge Owl Statue Chest",
+							"Hylia Bridge Sky Character",
+							"Hylia Bridge Owl Statue Chest",
+							"Gerudo Desert Sky Character",
+							"Gerudo Desert Owl Statue Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Castle Ruins",
+						"Checks": [
+							"Castle Ruins Sky Character",
+							"Castle Ruins Owl Statue Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Deep Grove",
+						"Checks": [
+							"Past - Owl Statue Chest"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Show Spawnable Lantern Chests",
+				"HideChecks": [
+					{
+						"Kind": "SimpleCheck",
+						"Checks": [
+							"Wolf Grotto - Rat Chuchu Lantern Chest",
+							"Wolf Grotto - Bomskit Lantern Chest",
+							"Wolf Grotto - Skulltula Lantern Chest",
+							"Light All Torches Chest",
+							"Wolf Grotto - Rock Lantern Chest",
+							"Snowpeak Cave Ice Lantern Chest",
+							"Lost Woods Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Purple Mist",
+						"Checks": [
+							"Mist Northeast Cave Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Eldin Lantern Cave",
+						"Checks": [
+							"Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Kakariko Graveyard",
+						"Checks": [
+							"Graveyard Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Bridge of Eldin Stockcave",
+						"Checks": [
+							"Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Lanayru Spring",
+						"Checks": [
+							"Back Room Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Bulblin Camp",
+						"Checks": [
+							"Outside Arbiter's Grounds Lantern Chest"
+						]
+					},
+					{
+						"Kind": "Block",
+						"Name": "Temple of Time",
+						"Checks": [
+							"Lobby Lantern Chest"
+						]
+					}
+				],
+				"Active": true,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "1.3 Rando Settings (Dev/Drehen)",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "-----------------------------------------------------",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Use 1.3 Logic",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Use Added Drehen S2 Logic",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Skull Kid Fight Skip",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Start with Mirror Chamber Portal",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Partial Zant Fight Skip",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Lower Hyrule Castle Chandelier",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Hyrule Castle Skip",
+				"HideChecks": null,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "-----------------------------------------------------",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "TOURNAMENT SETTINGS",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "-----------------------------------------------------",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Drehen Tournament Ruleset (soon)",
+				"HideChecks": null,
+				"CanBeClickable": false,
+				"Actions" : [
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Skip Prologue"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Crystal"
+						}
+					}
+				],
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Season 1 Tournament Ruleset",
+				"HideChecks": null,
+				"Actions" : [
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Skip Prologue"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Open Faron Woods"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Faron Twilight Skip"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Eldin Twilight Skip"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Lanayru Twilight Skip"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Skip MDH"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "Open Grove"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Open Door of Time"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Unlock Map Regions"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "Small Key Keysey"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "Big Key Keysey"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "Shop Items"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "BugSanity"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "PoeSanity"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "Golden Wolves"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "Ilia's Quest & Hidden Village"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : true,
+							"RuleName" : "Show Checks Excluded in Drehen Ruleset"
+						}
+					},
+					{
+						"SetRule" : {
+							"Active" : false,
+							"RuleName" : "Show Checks Excluded in Season 1 Ruleset"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Crystal"
+						}
+					},
+					{
+						"SetRightClick" : {
+							"Counter" : 1,
+							"Item" : "Hawkeye"
+						}
+					},
+					{
+						"SetRightClick" : {
+							"Counter" : 1,
+							"Item" : "Renado Letter"
+						}
+					},
+					{
+						"SetWheelClick" : {
+							"Counter" : 1,
+							"Item" : "Wallet"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Giant Bomb Bag"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Coro Key"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Gate Key"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Desert Key"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 3,
+							"Item" : "Vessel of Light"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 6,
+							"Item" : "Ancient Sky Book"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 15,
+							"Item" : "Poe Souls"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 2,
+							"Item" : "Mines Key Shard I"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Sky Key"
+						}
+					},
+					{
+						"SetRightClick" : {
+							"Counter" : 1,
+							"Item" : "Hyrule Castle Keys"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Hyrule Castle Big Key"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Close Mines"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 0,
+							"Item" : "Close Lakebed"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Close Grounds"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 0,
+							"Item" : "Close Snowpeak"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 0,
+							"Item" : "ToT 0 Sword"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 0,
+							"Item" : "Close Sky"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Palace Open"
+						}
+					},
+					{
+						"SetLeftClick" : {
+							"Counter" : 1,
+							"Item" : "Castle Open"
+						}
+					}
+				],
+				"ParentListName": "Main Rules"
+			},
+			{
+				"Name": "Generic Spawns",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Random Spawn"
+			},
+			{
+				"Name": "-----------------------------------------------------",
+				"HideChecks": null,
+				"Active": true,
+				"CanBeClickable": false,
+				"ParentListName": "Random Spawn"
+			},
+			{
+				"Name": "Ordona / Forest",
+				"HideChecks": null,
+				"ParentListName": "Random Spawn"
+			},
+			{
+				"Name": "Faron Field / Eldin",
+				"HideChecks": null,
+				"ParentListName": "Random Spawn"
+			},
+			{
+				"Name": "Lanayru / Snowpeak",
+				"HideChecks": null,
+				"ParentListName": "Random Spawn"
+			}
+		]
+	}
+]
