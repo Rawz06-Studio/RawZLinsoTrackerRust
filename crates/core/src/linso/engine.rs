@@ -7,6 +7,7 @@ use super::model::{
     CheckDef, HiddenChecks, ItemDef, Kind, MapDatas, MapDef, RuleAction, RulesList, Template,
 };
 use crate::model::Point;
+use serde::{Deserialize, Serialize};
 use std::cell::RefCell;
 use std::collections::HashMap;
 
@@ -25,7 +26,7 @@ pub enum Button {
 }
 
 /// What was dropped on a draggable item or a map check.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Dragged {
     pub name: String,
     pub base_name: String,
@@ -33,7 +34,7 @@ pub struct Dragged {
     pub index: Option<i64>,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ItemState {
     /// `show_item`: hidden children are neither drawn nor clickable.
     pub show: bool,
@@ -1165,6 +1166,139 @@ impl Engine {
     }
 }
 
+/// A tracker's progress, as a save file holds it.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct SaveState {
+    pub template: String,
+    items: Vec<SavedItem>,
+    checks: Vec<SavedCheck>,
+    rules: Vec<SavedRule>,
+}
+
+/// Saved entries carry their names, so a save from another version of the
+/// template only restores what still matches.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+struct SavedItem {
+    index: usize,
+    name: String,
+    state: ItemState,
+}
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+struct SavedCheck {
+    map: usize,
+    check: usize,
+    sub: usize,
+    name: String,
+    checked: bool,
+    hide: bool,
+    focused: bool,
+    dragged: Option<Dragged>,
+}
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+struct SavedRule {
+    list: String,
+    name: String,
+    checked: bool,
+}
+
+impl Engine {
+    pub fn save(&self, template: &str) -> SaveState {
+        let items = self
+            .nodes
+            .iter()
+            .enumerate()
+            .map(|(index, node)| SavedItem {
+                index,
+                name: node.def.name.clone(),
+                state: node.state.clone(),
+            })
+            .collect();
+        let mut checks = Vec::new();
+        for (map, data) in self.maps.iter().enumerate() {
+            for (check, entry) in data.checks.iter().enumerate() {
+                for (sub, item) in entry.checks().iter().enumerate() {
+                    checks.push(SavedCheck {
+                        map,
+                        check,
+                        sub,
+                        name: item.name.clone(),
+                        checked: item.checked,
+                        hide: item.hide,
+                        focused: item.focused,
+                        dragged: item.dragged.clone(),
+                    });
+                }
+            }
+        }
+        let rules = self
+            .rule_lists
+            .iter()
+            .flat_map(|list| {
+                list.rules.iter().map(|rule| SavedRule {
+                    list: list.def.name.clone(),
+                    name: rule.name.clone(),
+                    checked: rule.checked,
+                })
+            })
+            .collect();
+        SaveState {
+            template: template.to_owned(),
+            items,
+            checks,
+            rules,
+        }
+    }
+
+    /// Restores a save of this template; errors for another template's.
+    pub fn load(&mut self, template: &str, save: &SaveState) -> Result<(), String> {
+        if save.template != template {
+            return Err(format!("This save is for the template {}", save.template));
+        }
+        for saved in &save.items {
+            if let Some(node) = self.nodes.get_mut(saved.index)
+                && node.def.name == saved.name
+            {
+                node.state = saved.state.clone();
+            }
+        }
+        for saved in &save.checks {
+            let found = self
+                .maps
+                .get_mut(saved.map)
+                .and_then(|map| map.checks.get_mut(saved.check))
+                .and_then(|check| check.checks_mut().get_mut(saved.sub));
+            if let Some(item) = found
+                && item.name == saved.name
+            {
+                item.checked = saved.checked;
+                item.hide = saved.hide;
+                item.focused = saved.focused;
+                item.dragged = saved.dragged.clone();
+            }
+        }
+        for saved in &save.rules {
+            let found = self
+                .rule_lists
+                .iter_mut()
+                .filter(|list| list.def.name == saved.list)
+                .flat_map(|list| list.rules.iter_mut())
+                .find(|rule| rule.name == saved.name);
+            if let Some(rule) = found {
+                rule.checked = saved.checked;
+            }
+        }
+        self.logic_stale = true;
+        Ok(())
+    }
+
+    /// Whether the item is on, for the select and cancel sounds.
+    pub fn is_enabled(&self, id: ItemId) -> bool {
+        self.nodes[id].state.enable
+    }
+}
+
 #[derive(Debug, Clone, Copy)]
 enum Children {
     Hint,
@@ -1393,6 +1527,32 @@ mod tests {
         assert_eq!(engine.dropped_item(&dropped), Some((lantern, None)));
         engine.clear_check_drop(at);
         assert!(engine.sub_check(at).dragged.is_none());
+    }
+
+    #[test]
+    fn a_save_restores_items_checks_and_rules() {
+        let mut engine = load("twilightprincessmap");
+        let lantern = id(&engine, "Lantern");
+        engine.click(lantern, Button::Left);
+        engine.toggle_block(0, 0);
+        let bug = (0..engine.rule_lists.len())
+            .flat_map(|l| (0..engine.rule_lists[l].rules.len()).map(move |r| (l, r)))
+            .find(|&(l, r)| engine.rule_lists[l].rules[r].name == "BugSanity")
+            .unwrap();
+        engine.click_rule(bug.0, bug.1);
+        engine.refresh_logic();
+        let counts = engine.check_counts();
+        let save = engine.save("twilightprincessmap");
+        let json = serde_json::to_string(&save).unwrap();
+
+        let mut fresh = load("twilightprincessmap");
+        let save: SaveState = serde_json::from_str(&json).unwrap();
+        assert!(fresh.load("oot64", &save).is_err());
+        fresh.load("twilightprincessmap", &save).unwrap();
+        fresh.refresh_logic();
+        assert!(fresh.item(lantern).state.enable);
+        assert!(fresh.rule_active("BugSanity"));
+        assert_eq!(fresh.check_counts(), counts);
     }
 
     #[test]

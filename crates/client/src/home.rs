@@ -43,6 +43,8 @@ const GRID_LEFT: f32 = 40.0;
 const SECTIONS: [(&str, f32); 2] = [("Restream", 92.0), ("Local - LinSoTracker", 248.0)];
 const SECTION_TITLE_HEIGHT: f32 = 20.0;
 const GRID_COLUMNS: usize = 5;
+/// Rows a section shows before it pages.
+const SECTION_ROWS: [usize; 2] = [1, 3];
 const CELL: f32 = 122.0;
 const DETAIL_LEFT: f32 = 640.0;
 const DETAIL_TOP: f32 = 60.0;
@@ -76,15 +78,27 @@ struct Entry {
     route: Route,
     info: Info,
     icon: TextureHandle,
-    illustration: TextureHandle,
+    /// Templates the user adds may come without one.
+    illustration: Option<TextureHandle>,
+}
+
+/// A tracker the menu lists, before its files are read.
+struct Listed {
+    section: usize,
+    route: Route,
+    dir: String,
+    /// Built-in trackers must load; a broken template of the user's is skipped.
+    required: bool,
 }
 
 pub struct Home {
     background: TextureHandle,
     glow: TextureHandle,
     menu: TextureHandle,
+    arrows: [TextureHandle; 2],
     entries: Vec<Entry>,
     hovered: Option<usize>,
+    pages: [usize; 2],
 }
 
 fn texture(ctx: &Context, files: &Files, path: &str) -> Result<TextureHandle, Error> {
@@ -112,13 +126,21 @@ impl Home {
             "default/glow-official.png",
             "default/menu-official.png",
             "default/ViceCitySans.otf",
+            "default/icon.png",
+            "default/arrow-left.png",
+            "default/arrow-right.png",
         ] {
             bundle.request(file);
         }
-        for dir in Self::dirs() {
-            for file in ["tracker.json", "icon.png", "illustration.png"] {
-                bundle.request(&format!("{dir}/{file}"));
+        for listed in Self::catalog() {
+            let dir = &listed.dir;
+            if listed.required {
+                bundle.request(&format!("{dir}/tracker.json"));
+            } else {
+                bundle.request_optional(&format!("{dir}/tracker.json"));
             }
+            bundle.request_optional(&format!("{dir}/icon.png"));
+            bundle.request_optional(&format!("{dir}/illustration.png"));
         }
     }
 
@@ -136,46 +158,84 @@ impl Home {
         fonts.families.insert(FontFamily::Name(FONT.into()), family);
         ctx.set_fonts(fonts);
 
+        let default_icon = texture(ctx, files, "default/icon.png")?;
         let mut entries = Vec::new();
-        for (index, dir) in Self::dirs().enumerate() {
-            let json = files
-                .get(&format!("{dir}/tracker.json"))
-                .ok_or_else(|| format!("{dir}: tracker.json missing"))?;
-            let json = std::str::from_utf8(json)?;
-            let (section, route, info) = match index.checked_sub(RESTREAM.len()) {
-                None => {
-                    let name = RESTREAM[index].to_owned();
-                    let route = Route::Tracker { name, room: None };
-                    (0, route, Tracker::parse(json)?.info)
-                }
-                Some(local) => {
-                    let name = LOCAL[local].to_owned();
-                    (1, Route::Local { name }, Template::parse(json)?.info)
-                }
-            };
-            entries.push(Entry {
-                section,
-                route,
-                info,
-                icon: texture(ctx, files, &format!("{dir}/icon.png"))?,
-                illustration: texture(ctx, files, &format!("{dir}/illustration.png"))?,
-            });
+        for listed in Self::catalog() {
+            match Self::entry(ctx, files, &listed, &default_icon) {
+                Ok(entry) => entries.push(entry),
+                Err(error) if listed.required => return Err(error),
+                Err(error) => eprintln!("{}: skipped, {error}", listed.dir),
+            }
         }
         Ok(Self {
             background: texture(ctx, files, "default/background.png")?,
             glow: texture(ctx, files, "default/glow-official.png")?,
             menu: texture(ctx, files, "default/menu-official.png")?,
+            arrows: [
+                texture(ctx, files, "default/arrow-left.png")?,
+                texture(ctx, files, "default/arrow-right.png")?,
+            ],
             entries,
             hovered: None,
+            pages: [0, 0],
         })
     }
 
-    fn dirs() -> impl Iterator<Item = String> {
-        let restream = RESTREAM
+    fn entry(
+        ctx: &Context,
+        files: &Files,
+        listed: &Listed,
+        default_icon: &TextureHandle,
+    ) -> Result<Entry, Error> {
+        let dir = &listed.dir;
+        let json = files
+            .get(&format!("{dir}/tracker.json"))
+            .ok_or_else(|| format!("{dir}: tracker.json missing"))?;
+        let json = std::str::from_utf8(json)?;
+        let info = match listed.section {
+            0 => Tracker::parse(json)?.info,
+            _ => Template::parse(json)?.info,
+        };
+        let optional = |file: &str| texture(ctx, files, &format!("{dir}/{file}")).ok();
+        Ok(Entry {
+            section: listed.section,
+            route: listed.route.clone(),
+            info,
+            icon: optional("icon.png").unwrap_or_else(|| default_icon.clone()),
+            illustration: optional("illustration.png"),
+        })
+    }
+
+    /// Restream trackers, built-in templates, then the user's own templates.
+    fn catalog() -> Vec<Listed> {
+        let restream = RESTREAM.iter().map(|name| Listed {
+            section: 0,
+            route: Route::Tracker {
+                name: (*name).to_owned(),
+                room: None,
+            },
+            dir: format!("sources/restream/{name}"),
+            required: true,
+        });
+        #[cfg(not(target_arch = "wasm32"))]
+        let user = crate::user_templates::names();
+        #[cfg(target_arch = "wasm32")]
+        let user: Vec<String> = Vec::new();
+        let added: Vec<String> = user
+            .into_iter()
+            .filter(|name| !LOCAL.contains(&name.as_str()))
+            .collect();
+        let local = LOCAL
             .iter()
-            .map(|name| format!("sources/restream/{name}"));
-        let local = LOCAL.iter().map(|name| format!("sources/linso/{name}"));
-        restream.chain(local)
+            .map(|name| ((*name).to_owned(), true))
+            .chain(added.into_iter().map(|name| (name, false)))
+            .map(|(name, required)| Listed {
+                section: 1,
+                dir: format!("sources/linso/{name}"),
+                route: Route::Local { name },
+                required,
+            });
+        restream.chain(local).collect()
     }
 
     /// Returns the tracker the user clicked on.
@@ -199,11 +259,18 @@ impl Home {
 
         let mut chosen = None;
         self.hovered = None;
+        self.page_arrows(ui, &painter, origin);
         let mut in_section = [0usize; SECTIONS.len()];
         for index in 0..self.entries.len() {
             let entry = &self.entries[index];
-            let place = in_section[entry.section];
-            in_section[entry.section] += 1;
+            let section = entry.section;
+            let place = in_section[section];
+            in_section[section] += 1;
+            let per_page = SECTION_ROWS[section] * GRID_COLUMNS;
+            if place / per_page != self.pages[section] {
+                continue;
+            }
+            let place = place % per_page;
             let (column, row) = (place % GRID_COLUMNS, place / GRID_COLUMNS);
             let top = SECTIONS[entry.section].1 + SECTION_TITLE_HEIGHT;
             let cell = Rect::from_min_size(
@@ -244,6 +311,53 @@ impl Home {
         chosen
     }
 
+    /// Arrows after a section's title when it holds more than a page.
+    fn page_arrows(&mut self, ui: &mut egui::Ui, painter: &egui::Painter, origin: Pos2) {
+        for (section, (_, top)) in SECTIONS.iter().enumerate() {
+            let count = self.entries.iter().filter(|e| e.section == section).count();
+            let per_page = SECTION_ROWS[section] * GRID_COLUMNS;
+            let pages = count.div_ceil(per_page).max(1);
+            if pages < 2 {
+                continue;
+            }
+            self.pages[section] = self.pages[section].min(pages - 1);
+            let right = origin.x + GRID_LEFT + GRID_COLUMNS as f32 * CELL;
+            let center_y = origin.y + top + 9.0;
+            let size = vec2(24.0, 24.0);
+            let left_arrow = Rect::from_center_size(pos2(right - 90.0, center_y), size);
+            let right_arrow = Rect::from_center_size(pos2(right - 14.0, center_y), size);
+            let page = self.pages[section];
+            for (rect, texture, enabled, step) in [
+                (left_arrow, &self.arrows[0], page > 0, -1isize),
+                (right_arrow, &self.arrows[1], page + 1 < pages, 1),
+            ] {
+                let tint = if enabled {
+                    Color32::WHITE
+                } else {
+                    Color32::WHITE.gamma_multiply(0.3)
+                };
+                painter.image(texture.id(), rect, UNIT_UV, tint);
+                let response = ui
+                    .interact(
+                        rect,
+                        ui.scope_id().with(("page", section, step)),
+                        Sense::click(),
+                    )
+                    .on_hover_cursor(CursorIcon::PointingHand);
+                if enabled && response.clicked() {
+                    self.pages[section] = page.saturating_add_signed(step);
+                }
+            }
+            painter.text(
+                pos2(right - 52.0, center_y),
+                Align2::CENTER_CENTER,
+                format!("{}/{pages}", page + 1),
+                FontId::new(16.0, FontFamily::Name(FONT.into())),
+                Color32::from_rgb(0xf3, 0xf4, 0xf6),
+            );
+        }
+    }
+
     fn draw_credits(&self, painter: &egui::Painter, origin: Pos2) {
         let font = FontId::new(14.0, FontFamily::Name(FONT.into()));
         for (line, (text, color)) in CREDITS.iter().enumerate() {
@@ -264,14 +378,11 @@ impl Home {
 
     fn draw_detail(&self, painter: &egui::Painter, origin: Pos2, entry: &Entry) {
         let left = origin.x + DETAIL_LEFT;
-        let illustration =
-            Rect::from_min_size(pos2(left, origin.y + DETAIL_TOP), ILLUSTRATION_SIZE);
-        painter.image(
-            entry.illustration.id(),
-            illustration,
-            UNIT_UV,
-            Color32::WHITE,
-        );
+        if let Some(texture) = &entry.illustration {
+            let illustration =
+                Rect::from_min_size(pos2(left, origin.y + DETAIL_TOP), ILLUSTRATION_SIZE);
+            painter.image(texture.id(), illustration, UNIT_UV, Color32::WHITE);
+        }
 
         let text_width = DETAIL_WIDTH - 2.0 * INFO_PADDING;
         let line = |label: &str, value: &str| {

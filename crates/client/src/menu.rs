@@ -11,6 +11,7 @@ pub struct NativeMenu {
     /// The menu disappears if this is dropped.
     _bar: Menu,
     new_window: MenuItem,
+    open_templates: MenuItem,
     home: MenuItem,
     go_live: MenuItem,
     enabled: (bool, bool),
@@ -20,6 +21,7 @@ pub struct NativeMenu {
 impl NativeMenu {
     pub fn install(cc: &eframe::CreationContext<'_>) -> Result<Self, Error> {
         let new_window = MenuItem::new("New Window", true, None);
+        let open_templates = MenuItem::new("Open Templates Folder", true, None);
         let home = MenuItem::new("Home", false, None);
         let go_live = MenuItem::new("Go Live…", false, None);
         let bar = Menu::new();
@@ -32,7 +34,13 @@ impl NativeMenu {
         bar.append(&Submenu::with_items(
             "File",
             true,
-            &[&new_window, &home, &go_live],
+            &[
+                &new_window,
+                &home,
+                &go_live,
+                &muda::PredefinedMenuItem::separator(),
+                &open_templates,
+            ],
         )?)?;
         attach(&bar, cc)?;
 
@@ -47,6 +55,7 @@ impl NativeMenu {
         Ok(Self {
             _bar: bar,
             new_window,
+            open_templates,
             home,
             go_live,
             enabled: (false, false),
@@ -68,6 +77,8 @@ impl NativeMenu {
             .filter_map(|id| {
                 if id == *self.new_window.id() {
                     Some(Shortcut::NewWindow)
+                } else if id == *self.open_templates.id() {
+                    Some(Shortcut::OpenTemplates)
                 } else if id == *self.home.id() {
                     Some(Shortcut::Home)
                 } else if id == *self.go_live.id() {

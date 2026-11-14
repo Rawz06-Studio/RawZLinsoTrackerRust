@@ -2,7 +2,7 @@
 //! the server on the web. Results arrive through a [`Bundle`].
 
 use eframe::egui::Context;
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::sync::mpsc::{Receiver, Sender, channel};
 
 type FileResult = (String, Result<Vec<u8>, String>);
@@ -29,11 +29,18 @@ impl Source {
             let relative = path.strip_prefix("sources/")?;
             Some(dir.join(relative))
         });
+        // A template in Documents replaces the built-in one of its name.
+        let user_file = || {
+            let (name, file) = path.strip_prefix("sources/linso/")?.split_once('/')?;
+            crate::user_templates::read(name, file)
+        };
         let result = match override_path {
             Some(file) => std::fs::read(&file).map_err(|e| format!("{}: {e}", file.display())),
-            None => Bundled::get(&path)
-                .map(|file| file.data.into_owned())
-                .ok_or_else(|| format!("{path}: not found")),
+            None => user_file().unwrap_or_else(|| {
+                Bundled::get(&path)
+                    .map(|file| file.data.into_owned())
+                    .ok_or_else(|| format!("{path}: not found"))
+            }),
         };
         let _ = tx.send((path, result));
         ctx.request_repaint();
@@ -71,6 +78,8 @@ pub struct Bundle {
     tx: Sender<FileResult>,
     rx: Receiver<FileResult>,
     pending: usize,
+    /// Paths whose absence is not an error.
+    optional: HashSet<String>,
     files: HashMap<String, Vec<u8>>,
     error: Option<String>,
 }
@@ -85,9 +94,16 @@ impl Bundle {
             tx,
             rx,
             pending: 0,
+            optional: HashSet::new(),
             files: HashMap::new(),
             error: None,
         }
+    }
+
+    /// Like [`Bundle::request`], but the bundle loads without it if missing.
+    pub fn request_optional(&mut self, name: &str) {
+        self.optional.insert(format!("{}{name}", self.prefix));
+        self.request(name);
     }
 
     pub fn request(&mut self, name: &str) {
@@ -104,6 +120,7 @@ impl Bundle {
                     let name = path.strip_prefix(&self.prefix).unwrap_or(&path).to_owned();
                     self.files.insert(name, bytes);
                 }
+                Err(_) if self.optional.contains(&path) => {}
                 Err(error) => self.error = Some(error),
             }
         }

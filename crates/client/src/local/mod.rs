@@ -2,8 +2,11 @@
 //! They stay local, so there is no network here.
 
 pub mod assets;
+mod menu;
 mod view;
 
+use crate::sound::Sounds;
+use crate::storage::{self, Settings};
 use assets::LocalAssets;
 use eframe::egui::{
     self, Color32, CursorIcon, Event, MouseWheelUnit, Painter, PointerButton, Pos2, Rect, TextEdit,
@@ -76,7 +79,14 @@ struct PopupLayout {
 }
 
 pub struct LocalApp {
+    /// The template's folder name, which saves refer to.
+    name: String,
     engine: Engine,
+    settings: Settings,
+    sounds: Sounds,
+    /// The Escape menu, with the outcome of its last action.
+    menu: Option<Option<String>>,
+    go_home: bool,
     assets: LocalAssets,
     wheel: f32,
     pressed_at: Option<f64>,
@@ -106,14 +116,29 @@ fn on_element(rect: Rect, pos: Pos2) -> bool {
 impl LocalApp {
     pub fn new(
         ctx: &egui::Context,
+        name: String,
         template: Template,
         maps: Vec<MapDef>,
         assets: LocalAssets,
         screenshot: Option<PathBuf>,
     ) -> Self {
         ctx.all_styles_mut(|style| style.interaction.interact_radius = 0.0);
+        let mut engine = Engine::new(template, maps);
+        if let Some(json) = storage::read_default_save(&name) {
+            let loaded = serde_json::from_str(&json)
+                .map_err(|e| e.to_string())
+                .and_then(|save| engine.load(&name, &save));
+            if let Err(error) = loaded {
+                eprintln!("default save of {name} not loaded: {error}");
+            }
+        }
         Self {
-            engine: Engine::new(template, maps),
+            name,
+            engine,
+            settings: storage::load_settings(),
+            sounds: Sounds::default(),
+            menu: None,
+            go_home: false,
             assets,
             wheel: 0.0,
             pressed_at: None,
@@ -912,6 +937,8 @@ impl LocalApp {
 
         // The name of the item under the pointer.
         if let Some(pos) = pointer
+            && self.settings.show_hint
+            && self.menu.is_none()
             && !list_open
             && !over_check
             && self.dragging.is_none()
@@ -942,7 +969,15 @@ impl LocalApp {
             ctx.request_repaint_after_secs(GLOW_REPAINT_SECONDS);
         }
 
-        if let Some(pos) = pointer {
+        if ui.input(|i| i.key_pressed(egui::Key::Escape)) {
+            self.toggle_menu();
+        }
+        if self.menu.is_some() {
+            self.show_menu(ui);
+            // The tracker under the menu takes no clicks.
+            self.pressed_at = None;
+            self.wheel = 0.0;
+        } else if let Some(pos) = pointer {
             self.handle_input(&ctx, &painter, origin, pos, time);
         }
     }
@@ -1202,6 +1237,9 @@ impl LocalApp {
             ctx.open_url(egui::OpenUrl::new_tab(link));
         }
         self.engine.click(id, button);
+        if self.settings.sound && matches!(button, Button::Left | Button::Right) {
+            self.sounds.play(self.engine.is_enabled(id));
+        }
         true
     }
 
@@ -1254,5 +1292,60 @@ impl LocalApp {
             }
             _ => {}
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::path::Path;
+
+    fn app(ctx: &egui::Context, name: &str) -> LocalApp {
+        let dir = Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join("../../public/sources/linso")
+            .join(name);
+        let template =
+            Template::parse(&std::fs::read_to_string(dir.join("tracker.json")).unwrap()).unwrap();
+        let files = template
+            .files()
+            .into_iter()
+            .map(|file| (std::fs::read(dir.join(&file)).unwrap(), file))
+            .map(|(bytes, file)| (file, bytes))
+            .collect();
+        let assets = LocalAssets::load(ctx, &template, &[], &files).unwrap();
+        LocalApp::new(ctx, name.to_owned(), template, Vec::new(), assets, None)
+    }
+
+    fn frame(ctx: &egui::Context, app: &mut LocalApp, events: Vec<Event>) {
+        let input = egui::RawInput {
+            screen_rect: Some(Rect::from_min_size(Pos2::ZERO, vec2(400.0, 500.0))),
+            events,
+            ..Default::default()
+        };
+        let mut output = ctx.run_ui(input, |ui| app.show(ui, Pos2::ZERO));
+        output.textures_delta.clear();
+    }
+
+    fn escape() -> Event {
+        Event::Key {
+            key: egui::Key::Escape,
+            physical_key: None,
+            pressed: true,
+            repeat: false,
+            modifiers: Default::default(),
+        }
+    }
+
+    #[test]
+    fn escape_opens_and_closes_the_menu() {
+        let ctx = egui::Context::default();
+        let mut app = app(&ctx, "oot64");
+        frame(&ctx, &mut app, vec![]);
+        frame(&ctx, &mut app, vec![escape()]);
+        frame(&ctx, &mut app, vec![]);
+        assert!(app.menu.is_some());
+        frame(&ctx, &mut app, vec![escape()]);
+        frame(&ctx, &mut app, vec![]);
+        assert!(app.menu.is_none());
     }
 }

@@ -21,6 +21,12 @@ Trackers live in `public/sources`, in two families read by different code:
 
 Both families are bundled in the desktop executable.
 
+On first launch, the desktop app creates `Documents/RawZLinsoTracker/templates`.
+LinSoTracker `.template` files or template folders dropped there appear in the
+Local section, and replace a built-in template of the same name. The same
+folder keeps the Escape menu's settings and the default saves (in the browser,
+they go to local storage).
+
 ## Commands
 
 ```bash
@@ -43,7 +49,9 @@ make docker && make docker-run
 | --- | --- |
 | Left / right click, wheel, middle click | Change an item, depending on its type |
 | Ctrl+Shift+R | Reset the tracker |
-| Ctrl+Shift+L | Go Live: open a shared room |
+| Ctrl+Shift+L | Go Live: open a shared room (restream trackers) |
+| Escape | Options of a LinSoTracker template: zoom, hints, sound, saves |
+| Hold the left button on an item | Drag it onto a draggable item or a map check |
 | Ctrl+L | Open in a small window (web) |
 
 ## Server configuration

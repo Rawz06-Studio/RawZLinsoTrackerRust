@@ -11,7 +11,11 @@ mod menu;
 mod net;
 mod route;
 mod shell;
+mod sound;
 mod source;
+mod storage;
+#[cfg(not(target_arch = "wasm32"))]
+mod user_templates;
 #[cfg(target_arch = "wasm32")]
 mod web;
 
@@ -53,6 +57,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 
     let args = Args::parse();
+    storage::prepare();
     let route = match args.tracker {
         Some(name) => match name.strip_prefix("local/") {
             Some(_) if args.room.is_some() => {

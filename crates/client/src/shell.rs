@@ -26,6 +26,8 @@ pub enum Shortcut {
     Home,
     #[cfg(any(target_os = "macos", target_os = "windows"))]
     NewWindow,
+    #[cfg(any(target_os = "macos", target_os = "windows"))]
+    OpenTemplates,
     #[cfg(target_arch = "wasm32")]
     SmallWindow,
 }
@@ -52,6 +54,8 @@ struct Live {
 /// A LinSoTracker template on screen.
 struct LocalLive {
     view: LocalApp,
+    /// The window follows a zoom change one frame late, once egui uses it.
+    resize_pending: bool,
 }
 
 /// A LinSoTracker template loads in steps: its `tracker.json`, the files it
@@ -191,6 +195,8 @@ impl Shell {
     fn enter_home(ctx: &Context, files: &HashMap<String, Vec<u8>>) -> Screen {
         match Home::load(ctx, files) {
             Ok(home) => {
+                // Only LinSoTracker templates zoom.
+                ctx.set_zoom_factor(1.0);
                 Self::set_title(ctx, "RawZLinsoTracker");
                 Self::resize(ctx, home::SIZE);
                 Screen::Settling(Box::new(Screen::Home(Box::new(home))))
@@ -226,6 +232,7 @@ impl Shell {
             None => format!("Tracker {name}"),
         };
         Self::set_title(ctx, &title);
+        ctx.set_zoom_factor(1.0);
         let size = vec2(tracker.dimensions.width, tracker.dimensions.height);
         let bar = if self.shows_bar(&room, false) {
             BAR_HEIGHT
@@ -336,7 +343,7 @@ impl Shell {
                 Screen::LoadingLocal(Box::new(load))
             }
             LocalStage::MapFiles(template, maps) => {
-                self.enter_local(ctx, *template, maps, &load.files)
+                self.enter_local(ctx, load.name, *template, maps, &load.files)
             }
         }
     }
@@ -344,6 +351,7 @@ impl Shell {
     fn enter_local(
         &mut self,
         ctx: &Context,
+        name: String,
         template: Template,
         maps: Vec<MapDef>,
         files: &HashMap<String, Vec<u8>>,
@@ -353,14 +361,25 @@ impl Shell {
             Err(error) => return Screen::Failed(error.to_string()),
         };
         Self::set_title(ctx, &format!("{} - LinSoTracker", template.info.name));
-        let view = LocalApp::new(ctx, template, maps, assets, self.options.screenshot.take());
+        let view = LocalApp::new(
+            ctx,
+            name,
+            template,
+            maps,
+            assets,
+            self.options.screenshot.take(),
+        );
+        ctx.set_zoom_factor(view.zoom());
         let bar = if self.shows_bar(&None, true) {
             BAR_HEIGHT
         } else {
             0.0
         };
         Self::resize(ctx, view.size() + vec2(0.0, bar));
-        Screen::Settling(Box::new(Screen::Local(Box::new(LocalLive { view }))))
+        Screen::Settling(Box::new(Screen::Local(Box::new(LocalLive {
+            view,
+            resize_pending: true,
+        }))))
     }
 
     fn request_assets(
@@ -430,6 +449,9 @@ impl Shell {
             if shortcuts.contains(&Shortcut::NewWindow) {
                 open_new_window(&self.options);
             }
+            if shortcuts.contains(&Shortcut::OpenTemplates) {
+                crate::storage::open_templates_dir();
+            }
         }
         if let Screen::Local(local) = &mut self.screen {
             local.view.tick(ctx);
@@ -444,7 +466,7 @@ impl Shell {
                         return;
                     }
                     #[cfg(any(target_os = "macos", target_os = "windows"))]
-                    Shortcut::NewWindow => {}
+                    Shortcut::NewWindow | Shortcut::OpenTemplates => {}
                     #[cfg(target_arch = "wasm32")]
                     Shortcut::SmallWindow => {
                         let size = local.view.size();
@@ -469,7 +491,7 @@ impl Shell {
                     return;
                 }
                 #[cfg(any(target_os = "macos", target_os = "windows"))]
-                Shortcut::NewWindow => {}
+                Shortcut::NewWindow | Shortcut::OpenTemplates => {}
                 #[cfg(target_arch = "wasm32")]
                 Shortcut::SmallWindow => crate::web::open_small_window(live.size.x, live.size.y),
             }
@@ -510,6 +532,13 @@ impl Shell {
                     if ui.put(button, egui::Button::new("New Window")).clicked() {
                         open_new_window(&self.options);
                     }
+                    let folder = button.translate(vec2(-150.0, 0.0)).expand2(vec2(22.0, 0.0));
+                    if ui
+                        .put(folder, egui::Button::new("Templates Folder"))
+                        .clicked()
+                    {
+                        crate::storage::open_templates_dir();
+                    }
                 }
                 if let Some(route) = chosen {
                     self.navigate(&ctx, route);
@@ -541,6 +570,16 @@ impl Shell {
         }
         if let Screen::Local(local) = &mut self.screen {
             local.view.show(ui, origin);
+            home |= local.view.take_go_home();
+            let zoom = local.view.zoom();
+            if ctx.zoom_factor() != zoom {
+                ctx.set_zoom_factor(zoom);
+                local.resize_pending = true;
+            } else if local.resize_pending {
+                local.resize_pending = false;
+                let bar = if show_bar { BAR_HEIGHT } else { 0.0 };
+                Self::resize(&ctx, local.view.size() + vec2(0.0, bar));
+            }
         }
         if home {
             self.navigate(&ctx, Route::Home);
